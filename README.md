@@ -8,7 +8,7 @@ Bem-vinda(o) ao repositório do meu portfólio profissional! Este espaço consol
 
 Atuo como Gerente de Análise de Dados na SETIC-RO, mantendo relatórios analíticos, liderando equipes ágeis e fomentando a cultura data-driven no setor público. Com uma sólida base acadêmica em Psicologia, combino a capacidade técnica de exatas (modelagem de dados, pipelines ETL/ELT, DevOps) com a compreensão profunda do comportamento humano, gestão de crises e facilitação de pessoas. 
 
-Como mulher, LGBTQIAPN+ e PCD, busco construir espaços e tecnologias que gerem impacto social, inclusão e transformação.
+Como mulher, LGBTQIAPN+ e PCD, busco construir espaços e tecnologias que gerem impacto social, inclusão e transformação. Além de minha atuação no setor público, estou aberta a projetos de desenvolvimento, colaborando remotamente com equipes e clientes internacionais na construção de soluções em dados, BI e desenvolvimento web.
 
 ## 🛠️ Sobre o Projeto (Tech Stack)
 
@@ -25,7 +25,7 @@ Este portfólio foi desenvolvido com foco em performance, acessibilidade e desig
 
 ## 📬 Contato
 
-Fique à vontade para se conectar comigo:
+Fique à vontade para se conectar comigo para parcerias, networking ou projetos *nearshore*:
 - **LinkedIn:** [linkedin.com/in/isabella-carvalho](https://www.linkedin.com/in/isabella-carvalho-aa743a145/)
 - **E-mail:** [isabellactlemess@gmail.com](mailto:isabellactlemess@gmail.com)
 - **Lattes:** [http://lattes.cnpq.br/7045107957569078](http://lattes.cnpq.br/7045107957569078)
