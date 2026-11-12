@@ -26,7 +26,7 @@ Este portfólio foi desenvolvido com foco em performance, acessibilidade e desig
 ## 📬 Contato
 
 Fique à vontade para se conectar comigo:
-- **LinkedIn:** [linkedin.com/in/isabella-carvalho]([https://linkedin.com/in/isabellactlemess](https://www.linkedin.com/in/isabella-carvalho-aa743a145/))
+- **LinkedIn:** [linkedin.com/in/isabella-carvalho](https://www.linkedin.com/in/isabella-carvalho-aa743a145/)
 - **E-mail:** [isabellactlemess@gmail.com](mailto:isabellactlemess@gmail.com)
 - **Lattes:** [http://lattes.cnpq.br/7045107957569078](http://lattes.cnpq.br/7045107957569078)
 
