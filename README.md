@@ -8,7 +8,7 @@ Bem-vinda(o) ao repositório do meu portfólio profissional! Este espaço consol
 
 Atuo como Gerente de Análise de Dados na SETIC-RO, desenhando ecossistemas analíticos, liderando equipes ágeis e fomentando a cultura data-driven no setor público. Com uma sólida base acadêmica em Psicologia, combino a capacidade técnica de exatas (modelagem de dados, pipelines ETL/ELT, DevOps) com a compreensão profunda do comportamento humano, gestão de crises e facilitação de pessoas. 
 
-Como mulher LGBTQIAPN+ e PCD, busco construir espaços e tecnologias que gerem impacto social, inclusão e transformação.
+Como mulher, LGBTQIAPN+ e PCD, busco construir espaços e tecnologias que gerem impacto social, inclusão e transformação.
 
 ## 🛠️ Sobre o Projeto (Tech Stack)
 
