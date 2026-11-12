@@ -1,6 +1,6 @@
 # Isabella Carvalho | Portfólio Pessoal 🚀
 
-Bem-vinda(o) ao repositório do meu portfólio profissional! Este espaço consolida minha trajetória de 11 anos unindo Tecnologia, Governança de Dados, Infraestrutura e Psicologia Clínica/Social.
+Bem-vinda(o) ao repositório do meu portfólio profissional! Este espaço consolida minha trajetória de 11 anos unindo Tecnologia, Dados, Infraestrutura e Psicologia Clínica/Social.
 
 🔗 **Acesse o site ao vivo:** [https://isamtbella.github.io](https://isamtbella.github.io)
 
@@ -31,4 +31,4 @@ Fique à vontade para se conectar comigo:
 - **Lattes:** [http://lattes.cnpq.br/7045107957569078](http://lattes.cnpq.br/7045107957569078)
 
 ---
-*Feito com dedicação, dados e impacto social.* 🩵
+*Feito com dedicação.* 🩵
