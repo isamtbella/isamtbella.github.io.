@@ -172,64 +172,105 @@
         </aside>
 
         <!-- CONTEÚDO PRINCIPAL -->
-        <main class="w-full md:w-[65%] p-8 pt-4 md:p-16 pb-24">
+        <main class="w-full md:w-[65%] p-8 pt-4 md:p-16 pb-24 overflow-x-hidden">
             
             <!-- 01. VISÃO GERAL -->
-            <section id="visao" class="reveal mb-16 pt-2 md:pt-6">
-                <div class="text-accent text-xs font-bold tracking-widest mb-3">01 / <span class="lang-pt">VISÃO GERAL</span><span class="lang-en">OVERVIEW</span></div>
-                <h3 class="text-3xl font-semibold mb-6 text-gray-900 dark:text-gray-100 leading-tight">
-                    <span class="lang-pt">Visão Computacional, Analítica & Humanista.<br><em class="text-gray-500 dark:text-gray-400 font-light text-2xl">Vamos abstrair e elaborar essa dor para transformar, em vez de repetir, os mesmos problemas?</em></span>
-                    <span class="lang-en">Computational, Analytical & Humanist Vision.<br><em class="text-gray-500 dark:text-gray-400 font-light text-2xl">Shall we abstract and work through that pain to transform, rather than repeat, the same problems?</em></span>
-                </h3>
-                
-                <div class="lang-pt text-gray-600 dark:text-gray-400 leading-relaxed text-justify space-y-4 text-sm md:text-base">
-                    <p>A palavra é uma tecnologia entre-mundos. Ao longo de 11 anos de trajetória multidisciplinar, meu propósito é <strong>tramar uma nova língua</strong> entre a subjetividade humana e o rigor lógico das máquinas, articulando Engenharia e Análise de Dados, Visão Computacional, Infraestrutura, Práticas DevOps e Desenvolvimento Web.</p>
-                    <p>Com formação em <strong>Psicologia</strong> (de orientação psicanalítica) e <strong>Análise e Desenvolvimento de Sistemas</strong>, parto do princípio freudiano de que aquilo que não é escutado e elaborado insiste em se repetir nas pessoas, nas equipes e nos sistemas. Compreendo que por trás de cada gargalo operacional, base de dados desconexa ou falha recorrente existe uma dor real que precisa ser elaborada para transformar processos e romper ciclos de repetição, antes mesmo de ser abstraída em código. Traduzo essa escuta em arquiteturas eficientes: pipelines ETL automatizados, sistemas web sob medida e ecossistemas de inteligência analítica em Power BI, Superset, Metabase e Qlik Sense.</p>
-                    <p>Lidero equipes ágeis fomentando a cultura <em>data-driven</em> e a decisão baseada em evidências. Como mulher, LGBTQIAPN+ e PCD, convido pessoas, empresas e instituições a co-criarem tecnologias que não apenas processem informações, mas gerem sentido, autonomia e transformação social.</p>
+            <section id="visao" class="reveal relative mb-16 pt-2 md:pt-6">
+                <!-- Arte Teia / Rede Interseccional -->
+                <div class="pointer-events-none select-none absolute -top-4 -right-6 md:-top-8 md:-right-10 w-52 h-52 md:w-72 md:h-72 opacity-45 dark:opacity-35" aria-hidden="true">
+                    <svg viewBox="0 0 280 280" fill="none" class="w-full h-full">
+                        <defs>
+                            <radialGradient id="webGradHero" cx="92%" cy="14%" r="86%">
+                                <stop offset="0%" stop-color="#f9a8d4" stop-opacity="0.8"/>
+                                <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.45"/>
+                                <stop offset="100%" stop-color="#94a3b8" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                        <!-- Fios radiais partindo de (260, 40) -->
+                        <g stroke="url(#webGradHero)" stroke-width="0.9">
+                            <line x1="260" y1="40" x2="35" y2="20"/>
+                            <line x1="260" y1="40" x2="45" y2="110"/>
+                            <line x1="260" y1="40" x2="90" y2="188"/>
+                            <line x1="260" y1="40" x2="160" y2="245"/>
+                            <line x1="260" y1="40" x2="248" y2="265"/>
+                        </g>
+                        <!-- Tramas curvas (arcos entre os raios) -->
+                        <g stroke="url(#webGradHero)" stroke-width="0.85" fill="none">
+                            <path d="M 205.2 35.2 Q 209 47 207.7 57.0 Q 215 66 218.5 76.1 Q 228 82 235.9 89.4 Q 246 92 257.1 94.9"/>
+                            <path d="M 155.4 30.8 Q 162 52 160.1 72.4 Q 173 90 180.8 108.9 Q 199 120 214.0 134.4 Q 234 139 254.5 144.9"/>
+                            <path d="M 105.6 26.5 Q 115 58 112.6 87.9 Q 131 114 143.0 141.7 Q 170 159 192.1 179.3 Q 222 186 251.9 194.8"/>
+                            <path d="M 55.8 22.1 Q 68 63 65.0 103.3 Q 89 138 105.3 174.5 Q 140 198 170.1 224.3 Q 210 233 249.3 244.7"/>
+                        </g>
+                        <!-- Nós de interseção (pontos de encontro) -->
+                        <circle cx="207.7" cy="57.0" r="2" fill="#f9a8d4"/>
+                        <circle cx="218.5" cy="76.1" r="2" fill="#3b82f6"/>
+                        <circle cx="160.1" cy="72.4" r="2.2" fill="#3b82f6"/>
+                        <circle cx="180.8" cy="108.9" r="2.4" fill="#f9a8d4"/>
+                        <circle cx="214.0" cy="134.4" r="2" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.9"/>
+                        <circle cx="112.6" cy="87.9" r="2" fill="#f9a8d4"/>
+                        <circle cx="143.0" cy="141.7" r="2.5" fill="#3b82f6"/>
+                        <circle cx="192.1" cy="179.3" r="2.2" fill="#f9a8d4"/>
+                        <circle cx="105.3" cy="174.5" r="2" fill="#ffffff" stroke="#3b82f6" stroke-width="0.9"/>
+                        <circle cx="170.1" cy="224.3" r="2" fill="#3b82f6"/>
+                    </svg>
                 </div>
 
-                <div class="lang-en text-gray-600 dark:text-gray-400 leading-relaxed text-justify space-y-4 text-sm md:text-base">
-                    <p>The word is a technology between worlds. Across an 11-year multidisciplinary career, my purpose is to <strong>weave a new language</strong> between human subjectivity and the logical rigor of machines, bridging Data Engineering and Analytics, Computer Vision, Infrastructure, DevOps practices, and Web Development.</p>
-                    <p>With degrees in both <strong>Psychology</strong> (psychoanalytic orientation) and <strong>Systems Analysis and Development</strong>, I draw from the Freudian principle that what is not heard and worked through insists on repeating itself in people, teams, and systems alike. I understand that behind every operational bottleneck, disconnected database, or recurring failure lies a real pain point that must be worked through to transform processes and break cycles of repetition before being abstracted into code. I translate that listening into effective architectures: automated ETL pipelines, custom web applications, and analytical intelligence ecosystems in Power BI, Superset, Metabase, and Qlik Sense.</p>
-                    <p>I lead agile teams fostering a data-driven culture and evidence-based decision-making. As an LGBTQIAPN+ and disabled woman, I invite individuals, companies, and institutions to co-create technologies that not only process information, but generate meaning, autonomy, and social transformation.</p>
-                </div>
-
-                <!-- Tríade de Visões -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
-                        <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">01. Tech & AI</div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
-                            <span class="lang-pt">Visão Computacional & Engenharia</span>
-                            <span class="lang-en">Computer Vision & Engineering</span>
-                        </h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                            <span class="lang-pt">Automação inteligente, leitura computacional de padrões, integração de APIs, desenvolvimento Full Stack e infraestrutura resiliente.</span>
-                            <span class="lang-en">Intelligent automation, computational pattern recognition, API integration, Full Stack development, and resilient infrastructure.</span>
-                        </p>
+                <div class="relative z-10">
+                    <div class="text-accent text-xs font-bold tracking-widest mb-3">01 / <span class="lang-pt">VISÃO GERAL</span><span class="lang-en">OVERVIEW</span></div>
+                    <h3 class="text-3xl font-semibold mb-6 text-gray-900 dark:text-gray-100 leading-tight">
+                        <span class="lang-pt">Visão Computacional, Analítica & Humanista.<br><em class="text-gray-500 dark:text-gray-400 font-light text-2xl">Vamos abstrair e elaborar essa dor para transformar, em vez de repetir, os mesmos problemas?</em></span>
+                        <span class="lang-en">Computational, Analytical & Humanist Vision.<br><em class="text-gray-500 dark:text-gray-400 font-light text-2xl">Shall we abstract and work through that pain to transform, rather than repeat, the same problems?</em></span>
+                    </h3>
+                    
+                    <div class="lang-pt text-gray-600 dark:text-gray-400 leading-relaxed text-justify space-y-4 text-sm md:text-base">
+                        <p>A palavra é uma tecnologia entre-mundos. Ao longo de 11 anos de trajetória multidisciplinar, meu propósito é <strong>tramar uma nova língua</strong> entre a subjetividade humana e o rigor lógico das máquinas, articulando Engenharia e Análise de Dados, Visão Computacional, Infraestrutura, Práticas DevOps e Desenvolvimento Web.</p>
+                        <p>Com formação em <strong>Psicologia</strong> (de orientação psicanalítica) e <strong>Análise e Desenvolvimento de Sistemas</strong>, parto do princípio freudiano de que aquilo que não é escutado e elaborado insiste em se repetir nas pessoas, nas equipes e nos sistemas. Compreendo que por trás de cada gargalo operacional, base de dados desconexa ou falha recorrente existe uma dor real que precisa ser elaborada para transformar processos e romper ciclos de repetição, antes mesmo de ser abstraída em código. Traduzo essa escuta em arquiteturas eficientes: pipelines ETL automatizados, sistemas web sob medida e ecossistemas de inteligência analítica em Power BI, Superset, Metabase e Qlik Sense.</p>
+                        <p>Lidero equipes ágeis fomentando a cultura <em>data-driven</em> e a decisão baseada em evidências. Como mulher, LGBTQIAPN+ e PCD, convido pessoas, empresas e instituições a co-criarem tecnologias que não apenas processem informações, mas gerem sentido, autonomia e transformação social.</p>
                     </div>
 
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
-                        <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">02. Data-Driven</div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
-                            <span class="lang-pt">Visão Analítica & Estratégica</span>
-                            <span class="lang-en">Analytical & Strategic Vision</span>
-                        </h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                            <span class="lang-pt">Governança de dados, pipelines ETL/ELT e storytelling visual que transformam incerteza em tomada de decisão de alto impacto.</span>
-                            <span class="lang-en">Data governance, ETL/ELT pipelines, and visual storytelling that turn uncertainty into high-impact decision-making.</span>
-                        </p>
+                    <div class="lang-en text-gray-600 dark:text-gray-400 leading-relaxed text-justify space-y-4 text-sm md:text-base">
+                        <p>The word is a technology between worlds. Across an 11-year multidisciplinary career, my purpose is to <strong>weave a new language</strong> between human subjectivity and the logical rigor of machines, bridging Data Engineering and Analytics, Computer Vision, Infrastructure, DevOps practices, and Web Development.</p>
+                        <p>With degrees in both <strong>Psychology</strong> (psychoanalytic orientation) and <strong>Systems Analysis and Development</strong>, I draw from the Freudian principle that what is not heard and worked through insists on repeating itself in people, teams, and systems alike. I understand that behind every operational bottleneck, disconnected database, or recurring failure lies a real pain point that must be worked through to transform processes and break cycles of repetition before being abstracted into code. I translate that listening into effective architectures: automated ETL pipelines, custom web applications, and analytical intelligence ecosystems in Power BI, Superset, Metabase, and Qlik Sense.</p>
+                        <p>I lead agile teams fostering a data-driven culture and evidence-based decision-making. As an LGBTQIAPN+ and disabled woman, I invite individuals, companies, and institutions to co-create technologies that not only process information, but generate meaning, autonomy, and social transformation.</p>
                     </div>
 
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
-                        <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">03. Human-Centered</div>
-                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
-                            <span class="lang-pt">Visão Humanista & Escuta</span>
-                            <span class="lang-en">Humanist Vision & Listening</span>
-                        </h4>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                            <span class="lang-pt">Escuta clínica e organizacional aplicada à tecnologia: compreender a dor real de quem usa antes de escrever a primeira linha de código.</span>
-                            <span class="lang-en">Clinical and organizational listening applied to technology: understanding the user's real pain before writing the first line of code.</span>
-                        </p>
+                    <!-- Tríade de Visões -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                        <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">01. Tech & AI</div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                                <span class="lang-pt">Visão Computacional & Engenharia</span>
+                                <span class="lang-en">Computer Vision & Engineering</span>
+                            </h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                                <span class="lang-pt">Automação inteligente, leitura computacional de padrões, integração de APIs, desenvolvimento Full Stack e infraestrutura resiliente.</span>
+                                <span class="lang-en">Intelligent automation, computational pattern recognition, API integration, Full Stack development, and resilient infrastructure.</span>
+                            </p>
+                        </div>
+
+                        <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">02. Data-Driven</div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                                <span class="lang-pt">Visão Analítica & Estratégica</span>
+                                <span class="lang-en">Analytical & Strategic Vision</span>
+                            </h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                                <span class="lang-pt">Governança de dados, pipelines ETL/ELT e storytelling visual que transformam incerteza em tomada de decisão de alto impacto.</span>
+                                <span class="lang-en">Data governance, ETL/ELT pipelines, and visual storytelling that turn uncertainty into high-impact decision-making.</span>
+                            </p>
+                        </div>
+
+                        <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">03. Human-Centered</div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                                <span class="lang-pt">Visão Humanista & Escuta</span>
+                                <span class="lang-en">Humanist Vision & Listening</span>
+                            </h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                                <span class="lang-pt">Escuta clínica e organizacional aplicada à tecnologia: compreender a dor real de quem usa antes de escrever a primeira linha de código.</span>
+                                <span class="lang-en">Clinical and organizational listening applied to technology: understanding the user's real pain before writing the first line of code.</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -512,44 +553,76 @@
             <section id="criar" class="reveal mb-12">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">07 / <span class="lang-pt">ESCUTA & CRIAÇÃO</span><span class="lang-en">LISTENING & CREATION</span></div>
                 
-                <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-2xl p-6 md:p-8 hover:border-accent/50 transition duration-300">
-                    <div class="border-l-2 border-accent pl-3.5 py-0.5 mb-5">
-                        <p class="text-xs md:text-sm italic text-gray-700 dark:text-gray-300 leading-relaxed">
-                            <span class="lang-pt">“A palavra é uma tecnologia entre-mundos; vamos tramar uma nova língua? Fala que eu te escuto.”</span>
-                            <span class="lang-en">“The word is a technology between worlds; shall we weave a new language? Speak, I'm listening.”</span>
-                        </p>
-                        <p class="text-[11px] text-gray-500 mt-1">
-                            <span class="lang-pt">Livre adaptação de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
-                            <span class="lang-en">Freely adapted from <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
-                        </p>
+                <div class="relative overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-2xl p-6 md:p-8 hover:border-accent/50 transition duration-300">
+                    <!-- Arte Teia / Rede no canto inferior direito do card -->
+                    <div class="pointer-events-none select-none absolute -bottom-6 -right-6 w-48 h-48 md:w-56 md:h-56 opacity-35 dark:opacity-25" aria-hidden="true">
+                        <svg viewBox="0 0 240 240" fill="none" class="w-full h-full">
+                            <defs>
+                                <radialGradient id="webGradCta" cx="90%" cy="90%" r="85%">
+                                    <stop offset="0%" stop-color="#f9a8d4" stop-opacity="0.8"/>
+                                    <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.45"/>
+                                    <stop offset="100%" stop-color="#94a3b8" stop-opacity="0"/>
+                                </radialGradient>
+                            </defs>
+                            <g stroke="url(#webGradCta)" stroke-width="0.9">
+                                <line x1="220" y1="220" x2="25" y2="215"/>
+                                <line x1="220" y1="220" x2="50" y2="135"/>
+                                <line x1="220" y1="220" x2="115" y2="65"/>
+                                <line x1="220" y1="220" x2="195" y2="25"/>
+                            </g>
+                            <g stroke="url(#webGradCta)" stroke-width="0.85" fill="none">
+                                <path d="M 170 218.7 Q 174 208 175.3 197.5 Q 184 188 192.4 179.2 Q 203 175 213.6 170.6"/>
+                                <path d="M 120 217.4 Q 128 196 130.6 175.0 Q 148 156 164.8 138.4 Q 186 130 207.2 121.2"/>
+                                <path d="M 70 216.1 Q 82 184 85.9 152.5 Q 112 124 137.2 97.6 Q 169 85 200.8 71.8"/>
+                            </g>
+                            <circle cx="175.3" cy="197.5" r="2" fill="#f9a8d4"/>
+                            <circle cx="192.4" cy="179.2" r="2" fill="#3b82f6"/>
+                            <circle cx="130.6" cy="175.0" r="2.2" fill="#3b82f6"/>
+                            <circle cx="164.8" cy="138.4" r="2.4" fill="#f9a8d4"/>
+                            <circle cx="85.9" cy="152.5" r="2" fill="#f9a8d4"/>
+                            <circle cx="137.2" cy="97.6" r="2.2" fill="#3b82f6"/>
+                        </svg>
                     </div>
 
-                    <h3 class="text-2xl md:text-3xl font-semibold mb-3 text-gray-900 dark:text-white leading-snug">
-                        <span class="lang-pt">Vamos abstrair e elaborar essa dor para transformar, em vez de repetir, os mesmos problemas?</span>
-                        <span class="lang-en">Shall we abstract and work through that pain to transform, rather than repeat, the same problems?</span>
-                    </h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                        <span class="lang-pt">Toda solução tecnológica real nasce de uma escuta atenta, pois sem elaboração os problemas estruturais apenas se repetem sob novas interfaces. Seja para estruturar pipelines e painéis de Business Intelligence, desenvolver aplicações web e automações em Python, aplicar visão computacional ou desenhar arquiteturas de dados centradas nas pessoas, estou aberta a novos projetos, consultorias e parcerias remotas.</span>
-                        <span class="lang-en">Every meaningful technological solution begins with attentive listening, as structural problems merely repeat themselves under new interfaces unless their root causes are worked through. Whether structuring Business Intelligence pipelines and dashboards, building web applications and Python automations, applying computer vision, or designing human-centered data architectures, I am open to new projects, consulting, and remote partnerships.</span>
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        <a id="gmailLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Vamos%20tramar%20uma%20nova%20l%C3%ADngua%3F%20%7C%20Contato%20Portf%C3%B3lio" target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition shadow-lg shadow-blue-500/20 inline-flex items-center justify-center gap-2 text-center">
-                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <span class="lang-pt">Enviar no Gmail</span>
-                            <span class="lang-en">Send via Gmail</span>
-                        </a>
-                        <button type="button" onclick="copyEmail(this)" class="border border-gray-300 dark:border-gray-700 hover:border-accent dark:hover:border-accent text-gray-800 dark:text-gray-200 text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition inline-flex items-center justify-center gap-2 cursor-pointer text-center">
-                            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                            <span class="btn-label">
-                                <span class="lang-pt">Copiar E-mail</span>
-                                <span class="lang-en">Copy Email</span>
-                            </span>
-                            <span class="copy-feedback hidden text-emerald-500 font-bold">✓ Copiado!</span>
-                        </button>
-                        <a href="https://www.linkedin.com/in/isabella-carvalho-aa743a145/" target="_blank" rel="noopener noreferrer" class="border border-gray-300 dark:border-gray-700 hover:border-accent dark:hover:border-accent text-gray-800 dark:text-gray-200 text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition inline-flex items-center justify-center gap-2 text-center">
-                            <span class="lang-pt">LinkedIn</span>
-                            <span class="lang-en">LinkedIn</span>
-                        </a>
+                    <div class="relative z-10">
+                        <div class="border-l-2 border-accent pl-3.5 py-0.5 mb-5">
+                            <p class="text-xs md:text-sm italic text-gray-700 dark:text-gray-300 leading-relaxed">
+                                <span class="lang-pt">“A palavra é uma tecnologia entre-mundos; vamos tramar uma nova língua? Fala que eu te escuto.”</span>
+                                <span class="lang-en">“The word is a technology between worlds; shall we weave a new language? Speak, I'm listening.”</span>
+                            </p>
+                            <p class="text-[11px] text-gray-500 mt-1">
+                                <span class="lang-pt">Livre adaptação de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
+                                <span class="lang-en">Freely adapted from <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
+                            </p>
+                        </div>
+
+                        <h3 class="text-2xl md:text-3xl font-semibold mb-3 text-gray-900 dark:text-white leading-snug">
+                            <span class="lang-pt">Vamos abstrair e elaborar essa dor para transformar, em vez de repetir, os mesmos problemas?</span>
+                            <span class="lang-en">Shall we abstract and work through that pain to transform, rather than repeat, the same problems?</span>
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                            <span class="lang-pt">Toda solução tecnológica real nasce de uma escuta atenta, pois sem elaboração os problemas estruturais apenas se repetem sob novas interfaces. Seja para estruturar pipelines e painéis de Business Intelligence, desenvolver aplicações web e automações em Python, aplicar visão computacional ou desenhar arquiteturas de dados centradas nas pessoas, estou aberta a novos projetos, consultorias e parcerias remotas.</span>
+                            <span class="lang-en">Every meaningful technological solution begins with attentive listening, as structural problems merely repeat themselves under new interfaces unless their root causes are worked through. Whether structuring Business Intelligence pipelines and dashboards, building web applications and Python automations, applying computer vision, or designing human-centered data architectures, I am open to new projects, consulting, and remote partnerships.</span>
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <a id="gmailLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Vamos%20tramar%20uma%20nova%20l%C3%ADngua%3F%20%7C%20Contato%20Portf%C3%B3lio" target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition shadow-lg shadow-blue-500/20 inline-flex items-center justify-center gap-2 text-center">
+                                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span class="lang-pt">Enviar no Gmail</span>
+                                <span class="lang-en">Send via Gmail</span>
+                            </a>
+                            <button type="button" onclick="copyEmail(this)" class="border border-gray-300 dark:border-gray-700 hover:border-accent dark:hover:border-accent text-gray-800 dark:text-gray-200 text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition inline-flex items-center justify-center gap-2 cursor-pointer text-center">
+                                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span class="btn-label">
+                                    <span class="lang-pt">Copiar E-mail</span>
+                                    <span class="lang-en">Copy Email</span>
+                                </span>
+                                <span class="copy-feedback hidden text-emerald-500 font-bold">✓ Copiado!</span>
+                            </button>
+                            <a href="https://www.linkedin.com/in/isabella-carvalho-aa743a145/" target="_blank" rel="noopener noreferrer" class="border border-gray-300 dark:border-gray-700 hover:border-accent dark:hover:border-accent text-gray-800 dark:text-gray-200 text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition inline-flex items-center justify-center gap-2 text-center">
+                                <span class="lang-pt">LinkedIn</span>
+                                <span class="lang-en">LinkedIn</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
