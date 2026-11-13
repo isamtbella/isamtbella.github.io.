@@ -76,10 +76,10 @@
         </button>
     </div>
 
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row relative">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row relative items-start">
         
-        <!-- BARRA LATERAL FIXA -->
-        <aside class="md:w-[35%] md:fixed md:h-screen p-8 md:p-12 flex flex-col justify-between border-r border-gray-200 dark:border-gray-800 overflow-y-auto">
+        <!-- BARRA LATERAL FIXA (STICKY PARA RESPEITAR O CONTAINER EM QUALQUER MONITOR) -->
+        <aside class="w-full md:w-[35%] md:sticky md:top-0 md:h-screen p-8 md:p-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 overflow-y-auto shrink-0">
             <div>
                 <img src="https://github.com/isamtbella.png" alt="Isabella Carvalho" class="w-24 h-24 rounded-full mb-4 border border-gray-300 dark:border-gray-800 object-cover shadow-xl transition duration-500">
                 <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-1 text-gray-900 dark:text-white">Isabella<br>Carvalho</h1>
@@ -130,7 +130,7 @@
         </aside>
 
         <!-- CONTEÚDO PRINCIPAL -->
-        <main class="md:w-[65%] md:ml-auto p-8 md:p-16 pb-32">
+        <main class="w-full md:w-[65%] p-8 md:p-16 pb-32">
             
             <!-- 01. VISÃO GERAL -->
             <section id="visao" class="reveal mb-16 pt-6">
