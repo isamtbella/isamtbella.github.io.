@@ -165,16 +165,35 @@
                 </nav>
             </div>
 
-            <!-- Ramo Botânico-Digital na base da barra lateral -->
-            <div class="hidden md:block opacity-35 dark:opacity-25 w-16 h-28 my-4 ml-2" aria-hidden="true">
-                <svg viewBox="0 0 80 140" fill="none" class="w-full h-full">
-                    <path d="M 12 110 C 15 90, 24 58, 48 38 C 54 32, 60 26, 62 16" stroke="#f9a8d4" stroke-width="0.85" />
-                    <path d="M 48 38 C 42 42, 34 46, 28 62 M 28 62 C 24 72, 20 86, 26 112" stroke="#3b82f6" stroke-width="0.85" />
-                    <path d="M 48 38 Q 58 40, 52 48 Q 42 46, 48 38 Z" fill="#f9a8d4" opacity="0.45"/>
-                    <path d="M 33 58 Q 41 62, 35 68 Q 27 64, 33 58 Z" fill="#3b82f6" opacity="0.35"/>
-                    <path d="M 28 85 H 12 V 96 H 24" stroke="#3b82f6" stroke-width="0.8"/>
-                    <circle cx="12" cy="96" r="1.5" fill="#3b82f6"/>
-                    <circle cx="26" cy="112" r="1.5" fill="#ffffff"/>
+            <!-- Ramo Botânico-Digital (Flores & Circuitos) na base da barra lateral -->
+            <div class="hidden md:block opacity-50 dark:opacity-40 w-20 h-32 my-4 ml-1" aria-hidden="true">
+                <svg viewBox="0 0 90 150" fill="none" class="w-full h-full">
+                    <!-- Caule orgânico superior em rosa bebê -->
+                    <path d="M 38 78 C 40 58, 52 38, 68 18" stroke="#f9a8d4" stroke-width="0.9"/>
+                    <path d="M 48 54 C 36 46, 26 38, 22 26" stroke="#f9a8d4" stroke-width="0.85"/>
+                    <path d="M 56 38 C 66 36, 74 30, 78 24" stroke="#f9a8d4" stroke-width="0.85"/>
+                    <!-- Folhas line-art -->
+                    <path d="M 42 64 Q 54 62, 50 72 Q 40 72, 42 64 Z" stroke="#f9a8d4" stroke-width="0.8"/>
+                    <path d="M 34 45 Q 24 48, 28 56 Q 38 54, 34 45 Z" stroke="#ffffff" stroke-width="0.75"/>
+                    <!-- Flores line-art nas pontas -->
+                    <g transform="translate(68, 18)" stroke="#f9a8d4" stroke-width="0.8">
+                        <circle cx="0" cy="-3.5" r="2.2"/><circle cx="3.3" cy="-1.1" r="2.2"/><circle cx="2.1" cy="2.8" r="2.2"/><circle cx="-2.1" cy="2.8" r="2.2"/><circle cx="-3.3" cy="-1.1" r="2.2"/>
+                        <circle cx="0" cy="0" r="1.2" fill="#ffffff" stroke="none"/>
+                    </g>
+                    <g transform="translate(22, 26)" stroke="#f9a8d4" stroke-width="0.8">
+                        <circle cx="0" cy="-3" r="1.9"/><circle cx="2.8" cy="-0.9" r="1.9"/><circle cx="1.8" cy="2.4" r="1.9"/><circle cx="-1.8" cy="2.4" r="1.9"/><circle cx="-2.8" cy="-0.9" r="1.9"/>
+                        <circle cx="0" cy="0" r="1" fill="#ffffff" stroke="none"/>
+                    </g>
+                    <!-- Transição para raízes de circuito em azul -->
+                    <path d="M 38 78 L 38 112 L 26 124 L 26 140" stroke="#3b82f6" stroke-width="0.9"/>
+                    <path d="M 38 86 L 54 102 L 54 130" stroke="#3b82f6" stroke-width="0.85"/>
+                    <path d="M 38 96 L 20 112 L 12 112" stroke="#3b82f6" stroke-width="0.85"/>
+                    <path d="M 46 94 L 66 94 L 74 104" stroke="#3b82f6" stroke-width="0.8"/>
+                    <!-- Nós digitais -->
+                    <circle cx="26" cy="140" r="1.8" stroke="#3b82f6" stroke-width="0.85" fill="#0a0a0a"/>
+                    <circle cx="54" cy="130" r="1.8" fill="#3b82f6"/>
+                    <circle cx="12" cy="112" r="1.6" fill="#f9a8d4"/>
+                    <circle cx="74" cy="104" r="1.6" stroke="#3b82f6" stroke-width="0.85" fill="#0a0a0a"/>
                 </svg>
             </div>
 
@@ -188,7 +207,7 @@
         <main class="w-full md:w-[65%] p-8 pt-4 md:p-16 pb-24 overflow-x-hidden">
             
             <!-- 01. VISÃO GERAL -->
-            <section id="visao" class="reveal relative mb-16 pt-2 md:pt-6">
+            <section id="visao" class="reveal relative mb-10 pt-2 md:pt-6">
                 <!-- Arte Teia / Rede Interseccional no topo direito -->
                 <div class="pointer-events-none select-none absolute -top-4 -right-6 md:-top-8 md:-right-10 w-52 h-52 md:w-72 md:h-72 opacity-45 dark:opacity-35" aria-hidden="true">
                     <svg viewBox="0 0 280 280" fill="none" class="w-full h-full">
@@ -199,7 +218,6 @@
                                 <stop offset="100%" stop-color="#94a3b8" stop-opacity="0"/>
                             </radialGradient>
                         </defs>
-                        <!-- Fios radiais partindo de (260, 40) -->
                         <g stroke="url(#webGradHero)" stroke-width="0.9">
                             <line x1="260" y1="40" x2="35" y2="20"/>
                             <line x1="260" y1="40" x2="45" y2="110"/>
@@ -207,14 +225,12 @@
                             <line x1="260" y1="40" x2="160" y2="245"/>
                             <line x1="260" y1="40" x2="248" y2="265"/>
                         </g>
-                        <!-- Tramas curvas (arcos entre os raios) -->
                         <g stroke="url(#webGradHero)" stroke-width="0.85" fill="none">
                             <path d="M 205.2 35.2 Q 209 47 207.7 57.0 Q 215 66 218.5 76.1 Q 228 82 235.9 89.4 Q 246 92 257.1 94.9"/>
                             <path d="M 155.4 30.8 Q 162 52 160.1 72.4 Q 173 90 180.8 108.9 Q 199 120 214.0 134.4 Q 234 139 254.5 144.9"/>
                             <path d="M 105.6 26.5 Q 115 58 112.6 87.9 Q 131 114 143.0 141.7 Q 170 159 192.1 179.3 Q 222 186 251.9 194.8"/>
                             <path d="M 55.8 22.1 Q 68 63 65.0 103.3 Q 89 138 105.3 174.5 Q 140 198 170.1 224.3 Q 210 233 249.3 244.7"/>
                         </g>
-                        <!-- Nós de interseção -->
                         <circle cx="207.7" cy="57.0" r="2" fill="#f9a8d4"/>
                         <circle cx="218.5" cy="76.1" r="2" fill="#3b82f6"/>
                         <circle cx="160.1" cy="72.4" r="2.2" fill="#3b82f6"/>
@@ -251,7 +267,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
                         <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition group overflow-hidden">
                             <!-- Selo Tech Eye -->
-                            <div class="absolute top-4 right-4 text-accent/40 dark:text-accent/30 group-hover:text-accent transition duration-300 w-5 h-5">
+                            <div class="absolute top-4 right-4 text-accent/45 dark:text-accent/35 group-hover:text-accent transition duration-300 w-5 h-5">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                                     <circle cx="12" cy="12" r="3"/>
@@ -271,7 +287,7 @@
 
                         <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-pink-300 dark:hover:border-pink-500/40 transition group overflow-hidden">
                             <!-- Selo Data Nodes -->
-                            <div class="absolute top-4 right-4 text-pink-300/60 dark:text-pink-400/30 group-hover:text-pink-400 transition duration-300 w-5 h-5">
+                            <div class="absolute top-4 right-4 text-pink-300/70 dark:text-pink-400/40 group-hover:text-pink-400 transition duration-300 w-5 h-5">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
                                     <circle cx="12" cy="5" r="2" fill="currentColor" fill-opacity="0.1"/>
                                     <circle cx="5" cy="14" r="2" fill="currentColor" fill-opacity="0.1"/>
@@ -297,7 +313,7 @@
 
                         <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition group overflow-hidden">
                             <!-- Selo Human Wave -->
-                            <div class="absolute top-4 right-4 text-accent/40 dark:text-accent/30 group-hover:text-accent transition duration-300 w-5 h-5">
+                            <div class="absolute top-4 right-4 text-accent/45 dark:text-accent/35 group-hover:text-accent transition duration-300 w-5 h-5">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
                                     <path d="M3 12c4-8 4 8 8 0s4-8 8 0" stroke-linecap="round"/>
                                     <path d="M3 12c4 8 4-8 8 0s4 8 8 0" stroke-linecap="round" opacity="0.65"/>
@@ -319,8 +335,25 @@
                 </div>
             </section>
 
+            <!-- DIVISOR: LINHA CRUZADA ENTRELAÇADA (ROSA BEBÊ & AZUL) -->
+            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
+                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
+                    <!-- Fios principais cruzados -->
+                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
+                    <!-- Fios paralelos sutis de eco -->
+                    <path d="M 24 12.2 L 90 12.2 C 110 12.2, 115 24.2, 135 24.2 C 155 24.2, 160 6.2, 180 6.2 C 200 6.2, 205 24.2, 225 24.2 C 245 24.2, 250 12.2, 270 12.2 L 336 12.2" stroke="#f9a8d4" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <path d="M 24 23.8 L 90 23.8 C 110 23.8, 115 11.8, 135 11.8 C 155 11.8, 160 29.8, 180 29.8 C 200 29.8, 205 11.8, 225 11.8 C 245 11.8, 250 23.8, 270 23.8 L 336 23.8" stroke="#3b82f6" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <!-- Nós nos pontos de cruzamento -->
+                    <circle cx="112.5" cy="18" r="1.4" fill="#f9a8d4"/>
+                    <circle cx="157.5" cy="18" r="1.5" fill="#ffffff" stroke="#3b82f6" stroke-width="0.7"/>
+                    <circle cx="202.5" cy="18" r="1.5" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.7"/>
+                    <circle cx="247.5" cy="18" r="1.4" fill="#3b82f6"/>
+                </svg>
+            </div>
+
             <!-- 02. EXPERIÊNCIA TECH -->
-            <section id="experiencia" class="reveal mb-16">
+            <section id="experiencia" class="reveal mb-10">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">02 / <span class="lang-pt">TECNOLOGIA & GOVERNANÇA</span><span class="lang-en">TECHNOLOGY & GOVERNANCE</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">O caminho até aqui.</span><span class="lang-en">The path so far.</span></h3>
 
@@ -427,8 +460,22 @@
                 </div>
             </section>
 
+            <!-- DIVISOR: LINHA CRUZADA ENTRELAÇADA (ROSA BEBÊ & AZUL) -->
+            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
+                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
+                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 24 12.2 L 90 12.2 C 110 12.2, 115 24.2, 135 24.2 C 155 24.2, 160 6.2, 180 6.2 C 200 6.2, 205 24.2, 225 24.2 C 245 24.2, 250 12.2, 270 12.2 L 336 12.2" stroke="#f9a8d4" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <path d="M 24 23.8 L 90 23.8 C 110 23.8, 115 11.8, 135 11.8 C 155 11.8, 160 29.8, 180 29.8 C 200 29.8, 205 11.8, 225 11.8 C 245 11.8, 250 23.8, 270 23.8 L 336 23.8" stroke="#3b82f6" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <circle cx="112.5" cy="18" r="1.4" fill="#f9a8d4"/>
+                    <circle cx="157.5" cy="18" r="1.5" fill="#ffffff" stroke="#3b82f6" stroke-width="0.7"/>
+                    <circle cx="202.5" cy="18" r="1.5" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.7"/>
+                    <circle cx="247.5" cy="18" r="1.4" fill="#3b82f6"/>
+                </svg>
+            </div>
+
             <!-- 03. PRODUTOS E PAINÉIS -->
-            <section id="paineis" class="reveal mb-16">
+            <section id="paineis" class="reveal mb-10">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">03 / <span class="lang-pt">PRODUTOS & PAINÉIS</span><span class="lang-en">PRODUCTS & DASHBOARDS</span></div>
                 <h3 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
                     <span class="lang-pt">Inteligência Governamental & Visualização.</span>
@@ -511,8 +558,22 @@
                 </div>
             </section>
 
+            <!-- DIVISOR: LINHA CRUZADA ENTRELAÇADA (ROSA BEBÊ & AZUL) -->
+            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
+                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
+                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 24 12.2 L 90 12.2 C 110 12.2, 115 24.2, 135 24.2 C 155 24.2, 160 6.2, 180 6.2 C 200 6.2, 205 24.2, 225 24.2 C 245 24.2, 250 12.2, 270 12.2 L 336 12.2" stroke="#f9a8d4" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <path d="M 24 23.8 L 90 23.8 C 110 23.8, 115 11.8, 135 11.8 C 155 11.8, 160 29.8, 180 29.8 C 200 29.8, 205 11.8, 225 11.8 C 245 11.8, 250 23.8, 270 23.8 L 336 23.8" stroke="#3b82f6" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <circle cx="112.5" cy="18" r="1.4" fill="#f9a8d4"/>
+                    <circle cx="157.5" cy="18" r="1.5" fill="#ffffff" stroke="#3b82f6" stroke-width="0.7"/>
+                    <circle cx="202.5" cy="18" r="1.5" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.7"/>
+                    <circle cx="247.5" cy="18" r="1.4" fill="#3b82f6"/>
+                </svg>
+            </div>
+
             <!-- 04. PSICOLOGIA E IMPACTO SOCIAL -->
-            <section id="psicologia" class="reveal mb-16">
+            <section id="psicologia" class="reveal mb-10">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">04 / <span class="lang-pt">PSICOLOGIA & IMPACTO SOCIAL</span><span class="lang-en">PSYCHOLOGY & SOCIAL IMPACT</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">A base humana.</span><span class="lang-en">The human foundation.</span></h3>
 
@@ -644,8 +705,22 @@
                 </div>
             </section>
 
+            <!-- DIVISOR: LINHA CRUZADA ENTRELAÇADA (ROSA BEBÊ & AZUL) -->
+            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
+                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
+                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 24 12.2 L 90 12.2 C 110 12.2, 115 24.2, 135 24.2 C 155 24.2, 160 6.2, 180 6.2 C 200 6.2, 205 24.2, 225 24.2 C 245 24.2, 250 12.2, 270 12.2 L 336 12.2" stroke="#f9a8d4" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <path d="M 24 23.8 L 90 23.8 C 110 23.8, 115 11.8, 135 11.8 C 155 11.8, 160 29.8, 180 29.8 C 200 29.8, 205 11.8, 225 11.8 C 245 11.8, 250 23.8, 270 23.8 L 336 23.8" stroke="#3b82f6" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <circle cx="112.5" cy="18" r="1.4" fill="#f9a8d4"/>
+                    <circle cx="157.5" cy="18" r="1.5" fill="#ffffff" stroke="#3b82f6" stroke-width="0.7"/>
+                    <circle cx="202.5" cy="18" r="1.5" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.7"/>
+                    <circle cx="247.5" cy="18" r="1.4" fill="#3b82f6"/>
+                </svg>
+            </div>
+
             <!-- 05. COMPETÊNCIAS & IDIOMAS -->
-            <section id="competencias" class="reveal mb-16">
+            <section id="competencias" class="reveal mb-10">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">05 / <span class="lang-pt">COMPETÊNCIAS & IDIOMAS</span><span class="lang-en">SKILLS & LANGUAGES</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">Ferramentas, Tecnologias & Idiomas.</span><span class="lang-en">Tools, Technologies & Languages.</span></h3>
                 
@@ -675,8 +750,22 @@
                 </div>
             </section>
 
+            <!-- DIVISOR: LINHA CRUZADA ENTRELAÇADA (ROSA BEBÊ & AZUL) -->
+            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
+                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
+                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 24 12.2 L 90 12.2 C 110 12.2, 115 24.2, 135 24.2 C 155 24.2, 160 6.2, 180 6.2 C 200 6.2, 205 24.2, 225 24.2 C 245 24.2, 250 12.2, 270 12.2 L 336 12.2" stroke="#f9a8d4" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <path d="M 24 23.8 L 90 23.8 C 110 23.8, 115 11.8, 135 11.8 C 155 11.8, 160 29.8, 180 29.8 C 200 29.8, 205 11.8, 225 11.8 C 245 11.8, 250 23.8, 270 23.8 L 336 23.8" stroke="#3b82f6" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <circle cx="112.5" cy="18" r="1.4" fill="#f9a8d4"/>
+                    <circle cx="157.5" cy="18" r="1.5" fill="#ffffff" stroke="#3b82f6" stroke-width="0.7"/>
+                    <circle cx="202.5" cy="18" r="1.5" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.7"/>
+                    <circle cx="247.5" cy="18" r="1.4" fill="#3b82f6"/>
+                </svg>
+            </div>
+
             <!-- 06. FORMAÇÃO & LATTES -->
-            <section id="formacao" class="reveal mb-16">
+            <section id="formacao" class="reveal mb-10">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">06 / <span class="lang-pt">PRODUÇÃO CIENTÍFICA & LATTES</span><span class="lang-en">ACADEMIC & LATTES</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">Uma base sólida.</span><span class="lang-en">A solid foundation.</span></h3>
                 
@@ -796,6 +885,20 @@
                     <span class="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded">Kanban Essentials (KEPC)</span>
                 </div>
             </section>
+
+            <!-- DIVISOR: LINHA CRUZADA ENTRELAÇADA (ROSA BEBÊ & AZUL) -->
+            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
+                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
+                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 24 12.2 L 90 12.2 C 110 12.2, 115 24.2, 135 24.2 C 155 24.2, 160 6.2, 180 6.2 C 200 6.2, 205 24.2, 225 24.2 C 245 24.2, 250 12.2, 270 12.2 L 336 12.2" stroke="#f9a8d4" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <path d="M 24 23.8 L 90 23.8 C 110 23.8, 115 11.8, 135 11.8 C 155 11.8, 160 29.8, 180 29.8 C 200 29.8, 205 11.8, 225 11.8 C 245 11.8, 250 23.8, 270 23.8 L 336 23.8" stroke="#3b82f6" stroke-width="0.65" stroke-opacity="0.45"/>
+                    <circle cx="112.5" cy="18" r="1.4" fill="#f9a8d4"/>
+                    <circle cx="157.5" cy="18" r="1.5" fill="#ffffff" stroke="#3b82f6" stroke-width="0.7"/>
+                    <circle cx="202.5" cy="18" r="1.5" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.7"/>
+                    <circle cx="247.5" cy="18" r="1.4" fill="#3b82f6"/>
+                </svg>
+            </div>
 
             <!-- 07. ESCUTA & CRIAÇÃO (CTA) -->
             <section id="criar" class="reveal mb-12">
