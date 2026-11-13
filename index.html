@@ -37,11 +37,15 @@
         .dark .spotlight { background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.03), transparent 40%); }
 
         /* Multilingual toggle hiding */
-        .lang-en { display: none; }
-        body.lang-english .lang-pt { display: none; }
-        body.lang-english .lang-en { display: block; }
-        body.lang-english span.lang-en, body.lang-english a.lang-en { display: inline; }
-        body.lang-english div.flex.lang-en { display: flex; }
+        .lang-en { display: none !important; }
+        body.lang-english .lang-pt { display: none !important; }
+        body.lang-english .lang-en { display: block !important; }
+        body.lang-english span.lang-en,
+        body.lang-english a.lang-en,
+        body.lang-english em.lang-en,
+        body.lang-english strong.lang-en { display: inline !important; }
+        body.lang-english div.flex.lang-en { display: flex !important; }
+        body.lang-english div.grid.lang-en { display: grid !important; }
         
         /* Animations */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -75,13 +79,19 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row relative">
         
         <!-- BARRA LATERAL FIXA -->
-        <aside class="md:w-[35%] md:fixed md:h-screen p-8 md:p-12 flex flex-col justify-between border-r border-gray-200 dark:border-gray-800">
+        <aside class="md:w-[35%] md:fixed md:h-screen p-8 md:p-12 flex flex-col justify-between border-r border-gray-200 dark:border-gray-800 overflow-y-auto">
             <div>
                 <img src="https://github.com/isamtbella.png" alt="Isabella Carvalho" class="w-24 h-24 rounded-full mb-4 border border-gray-300 dark:border-gray-800 object-cover shadow-xl transition duration-500">
                 <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-1 text-gray-900 dark:text-white">Isabella<br>Carvalho</h1>
                 
                 <h2 class="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 lang-pt">Tecnologia, Gestão, Dados & Impacto Social</h2>
                 <h2 class="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 lang-en">Technology, Management, Data & Social Impact</h2>
+
+                <!-- Epígrafe Poética / Manifesto -->
+                <blockquote class="border-l-2 border-accent pl-3 py-1 mb-5 text-xs italic text-gray-500 dark:text-gray-400 leading-relaxed">
+                    <span class="lang-pt">“A palavra é uma tecnologia entre-mundos; tramar uma nova língua.”</span>
+                    <span class="lang-en">“The word is a technology between worlds; weaving a new language.”</span>
+                </blockquote>
                 
                 <div class="text-xs text-gray-500 mb-6 space-y-1.5">
                     <p class="flex items-center gap-2">
@@ -109,6 +119,7 @@
                     <a href="#psicologia" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Psicologia & Impacto</span><span class="lang-en">Psychology & Impact</span></a>
                     <a href="#competencias" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Competências</span><span class="lang-en">Skills</span></a>
                     <a href="#formacao" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Produção & Lattes</span><span class="lang-en">Academic & Lattes</span></a>
+                    <a href="#criar" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest text-accent"><span class="lang-pt">Escuta & Criação</span><span class="lang-en">Listening & Creation</span></a>
                 </nav>
             </div>
 
@@ -124,21 +135,60 @@
             <!-- 01. VISÃO GERAL -->
             <section id="visao" class="reveal mb-16 pt-6">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">01 / <span class="lang-pt">VISÃO GERAL</span><span class="lang-en">OVERVIEW</span></div>
-                <h3 class="text-3xl font-semibold mb-6 text-gray-900 dark:text-gray-100">
-                    <span class="lang-pt">Estratégia. Liderança.<br><em class="text-gray-500 dark:text-gray-400 font-light">Transformação.</em></span>
-                    <span class="lang-en">Strategy. Leadership.<br><em class="text-gray-500 dark:text-gray-400 font-light">Transformation.</em></span>
+                <h3 class="text-3xl font-semibold mb-6 text-gray-900 dark:text-gray-100 leading-tight">
+                    <span class="lang-pt">Visão Computacional, Analítica & Humanista.<br><em class="text-gray-500 dark:text-gray-400 font-light text-2xl">Escuto a sua dor através de soluções tecnológicas.</em></span>
+                    <span class="lang-en">Computational, Analytical & Humanist Vision.<br><em class="text-gray-500 dark:text-gray-400 font-light text-2xl">I listen to your pain through technological solutions.</em></span>
                 </h3>
                 
                 <div class="lang-pt text-gray-600 dark:text-gray-400 leading-relaxed text-justify space-y-4 text-sm md:text-base">
-                    <p>Profissional de TI com trajetória multidisciplinar de 11 anos, combinando Análise e Engenharia de Dados, Infraestrutura, Práticas DevOps e Desenvolvimento Web.</p>
-                    <p>Minha atuação une a capacidade técnica avançada, como a sistematização de processos, a estruturação de pipelines ETL e o desenvolvimento corporativo em Power BI, Superset, Metabase e Qlik Sense, com a sólida compreensão do comportamento humano proporcionada pela minha base acadêmica em Psicologia.</p>
-                    <p>Lidero equipes ágeis fomentando a cultura data-driven no setor público, orientada por um senso de impacto social. Como mulher, LGBTQIAPN+ e PCD, busco construir ecossistemas tecnológicos que sejam eficientes, inclusivos e verdadeiramente transformadores.</p>
+                    <p>A palavra é uma tecnologia entre-mundos. Ao longo de 11 anos de trajetória multidisciplinar, meu trabalho consiste em <strong>tramar uma nova língua</strong> entre a subjetividade humana e o rigor lógico das máquinas — articulando Engenharia e Análise de Dados, Visão Computacional, Infraestrutura, Práticas DevOps e Desenvolvimento Web.</p>
+                    <p>Com formação em <strong>Psicologia</strong> e <strong>Análise e Desenvolvimento de Sistemas</strong>, compreendo que por trás de cada gargalo operacional, base de dados desconexa ou desafio de gestão existe uma dor real. Minha atuação parte da escuta ativa dessa dor para traduzi-la em arquiteturas eficientes: pipelines ETL automatizados, sistemas web sob medida e ecossistemas de inteligência analítica em Power BI, Superset, Metabase e Qlik Sense.</p>
+                    <p>Lidero equipes ágeis fomentando a cultura <em>data-driven</em> e a decisão baseada em evidências. Como mulher, LGBTQIAPN+ e PCD, convido pessoas, empresas e instituições a co-criarem tecnologias que não apenas processem informações, mas gerem sentido, autonomia e transformação social.</p>
                 </div>
 
                 <div class="lang-en text-gray-600 dark:text-gray-400 leading-relaxed text-justify space-y-4 text-sm md:text-base">
-                    <p>IT professional with an 11-year multidisciplinary background, combining Data Analysis and Engineering, Infrastructure, DevOps practices, and Web Development.</p>
-                    <p>My work bridges advanced technical capabilities—such as process systematization, ETL pipelines, and corporate development in Power BI, Superset, Metabase, and Qlik Sense—with a deep understanding of human behavior gained through my academic foundation in Psychology.</p>
-                    <p>I lead agile teams to foster a data-driven culture in the public sector, driven by a sense of social impact. As an LGBTQIAPN+ and disabled woman, I aim to build technological ecosystems that are efficient, inclusive, and truly transformative.</p>
+                    <p>The word is a technology between worlds. Across an 11-year multidisciplinary career, my work consists of <strong>weaving a new language</strong> between human subjectivity and the logical rigor of machines—bridging Data Engineering and Analytics, Computer Vision, Infrastructure, DevOps practices, and Web Development.</p>
+                    <p>With degrees in both <strong>Psychology</strong> and <strong>Systems Analysis and Development</strong>, I understand that behind every operational bottleneck, disconnected database, or management challenge lies a real pain point. My approach begins with active listening to translate that pain into effective architectures: automated ETL pipelines, custom web applications, and analytical intelligence ecosystems in Power BI, Superset, Metabase, and Qlik Sense.</p>
+                    <p>I lead agile teams fostering a data-driven culture and evidence-based decision-making. As an LGBTQIAPN+ and disabled woman, I invite individuals, companies, and institutions to co-create technologies that not only process information, but generate meaning, autonomy, and social transformation.</p>
+                </div>
+
+                <!-- Tríade de Visões -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
+                        <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">01. Tech & AI</div>
+                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                            <span class="lang-pt">Visão Computacional & Engenharia</span>
+                            <span class="lang-en">Computer Vision & Engineering</span>
+                        </h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <span class="lang-pt">Automação inteligente, leitura computacional de padrões, integração de APIs, desenvolvimento Full Stack e infraestrutura resiliente.</span>
+                            <span class="lang-en">Intelligent automation, computational pattern recognition, API integration, Full Stack development, and resilient infrastructure.</span>
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
+                        <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">02. Data-Driven</div>
+                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                            <span class="lang-pt">Visão Analítica & Estratégica</span>
+                            <span class="lang-en">Analytical & Strategic Vision</span>
+                        </h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <span class="lang-pt">Governança de dados, pipelines ETL/ELT e storytelling visual que transformam incerteza em tomada de decisão de alto impacto.</span>
+                            <span class="lang-en">Data governance, ETL/ELT pipelines, and visual storytelling that turn uncertainty into high-impact decision-making.</span>
+                        </p>
+                    </div>
+
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
+                        <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">03. Human-Centered</div>
+                        <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                            <span class="lang-pt">Visão Humanista & Escuta</span>
+                            <span class="lang-en">Humanist Vision & Listening</span>
+                        </h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <span class="lang-pt">Escuta clínica e organizacional aplicada à tecnologia: compreender a dor real de quem usa antes de escrever a primeira linha de código.</span>
+                            <span class="lang-en">Clinical and organizational listening applied to technology: understanding the user's real pain before writing the first line of code.</span>
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -201,19 +251,21 @@
             <section id="paineis" class="reveal mb-16">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">03 / <span class="lang-pt">PRODUTOS & PAINÉIS</span><span class="lang-en">PRODUCTS & DASHBOARDS</span></div>
                 <h3 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
-                    <span class="lang-pt">Inteligência Governamental.</span>
-                    <span class="lang-en">Government Intelligence.</span>
+                    <span class="lang-pt">Inteligência Governamental & Visualização.</span>
+                    <span class="lang-en">Government Intelligence & Visualization.</span>
                 </h3>
                 <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed text-justify">
-                    <span class="lang-pt">Desenho e execução de painéis analíticos estratégicos, convertendo dados complexos em plataformas interativas de monitoramento para suporte à tomada de decisão de alto nível.</span>
-                    <span class="lang-en">Design and execution of strategic analytical dashboards, converting complex data into interactive monitoring platforms to support high-level decision-making.</span>
+                    <span class="lang-pt">Desenho e execução de painéis analíticos estratégicos, convertendo dores operacionais e dados complexos em plataformas interativas para suporte à tomada de decisão de alto nível.</span>
+                    <span class="lang-en">Design and execution of strategic analytical dashboards, converting operational pain points and complex data into interactive platforms to support high-level decision-making.</span>
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     
                     <!-- Item 1: Incêndio -->
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-red-500 dark:hover:border-red-900 transition duration-300 flex flex-col justify-between">
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-red-500 dark:hover:border-red-900 transition duration-300 flex flex-col justify-between group">
                         <div>
+                            <!-- Se tiver a imagem na pasta do projeto, basta descomentar a linha abaixo e colocar o nome do arquivo -->
+                            <!-- <img src="painel-incendio.png" alt="Painel de Incêndio" class="w-full h-36 object-cover rounded-lg mb-4 border border-gray-800"> -->
                             <div class="text-[10px] text-red-500 uppercase tracking-widest font-semibold mb-2"><span class="lang-pt">Monitoramento Operacional</span><span class="lang-en">Operational Monitoring</span></div>
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-pt">Monitoramento de Focos de Incêndio</span><span class="lang-en">Wildfire Monitoring</span></h4>
                             <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed"><span class="lang-pt">Alertas estratégicos e geolocalizados para suporte direto às operações dos bombeiros no combate a queimadas.</span><span class="lang-en">Strategic and geolocated alerts providing direct support to firefighting operations.</span></p>
@@ -225,8 +277,9 @@
                     </div>
 
                     <!-- Item 2: Mobilidade -->
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-blue-500 dark:hover:border-blue-900 transition duration-300 flex flex-col justify-between">
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-blue-500 dark:hover:border-blue-900 transition duration-300 flex flex-col justify-between group">
                         <div>
+                            <!-- <img src="painel-mobilidade.png" alt="Plataforma de Mobilidade" class="w-full h-36 object-cover rounded-lg mb-4 border border-gray-800"> -->
                             <div class="text-[10px] text-blue-500 uppercase tracking-widest font-semibold mb-2"><span class="lang-pt">Gestão Urbana</span><span class="lang-en">Urban Management</span></div>
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-pt">Plataforma de Mobilidade Urbana</span><span class="lang-en">Urban Mobility Platform</span></h4>
                             <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed"><span class="lang-pt">Painéis integrados para acompanhamento de tráfego, fluxos viários e otimização de transporte.</span><span class="lang-en">Integrated dashboards for traffic tracking, road flows, and transport optimization.</span></p>
@@ -238,8 +291,9 @@
                     </div>
 
                     <!-- Item 3: Políticas Públicas -->
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-emerald-500 dark:hover:border-emerald-900 transition duration-300 flex flex-col justify-between">
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-emerald-500 dark:hover:border-emerald-900 transition duration-300 flex flex-col justify-between group">
                         <div>
+                            <!-- <img src="painel-politicas.png" alt="Políticas Públicas" class="w-full h-36 object-cover rounded-lg mb-4 border border-gray-800"> -->
                             <div class="text-[10px] text-emerald-500 uppercase tracking-widest font-semibold mb-2"><span class="lang-pt">Impacto Social</span><span class="lang-en">Social Impact</span></div>
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-pt">Monitoramento de Políticas Públicas</span><span class="lang-en">Public Policy Monitoring</span></h4>
                             <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed"><span class="lang-pt">Acompanhamento de programa de acesso à alimentação, investimentos públicos e impacto em beneficiários.</span><span class="lang-en">Tracking of food access programs, public investments, and beneficiary impact.</span></p>
@@ -251,8 +305,9 @@
                     </div>
 
                     <!-- Item 4: TRÂNSITO -->
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-amber-500 dark:hover:border-amber-900 transition duration-300 flex flex-col justify-between">
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-amber-500 dark:hover:border-amber-900 transition duration-300 flex flex-col justify-between group">
                         <div>
+                            <!-- <img src="painel-transito.png" alt="Gestão de Trânsito" class="w-full h-36 object-cover rounded-lg mb-4 border border-gray-800"> -->
                             <div class="text-[10px] text-amber-500 uppercase tracking-widest font-semibold mb-2"><span class="lang-pt">Gestão & Produtividade</span><span class="lang-en">Management & Productivity</span></div>
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-pt">Gestão Operacional de Trânsito</span><span class="lang-en">Traffic Operational Management</span></h4>
                             <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed"><span class="lang-pt">Painéis de controle de equipe, produtividade, atendimento de processos de recursos e monitoramento de recursos financeiros arrecadados via infrações.</span><span class="lang-en">Dashboards controlling team productivity, appeal processing workflows, and revenue tracking from traffic fines.</span></p>
@@ -319,32 +374,32 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <h4 class="text-gray-800 dark:text-gray-200 font-medium mb-2.5 border-b border-gray-200 dark:border-gray-800 pb-2 text-sm"><span class="lang-pt">Engenharia & Bancos de Dados</span><span class="lang-en">Engineering & Databases</span></h4>
+                        <h4 class="text-gray-800 dark:text-gray-200 font-medium mb-2.5 border-b border-gray-200 dark:border-gray-800 pb-2 text-sm"><span class="lang-pt">Engenharia de Dados, IA & Visão Computacional</span><span class="lang-en">Data Engineering, AI & Computer Vision</span></h4>
                         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Python, PostgreSQL, SQL Server, MongoDB, MySQL, Apache Airflow, Pentaho, <span class="lang-pt">Pipelines ETL/ELT, Modelagem Relacional e Dimensional.</span><span class="lang-en">ETL/ELT Pipelines, Relational and Dimensional Modeling.</span>
+                            Python, PostgreSQL, SQL Server, MongoDB, MySQL, Apache Airflow, Pentaho, <span class="lang-pt">Visão Computacional, Automação & Web Scraping, Pipelines ETL/ELT, Modelagem Relacional e Dimensional.</span><span class="lang-en">Computer Vision, Automation & Web Scraping, ETL/ELT Pipelines, Relational and Dimensional Modeling.</span>
                         </p>
                     </div>
                     <div>
                         <h4 class="text-gray-800 dark:text-gray-200 font-medium mb-2.5 border-b border-gray-200 dark:border-gray-800 pb-2 text-sm"><span class="lang-pt">Visualização & BI</span><span class="lang-en">Visualization & BI</span></h4>
                         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Power BI, Apache Superset, Metabase, Qlik Sense, DAX, Data Storytelling, <span class="lang-pt">Padronização Visual.</span><span class="lang-en">Visual Standardization.</span>
+                            Power BI, Apache Superset, Metabase, Qlik Sense, DAX, Data Storytelling, <span class="lang-pt">Padronização Visual e Decisão Baseada em Dados.</span><span class="lang-en">Visual Standardization and Data-Driven Decision-Making.</span>
                         </p>
                     </div>
                     <div>
                         <h4 class="text-gray-800 dark:text-gray-200 font-medium mb-2.5 border-b border-gray-200 dark:border-gray-800 pb-2 text-sm"><span class="lang-pt">DevOps & Infraestrutura</span><span class="lang-en">DevOps & Infrastructure</span></h4>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Docker, CI/CD, Git/GitHub, Azure DevOps, Grafana, Linux, Windows Server, Active Directory.</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Docker, CI/CD, Git/GitHub, Azure DevOps, Grafana, Prometheus, Linux, Windows Server, Active Directory.</p>
                     </div>
                     <div>
                         <h4 class="text-gray-800 dark:text-gray-200 font-medium mb-2.5 border-b border-gray-200 dark:border-gray-800 pb-2 text-sm"><span class="lang-pt">Desenvolvimento Web, Gestão & Idioma</span><span class="lang-en">Web Development, Management & Language</span></h4>
                         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                            HTML5, CSS3, JavaScript, Tailwind CSS, <span class="lang-pt">Metodologias Ágeis (Scrum, Kanban), Liderança de Equipes, ITIL, Governança de Dados, Inglês Proficiente (Stricto Sensu).</span><span class="lang-en">Agile Methodologies (Scrum, Kanban), Team Leadership, ITIL, Data Governance, Proficient Academic English (Stricto Sensu).</span>
+                            HTML5, CSS3, JavaScript, Tailwind CSS, APIs REST, <span class="lang-pt">Metodologias Ágeis (Scrum, Kanban), Liderança de Equipes, ITIL, Governança de Dados, Inglês Proficiente (Stricto Sensu).</span><span class="lang-en">Agile Methodologies (Scrum, Kanban), Team Leadership, ITIL, Data Governance, Proficient Academic English (Stricto Sensu).</span>
                         </p>
                     </div>
                 </div>
             </section>
 
             <!-- 06. FORMAÇÃO & LATTES -->
-            <section id="formacao" class="reveal mb-10">
+            <section id="formacao" class="reveal mb-16">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">06 / <span class="lang-pt">PRODUÇÃO CIENTÍFICA & LATTES</span><span class="lang-en">ACADEMIC & LATTES</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">Uma base sólida.</span><span class="lang-en">A solid foundation.</span></h3>
                 
@@ -394,6 +449,36 @@
                     <span class="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded"><span class="lang-pt">Certificado de Análise de Dados - Google</span><span class="lang-en">Google Data Analytics Certificate</span></span>
                     <span class="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded">Scrum Foundation (SFPC)</span>
                     <span class="bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded">Kanban Essentials (KEPC)</span>
+                </div>
+            </section>
+
+            <!-- 07. ESCUTA & CRIAÇÃO (CTA) -->
+            <section id="criar" class="reveal mb-10">
+                <div class="text-accent text-xs font-bold tracking-widest mb-3">07 / <span class="lang-pt">ESCUTA & CRIAÇÃO</span><span class="lang-en">LISTENING & CREATION</span></div>
+                
+                <div class="border border-accent/30 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 dark:from-blue-500/10 dark:to-purple-900/10 rounded-2xl p-8 md:p-10">
+                    <p class="text-xs font-mono text-accent uppercase tracking-widest mb-2">
+                        <span class="lang-pt">“A palavra é uma tecnologia entre-mundos; tramar uma nova língua.”</span>
+                        <span class="lang-en">“The word is a technology between worlds; weaving a new language.”</span>
+                    </p>
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-900 dark:text-white leading-snug">
+                        <span class="lang-pt">Qual dor precisamos escutar e transformar em tecnologia hoje?</span>
+                        <span class="lang-en">What pain point do we need to listen to and transform into technology today?</span>
+                    </h3>
+                    <p class="text-sm md:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-6 text-justify">
+                        <span class="lang-pt">Toda solução tecnológica real nasce de uma escuta atenta. Seja para estruturar pipelines e painéis de Business Intelligence, desenvolver aplicações web e automações em Python, aplicar visão computacional ou desenhar arquiteturas de dados centradas nas pessoas, estou aberta a novos projetos, consultorias e parcerias remotas. Vamos tramar essa nova língua juntos?</span>
+                        <span class="lang-en">Every meaningful technological solution begins with attentive listening. Whether structuring Business Intelligence pipelines and dashboards, building web applications and Python automations, applying computer vision, or designing human-centered data architectures, I am open to new projects, consulting, and remote partnerships. Shall we weave this new language together?</span>
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="mailto:isabellactlemess@gmail.com" class="bg-accent hover:bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded-lg transition shadow-lg shadow-blue-500/20">
+                            <span class="lang-pt">Iniciar uma Conversa por E-mail</span>
+                            <span class="lang-en">Start a Conversation via Email</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/isabella-carvalho-aa743a145/" target="_blank" class="border border-gray-300 dark:border-gray-700 hover:border-accent dark:hover:border-accent text-gray-800 dark:text-gray-200 text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded-lg transition">
+                            <span class="lang-pt">Conectar no LinkedIn</span>
+                            <span class="lang-en">Connect on LinkedIn</span>
+                        </a>
+                    </div>
                 </div>
             </section>
 
