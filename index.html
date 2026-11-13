@@ -23,12 +23,12 @@
         }
     </script>
     <style>
-        /* Base styles */
+        /* Estilos Base */
         body { transition: background-color 0.3s, color 0.3s; cursor: default; }
         .dark body { background-color: #0a0a0a; color: #e5e7eb; }
         body { background-color: #f8fafc; color: #1e293b; }
         
-        /* Spotlight */
+        /* Efeito de Luz de Fundo (Spotlight) */
         .spotlight {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none; z-index: 50;
@@ -36,7 +36,7 @@
         }
         .dark .spotlight { background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.03), transparent 40%); }
 
-        /* Multilingual toggle hiding */
+        /* Comportamento de tradução */
         .lang-en { display: none !important; }
         body.lang-english .lang-pt { display: none !important; }
         body.lang-english .lang-en { display: block !important; }
@@ -47,11 +47,11 @@
         body.lang-english div.flex.lang-en { display: flex !important; }
         body.lang-english div.grid.lang-en { display: grid !important; }
         
-        /* Animations */
+        /* Efeito de aparecimento gradual */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* Nav active states */
+        /* Menu ativo */
         .nav-item.active { font-weight: 600; }
         .dark .nav-item.active { color: #fff; }
         .nav-item.active { color: #0f172a; }
@@ -87,7 +87,7 @@
                 <h2 class="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 lang-pt">Tecnologia, Gestão, Dados & Impacto Social</h2>
                 <h2 class="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 lang-en">Technology, Management, Data & Social Impact</h2>
 
-                <!-- Epígrafe Poética / Manifesto -->
+                <!-- Epígrafe Poética -->
                 <blockquote class="border-l-2 border-accent pl-3 py-1 mb-5 text-xs italic text-gray-500 dark:text-gray-400 leading-relaxed">
                     <span class="lang-pt">“A palavra é uma tecnologia entre-mundos; vamos tramar uma nova língua.”</span>
                     <span class="lang-en">“The word is a technology between worlds; let's weave a new language.”</span>
@@ -118,7 +118,7 @@
                 </div>
 
                 <!-- Divisor Floral Rosa Bebê & Branco (Mobile & Web) -->
-                <div class="flex items-center justify-center gap-3 my-5" aria-hidden="true">
+                <div class="flex items-center justify-center gap-3 my-6" aria-hidden="true">
                     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-pink-300/60 dark:via-pink-300/40 to-pink-300/80"></span>
                     <div class="flex items-center gap-2">
                         <!-- Flor Rosa Bebê -->
@@ -154,7 +154,7 @@
                     <span class="h-px flex-1 bg-gradient-to-l from-transparent via-pink-300/60 dark:via-pink-300/40 to-pink-300/80"></span>
                 </div>
 
-                <nav class="hidden md:flex flex-col gap-2 text-xs text-gray-500 font-medium">
+                <nav class="hidden md:flex flex-col gap-2.5 text-xs text-gray-500 font-medium">
                     <a href="#visao" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Visão Geral</span><span class="lang-en">Overview</span></a>
                     <a href="#experiencia" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Experiência</span><span class="lang-en">Experience</span></a>
                     <a href="#paineis" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Produtos & Painéis</span><span class="lang-en">Products & Dashboards</span></a>
@@ -165,64 +165,22 @@
                 </nav>
             </div>
 
-            <!-- Assinatura Botânico-Digital + Rodapé da Barra Lateral (Web) -->
-            <div class="hidden md:flex items-end justify-between pt-4">
-                <p class="text-[11px] text-gray-500">© 2026 Isabella Carvalho</p>
-                <!-- Ramo Botânico-Digital (Line-Art SVG) -->
-                <svg class="w-24 h-28 opacity-75 dark:opacity-70" viewBox="0 0 110 130" fill="none" aria-hidden="true">
-                    <!-- Trilhas de Circuito (Base Azul) -->
-                    <g stroke="#3b82f6" stroke-width="1" stroke-linecap="round">
-                        <path d="M55 122 V74"/>
-                        <path d="M47 116 V92 L35 80"/>
-                        <path d="M63 114 V86 L77 72"/>
-                        <path d="M55 104 L41 90 H27"/>
-                        <path d="M55 96 L69 82 H85"/>
-                    </g>
-                    <!-- Nós Digitais -->
-                    <circle cx="55" cy="122" r="2" fill="#3b82f6"/>
-                    <circle cx="35" cy="80" r="2" stroke="#3b82f6" stroke-width="1" fill="#0a0a0a"/>
-                    <circle cx="77" cy="72" r="2" stroke="#3b82f6" stroke-width="1" fill="#0a0a0a"/>
-                    <circle cx="27" cy="90" r="1.8" fill="#3b82f6"/>
-                    <circle cx="85" cy="82" r="1.8" fill="#3b82f6"/>
-                    <!-- Pontos de transição -->
-                    <circle cx="51" cy="79" r="1.2" fill="#f9a8d4"/>
-                    <circle cx="51" cy="84" r="1.2" fill="#f9a8d4"/>
-                    <circle cx="59" cy="76" r="1.2" fill="#3b82f6"/>
-
-                    <!-- Haste Orgânica & Folhas -->
-                    <path d="M55 74 C55 56, 62 42, 74 24" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
-                    <path d="M58 58 C47 51, 39 43, 33 31" stroke="#f9a8d4" stroke-width="1" stroke-linecap="round"/>
-                    <path d="M63 45 C73 41, 82 37, 90 29" stroke="#f9a8d4" stroke-width="1" stroke-linecap="round"/>
-                    <!-- Folhas line-art -->
-                    <path d="M57 63 C48 63, 44 57, 48 52 C53 54, 56 58, 57 63 Z" stroke="#f9a8d4" stroke-width="0.95"/>
-                    <path d="M62 49 C69 51, 74 47, 72 41 C67 42, 64 45, 62 49 Z" stroke="#f9a8d4" stroke-width="0.95"/>
-                    <path d="M68 35 C61 32, 60 25, 65 22 C68 26, 69 30, 68 35 Z" stroke="#f9a8d4" stroke-width="0.95"/>
-
-                    <!-- Flor Principal Rosa Bebê -->
-                    <g transform="translate(74, 22)" stroke="#f9a8d4" stroke-width="1">
-                        <path d="M0 -2 C-3 -8, 3 -8, 0 -2 Z" fill="#f9a8d4" fill-opacity="0.25"/>
-                        <path d="M2 -1 C8 -4, 9 2, 2 1 Z" fill="#f9a8d4" fill-opacity="0.25"/>
-                        <path d="M1 2 C5 8, -1 9, -1 2 Z" fill="#f9a8d4" fill-opacity="0.25"/>
-                        <path d="M-2 1 C-8 4, -9 -2, -2 -1 Z" fill="#f9a8d4" fill-opacity="0.25"/>
-                        <circle cx="0" cy="0" r="1.5" fill="#ffffff"/>
-                    </g>
-                    <!-- Flor Secundária Branca -->
-                    <g transform="translate(32, 30)" stroke="#f9a8d4" stroke-width="0.95">
-                        <circle cx="0" cy="-3.5" r="2.2" fill="#ffffff"/>
-                        <circle cx="3.3" cy="-1" r="2.2" fill="#ffffff"/>
-                        <circle cx="2" cy="3" r="2.2" fill="#ffffff"/>
-                        <circle cx="-2" cy="3" r="2.2" fill="#ffffff"/>
-                        <circle cx="-3.3" cy="-1" r="2.2" fill="#ffffff"/>
-                        <circle cx="0" cy="0" r="1.4" fill="#f9a8d4"/>
-                    </g>
-                    <!-- Botão Floral -->
-                    <g transform="translate(91, 28)" stroke="#f9a8d4" stroke-width="0.95">
-                        <circle cx="0" cy="-2.5" r="1.8" fill="#f9a8d4" fill-opacity="0.35"/>
-                        <circle cx="2.3" cy="1" r="1.8" fill="#f9a8d4" fill-opacity="0.35"/>
-                        <circle cx="-2.3" cy="1" r="1.8" fill="#f9a8d4" fill-opacity="0.35"/>
-                        <circle cx="0" cy="0" r="1.1" fill="#ffffff"/>
-                    </g>
+            <!-- Ramo Botânico-Digital na base da barra lateral -->
+            <div class="hidden md:block opacity-35 dark:opacity-25 w-16 h-28 my-4 ml-2" aria-hidden="true">
+                <svg viewBox="0 0 80 140" fill="none" class="w-full h-full">
+                    <path d="M 12 110 C 15 90, 24 58, 48 38 C 54 32, 60 26, 62 16" stroke="#f9a8d4" stroke-width="0.8" />
+                    <path d="M 48 38 C 42 42, 34 46, 28 62 M 28 62 C 24 72, 20 86, 26 112" stroke="#3b82f6" stroke-width="0.85" />
+                    <path d="M 48 38 Q 58 40, 52 48 Q 42 46, 48 38 Z" fill="#f9a8d4" opacity="0.4"/>
+                    <path d="M 33 58 Q 41 62, 35 68 Q 27 64, 33 58 Z" fill="#3b82f6" opacity="0.3"/>
+                    <path d="M 28 85 H 12 V 96 H 24" stroke="#3b82f6" stroke-width="0.8"/>
+                    <circle cx="12" cy="96" r="1.5" fill="#3b82f6"/>
+                    <circle cx="26" cy="112" r="1.5" fill="#ffffff"/>
                 </svg>
+            </div>
+
+            <!-- Rodapé -->
+            <div class="hidden md:block text-[11px] text-gray-500 pt-4">
+                <p>© 2026 Isabella Carvalho</p>
             </div>
         </aside>
 
@@ -231,42 +189,29 @@
             
             <!-- 01. VISÃO GERAL -->
             <section id="visao" class="reveal relative mb-16 pt-2 md:pt-6">
-                <!-- Arte Teia / Rede Interseccional -->
-                <div class="pointer-events-none select-none absolute -top-4 -right-6 md:-top-8 md:-right-10 w-52 h-52 md:w-72 md:h-72 opacity-45 dark:opacity-35" aria-hidden="true">
-                    <svg viewBox="0 0 280 280" fill="none" class="w-full h-full">
+                <!-- Ramo Botânico-Digital sutil no topo direito do fundo -->
+                <div class="pointer-events-none select-none absolute -top-4 -right-4 md:-top-10 md:-right-6 w-44 h-72 opacity-35 dark:opacity-25" aria-hidden="true">
+                    <svg viewBox="0 0 160 260" fill="none" class="w-full h-full">
                         <defs>
-                            <radialGradient id="webGradHero" cx="92%" cy="14%" r="86%">
+                            <linearGradient id="cyberOrganicGrad" x1="80%" y1="0%" x2="20%" y2="100%">
                                 <stop offset="0%" stop-color="#f9a8d4" stop-opacity="0.8"/>
-                                <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.45"/>
-                                <stop offset="100%" stop-color="#94a3b8" stop-opacity="0"/>
-                            </radialGradient>
+                                <stop offset="60%" stop-color="#3b82f6" stop-opacity="0.5"/>
+                                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+                            </linearGradient>
                         </defs>
-                        <!-- Fios radiais partindo de (260, 40) -->
-                        <g stroke="url(#webGradHero)" stroke-width="0.9">
-                            <line x1="260" y1="40" x2="35" y2="20"/>
-                            <line x1="260" y1="40" x2="45" y2="110"/>
-                            <line x1="260" y1="40" x2="90" y2="188"/>
-                            <line x1="260" y1="40" x2="160" y2="245"/>
-                            <line x1="260" y1="40" x2="248" y2="265"/>
-                        </g>
-                        <!-- Tramas curvas -->
-                        <g stroke="url(#webGradHero)" stroke-width="0.85" fill="none">
-                            <path d="M 205.2 35.2 Q 209 47 207.7 57.0 Q 215 66 218.5 76.1 Q 228 82 235.9 89.4 Q 246 92 257.1 94.9"/>
-                            <path d="M 155.4 30.8 Q 162 52 160.1 72.4 Q 173 90 180.8 108.9 Q 199 120 214.0 134.4 Q 234 139 254.5 144.9"/>
-                            <path d="M 105.6 26.5 Q 115 58 112.6 87.9 Q 131 114 143.0 141.7 Q 170 159 192.1 179.3 Q 222 186 251.9 194.8"/>
-                            <path d="M 55.8 22.1 Q 68 63 65.0 103.3 Q 89 138 105.3 174.5 Q 140 198 170.1 224.3 Q 210 233 249.3 244.7"/>
-                        </g>
-                        <!-- Nós de interseção -->
-                        <circle cx="207.7" cy="57.0" r="2" fill="#f9a8d4"/>
-                        <circle cx="218.5" cy="76.1" r="2" fill="#3b82f6"/>
-                        <circle cx="160.1" cy="72.4" r="2.2" fill="#3b82f6"/>
-                        <circle cx="180.8" cy="108.9" r="2.4" fill="#f9a8d4"/>
-                        <circle cx="214.0" cy="134.4" r="2" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.9"/>
-                        <circle cx="112.6" cy="87.9" r="2" fill="#f9a8d4"/>
-                        <circle cx="143.0" cy="141.7" r="2.5" fill="#3b82f6"/>
-                        <circle cx="192.1" cy="179.3" r="2.2" fill="#f9a8d4"/>
-                        <circle cx="105.3" cy="174.5" r="2" fill="#ffffff" stroke="#3b82f6" stroke-width="0.9"/>
-                        <circle cx="170.1" cy="224.3" r="2" fill="#3b82f6"/>
+                        <path d="M 120 20 C 112 60, 85 110, 55 145 C 45 158, 30 170, 20 185" stroke="url(#cyberOrganicGrad)" stroke-width="0.9" />
+                        <path d="M 55 145 C 58 175, 68 200, 62 235" stroke="#3b82f6" stroke-width="0.85" />
+                        <path d="M 68 120 H 132 V 135 H 105 V 155" stroke="#3b82f6" stroke-width="0.8" />
+                        <path d="M 45 160 H 15 V 190 H 40" stroke="#3b82f6" stroke-width="0.8" />
+                        <path d="M 62 195 H 98 V 215" stroke="#3b82f6" stroke-width="0.8" />
+                        <path d="M 112 35 Q 130 38, 120 50 Q 102 46, 112 35 Z" fill="#f9a8d4" opacity="0.3"/>
+                        <path d="M 98 62 Q 115 65, 105 76 Q 88 72, 98 62 Z" fill="#f9a8d4" opacity="0.3"/>
+                        <path d="M 82 90 Q 96 95, 86 106 Q 72 100, 82 90 Z" fill="#3b82f6" opacity="0.2"/>
+                        <circle cx="132" cy="135" r="1.5" fill="#3b82f6"/>
+                        <circle cx="105" cy="155" r="1.5" fill="#f9a8d4"/>
+                        <circle cx="15" cy="190" r="1.8" fill="#ffffff" stroke="#3b82f6" stroke-width="0.5"/>
+                        <circle cx="98" cy="215" r="1.5" fill="#3b82f6"/>
+                        <circle cx="62" cy="235" r="2" fill="#3b82f6"/>
                     </svg>
                 </div>
 
@@ -289,21 +234,18 @@
                         <p>I lead agile teams fostering a data-driven culture and evidence-based decision-making. As an LGBTQIAPN+ and disabled woman, I invite individuals, companies, and institutions to co-create technologies that not only process information, but generate meaning, autonomy, and social transformation.</p>
                     </div>
 
-                    <!-- Tríade de Visões com Selos Autorais Line-Art -->
+                    <!-- Tríade de Visões -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                        <!-- Card 01 -->
-                        <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
-                            <div class="flex items-center justify-between mb-2">
-                                <div class="text-accent text-xs font-mono uppercase tracking-wider">01. Tech & AI</div>
-                                <!-- Selo 1: Olho Geométrico & Brilho Floral -->
-                                <svg class="w-7 h-7 shrink-0" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                                    <circle cx="16" cy="16" r="14" stroke="#f9a8d4" stroke-width="1" stroke-opacity="0.7"/>
-                                    <path d="M6.5 16C9 11.5 12.3 9.5 16 9.5C19.7 9.5 23 11.5 25.5 16C23 20.5 19.7 22.5 16 22.5C12.3 22.5 9 20.5 6.5 16Z" stroke="#f9a8d4" stroke-width="1.1"/>
-                                    <circle cx="16" cy="16" r="3.4" stroke="#3b82f6" stroke-width="1.1"/>
-                                    <circle cx="16" cy="16" r="1.2" fill="#f9a8d4"/>
-                                    <path d="M23.5 8.5L24.2 10.3L26 11L24.2 11.7L23.5 13.5L22.8 11.7L21 11L22.8 10.3L23.5 8.5Z" stroke="#3b82f6" stroke-width="0.8"/>
+                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition group overflow-hidden">
+                            <!-- Selo Tech Eye -->
+                            <div class="absolute top-4 right-4 text-accent/40 dark:text-accent/30 group-hover:text-accent transition duration-300 w-5 h-5">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M12 2v2M5 5l1.5 1.5M19 5l-1.5 1.5" stroke-linecap="round"/>
                                 </svg>
                             </div>
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">01. Tech & AI</div>
                             <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
                                 <span class="lang-pt">Visão Computacional & Engenharia</span>
                                 <span class="lang-en">Computer Vision & Engineering</span>
@@ -314,31 +256,22 @@
                             </p>
                         </div>
 
-                        <!-- Card 02 -->
-                        <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
-                            <div class="flex items-center justify-between mb-2">
-                                <div class="text-accent text-xs font-mono uppercase tracking-wider">02. Data-Driven</div>
-                                <!-- Selo 2: Constelação de Nós -->
-                                <svg class="w-7 h-7 shrink-0" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                                    <circle cx="16" cy="16" r="14" stroke="#f9a8d4" stroke-width="1" stroke-opacity="0.7"/>
-                                    <g stroke="#3b82f6" stroke-width="0.95" stroke-opacity="0.8">
-                                        <line x1="11" y1="10" x2="21" y2="11"/>
-                                        <line x1="21" y1="11" x2="23" y2="19"/>
-                                        <line x1="23" y1="19" x2="14" y2="23"/>
-                                        <line x1="14" y1="23" x2="9" y2="17"/>
-                                        <line x1="9" y1="17" x2="11" y2="10"/>
-                                        <line x1="11" y1="10" x2="16" y2="16"/>
-                                        <line x1="21" y1="11" x2="16" y2="16"/>
-                                        <line x1="14" y1="23" x2="16" y2="16"/>
-                                    </g>
-                                    <circle cx="11" cy="10" r="1.7" fill="#f9a8d4"/>
-                                    <circle cx="21" cy="11" r="1.7" fill="#3b82f6"/>
-                                    <circle cx="23" cy="19" r="1.6" fill="#f9a8d4"/>
-                                    <circle cx="14" cy="23" r="1.7" fill="#3b82f6"/>
-                                    <circle cx="9" cy="17" r="1.6" fill="#f9a8d4"/>
-                                    <circle cx="16" cy="16" r="2" fill="#ffffff" stroke="#3b82f6" stroke-width="1"/>
+                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-pink-300 dark:hover:border-pink-500/40 transition group overflow-hidden">
+                            <!-- Selo Data Nodes -->
+                            <div class="absolute top-4 right-4 text-pink-300/60 dark:text-pink-400/30 group-hover:text-pink-400 transition duration-300 w-5 h-5">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                                    <circle cx="12" cy="5" r="2" fill="currentColor" fill-opacity="0.1"/>
+                                    <circle cx="5" cy="14" r="2" fill="currentColor" fill-opacity="0.1"/>
+                                    <circle cx="19" cy="14" r="2" fill="currentColor" fill-opacity="0.1"/>
+                                    <circle cx="12" cy="20" r="2" fill="currentColor" fill-opacity="0.1"/>
+                                    <line x1="12" y1="7" x2="5" y2="12"/>
+                                    <line x1="12" y1="7" x2="19" y2="12"/>
+                                    <line x1="5" y1="16" x2="12" y2="18"/>
+                                    <line x1="19" y1="16" x2="12" y2="18"/>
+                                    <line x1="12" y1="7" x2="12" y2="18"/>
                                 </svg>
                             </div>
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">02. Data-Driven</div>
                             <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
                                 <span class="lang-pt">Visão Analítica & Estratégica</span>
                                 <span class="lang-en">Analytical & Strategic Vision</span>
@@ -349,18 +282,17 @@
                             </p>
                         </div>
 
-                        <!-- Card 03 -->
-                        <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition">
-                            <div class="flex items-center justify-between mb-2">
-                                <div class="text-accent text-xs font-mono uppercase tracking-wider">03. Human-Centered</div>
-                                <!-- Selo 3: Ondas Entrelaçadas -->
-                                <svg class="w-7 h-7 shrink-0" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                                    <circle cx="16" cy="16" r="14" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.75"/>
-                                    <path d="M5 16C8 11.5 11.5 11.5 16 16C20.5 20.5 24 20.5 27 16" stroke="#f9a8d4" stroke-width="1.25" stroke-linecap="round"/>
-                                    <path d="M5 16C8 20.5 11.5 20.5 16 16C20.5 11.5 24 11.5 27 16" stroke="#3b82f6" stroke-width="1.25" stroke-linecap="round"/>
-                                    <circle cx="16" cy="16" r="1.6" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.9"/>
+                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition group overflow-hidden">
+                            <!-- Selo Human Wave -->
+                            <div class="absolute top-4 right-4 text-accent/40 dark:text-accent/30 group-hover:text-accent transition duration-300 w-5 h-5">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+                                    <path d="M3 12c4-8 4 8 8 0s4-8 8 0" stroke-linecap="round"/>
+                                    <path d="M3 12c4 8 4-8 8 0s4 8 8 0" stroke-linecap="round" opacity="0.65"/>
+                                    <circle cx="7" cy="8" r="1" fill="currentColor"/>
+                                    <circle cx="15" cy="16" r="1" fill="currentColor"/>
                                 </svg>
                             </div>
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">03. Human-Centered</div>
                             <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
                                 <span class="lang-pt">Visão Humanista & Escuta</span>
                                 <span class="lang-en">Humanist Vision & Listening</span>
@@ -379,10 +311,22 @@
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">02 / <span class="lang-pt">TECNOLOGIA & GOVERNANÇA</span><span class="lang-en">TECHNOLOGY & GOVERNANCE</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">O caminho até aqui.</span><span class="lang-en">The path so far.</span></h3>
 
-                <div class="flex flex-col gap-10">
+                <div class="relative flex flex-col gap-10 pl-6 border-l border-dotted border-pink-300/60 dark:border-pink-300/40">
                     
                     <!-- SETIC -->
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
+                        <!-- Flor de conexão da linha do tempo -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="currentColor" class="text-pink-300 dark:text-pink-400">
+                                <circle cx="5" cy="2" r="1.5" />
+                                <circle cx="8" cy="4" r="1.5" />
+                                <circle cx="7" cy="7.5" r="1.5" />
+                                <circle cx="3" cy="7.5" r="1.5" />
+                                <circle cx="2" cy="4" r="1.5" />
+                                <circle cx="5" cy="5" r="1" fill="#ffffff" />
+                            </svg>
+                        </div>
+                        
                         <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">
                             <span class="lang-pt">2015 - Atual</span><span class="lang-en">2015 - Present</span>
                         </div>
@@ -400,7 +344,15 @@
                     </div>
 
                     <!-- VORTENS -->
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
+                        <!-- Broto delicado da linha do tempo -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2" class="text-pink-300 dark:text-pink-400">
+                                <path d="M 5 9 Q 2 5, 5 1 Q 8 5, 5 9" fill="currentColor" fill-opacity="0.1"/>
+                                <circle cx="5" cy="5" r="1.2" fill="#ffffff" stroke="none"/>
+                            </svg>
+                        </div>
+                        
                         <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">2025</div>
                         <div class="md:col-span-3">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-200">Vortens Tecnologia</h4>
@@ -414,7 +366,19 @@
                     </div>
 
                     <!-- UZZIPAY -->
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
+                        <!-- Flor de conexão da linha do tempo -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="currentColor" class="text-pink-300 dark:text-pink-400">
+                                <circle cx="5" cy="2" r="1.5" />
+                                <circle cx="8" cy="4" r="1.5" />
+                                <circle cx="7" cy="7.5" r="1.5" />
+                                <circle cx="3" cy="7.5" r="1.5" />
+                                <circle cx="2" cy="4" r="1.5" />
+                                <circle cx="5" cy="5" r="1" fill="#ffffff" />
+                            </svg>
+                        </div>
+                        
                         <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">2021 - 2023</div>
                         <div class="md:col-span-3">
                             <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-200">Uzzipay (Fintech)</h4>
@@ -428,7 +392,16 @@
                     </div>
 
                     <!-- COMUNIDADE TECH & EVENTOS -->
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
+                        <!-- Folha dupla sutil da linha do tempo -->
+                        <div class="absolute -left-[32px] top-1.5 w-[11px] h-[11px]" aria-hidden="true">
+                            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1" class="text-pink-300 dark:text-pink-400">
+                                <path d="M 6 11 C 6 8, 3 5, 2 3 Q 6 3, 6 6" />
+                                <path d="M 6 11 C 6 8, 9 5, 10 3 Q 6 3, 6 6" />
+                                <circle cx="6" cy="11" r="0.8" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        
                         <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">
                             <span class="lang-pt">Comunidade</span><span class="lang-en">Community</span>
                         </div>
@@ -444,16 +417,6 @@
 
                 </div>
             </section>
-
-            <!-- Divisor Editorial: Laço Entrelaçado -->
-            <div class="flex items-center justify-center my-12" aria-hidden="true">
-                <svg class="w-56 h-7 opacity-80" viewBox="0 0 240 28" fill="none">
-                    <path d="M4 14 H56 C76 14, 84 5, 102 14 C120 23, 128 5, 146 14 C164 23, 172 14, 184 14 H236" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
-                    <path d="M4 14 H56 C76 14, 84 23, 102 14 C120 5, 128 23, 146 14 C164 5, 172 14, 184 14 H236" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
-                    <circle cx="102" cy="14" r="1.8" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.9"/>
-                    <circle cx="146" cy="14" r="1.8" fill="#ffffff" stroke="#3b82f6" stroke-width="0.9"/>
-                </svg>
-            </div>
 
             <!-- 03. PRODUTOS E PAINÉIS -->
             <section id="paineis" class="reveal mb-16">
@@ -539,75 +502,49 @@
                 </div>
             </section>
 
-            <!-- Divisor Editorial: Laço Entrelaçado -->
-            <div class="flex items-center justify-center my-12" aria-hidden="true">
-                <svg class="w-56 h-7 opacity-80" viewBox="0 0 240 28" fill="none">
-                    <path d="M4 14 H56 C76 14, 84 5, 102 14 C120 23, 128 5, 146 14 C164 23, 172 14, 184 14 H236" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
-                    <path d="M4 14 H56 C76 14, 84 23, 102 14 C120 5, 128 23, 146 14 C164 5, 172 14, 184 14 H236" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
-                    <circle cx="102" cy="14" r="1.8" fill="#ffffff" stroke="#f9a8d4" stroke-width="0.9"/>
-                    <circle cx="146" cy="14" r="1.8" fill="#ffffff" stroke="#3b82f6" stroke-width="0.9"/>
-                </svg>
-            </div>
-
             <!-- 04. PSICOLOGIA E IMPACTO SOCIAL -->
             <section id="psicologia" class="reveal mb-16">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">04 / <span class="lang-pt">PSICOLOGIA & IMPACTO SOCIAL</span><span class="lang-en">PSYCHOLOGY & SOCIAL IMPACT</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">A base humana.</span><span class="lang-en">The human foundation.</span></h3>
 
-                <div class="relative overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-2xl p-6 md:p-8">
-                    <!-- Ramo Botânico-Digital Sutil no Canto do Card (Visível no Mobile e Web) -->
-                    <div class="pointer-events-none select-none absolute -bottom-2 -right-2 w-36 h-44 opacity-30 dark:opacity-25" aria-hidden="true">
-                        <svg viewBox="0 0 110 130" fill="none" class="w-full h-full">
-                            <g stroke="#3b82f6" stroke-width="1" stroke-linecap="round">
-                                <path d="M55 125 V74"/>
-                                <path d="M47 118 V92 L35 80"/>
-                                <path d="M63 116 V86 L77 72"/>
-                                <path d="M55 104 L41 90 H27"/>
-                                <path d="M55 96 L69 82 H85"/>
-                            </g>
-                            <circle cx="35" cy="80" r="2" fill="#3b82f6"/>
-                            <circle cx="77" cy="72" r="2" fill="#3b82f6"/>
-                            <circle cx="27" cy="90" r="1.8" fill="#3b82f6"/>
-                            <circle cx="85" cy="82" r="1.8" fill="#3b82f6"/>
-                            <path d="M55 74 C55 56, 62 42, 74 24" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
-                            <path d="M58 58 C47 51, 39 43, 33 31" stroke="#f9a8d4" stroke-width="1" stroke-linecap="round"/>
-                            <path d="M63 45 C73 41, 82 37, 90 29" stroke="#f9a8d4" stroke-width="1" stroke-linecap="round"/>
-                            <path d="M57 63 C48 63, 44 57, 48 52 C53 54, 56 58, 57 63 Z" stroke="#f9a8d4" stroke-width="0.95"/>
-                            <path d="M62 49 C69 51, 74 47, 72 41 C67 42, 64 45, 62 49 Z" stroke="#f9a8d4" stroke-width="0.95"/>
-                            <g transform="translate(74, 22)" stroke="#f9a8d4" stroke-width="1">
-                                <circle cx="0" cy="-3.5" r="2.3" fill="#f9a8d4" fill-opacity="0.3"/>
-                                <circle cx="3.3" cy="-1" r="2.3" fill="#f9a8d4" fill-opacity="0.3"/>
-                                <circle cx="2" cy="3" r="2.3" fill="#f9a8d4" fill-opacity="0.3"/>
-                                <circle cx="-2" cy="3" r="2.3" fill="#f9a8d4" fill-opacity="0.3"/>
-                                <circle cx="-3.3" cy="-1" r="2.3" fill="#f9a8d4" fill-opacity="0.3"/>
-                                <circle cx="0" cy="0" r="1.5" fill="#ffffff"/>
-                            </g>
-                            <g transform="translate(32, 30)" stroke="#f9a8d4" stroke-width="0.95">
-                                <circle cx="0" cy="-3.2" r="2" fill="#ffffff"/>
-                                <circle cx="3" cy="-1" r="2" fill="#ffffff"/>
-                                <circle cx="1.9" cy="2.8" r="2" fill="#ffffff"/>
-                                <circle cx="-1.9" cy="2.8" r="2" fill="#ffffff"/>
-                                <circle cx="-3" cy="-1" r="2" fill="#ffffff"/>
-                                <circle cx="0" cy="0" r="1.3" fill="#f9a8d4"/>
-                            </g>
-                        </svg>
-                    </div>
-
-                    <div class="relative z-10 flex flex-col gap-5">
+                <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-2xl p-6 md:p-8">
+                    <div class="flex flex-col gap-5">
                         <div>
                             <div class="text-xs text-accent font-semibold uppercase tracking-wider mb-1">2016 - 2020</div>
                             <h4 class="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white mb-1"><span class="lang-pt">Atuação Clínica & Social</span><span class="lang-en">Clinical & Social Practice</span></h4>
                             <p class="text-xs text-gray-500 mb-4"><span class="lang-pt">Psicóloga / Extensionista / Estagiária</span><span class="lang-en">Psychologist / Extensionist / Intern</span></p>
                         </div>
                         
-                        <ul class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-3.5">
-                            <li class="flex items-start"><span class="mr-3 text-accent text-lg">▹</span> <div><strong><span class="lang-pt">Atendimento Autônomo (Pós-Formação):</span><span class="lang-en">Autonomous Practice (Post-Graduation):</span></strong> <span class="lang-pt">Prática clínica particular exercida após a colação de grau, prestando suporte psicoterapêutico individual com crianças, adolescentes e idosos.</span><span class="lang-en">Private clinical practice carried out after graduation, providing individual psychotherapeutic support for children, adolescents, and older adults.</span></div></li>
-                            <li class="flex items-start"><span class="mr-3 text-accent text-lg">▹</span> <div><strong><span class="lang-pt">Estágios Curriculares, Saúde Pública & Escuta Voluntária (FIMCA, CAPS e Centro do Idoso):</span><span class="lang-en">Curricular Internships, Public Health & Volunteer Listening (FIMCA, CAPS, and Elderly Care Center):</span></strong> <span class="lang-pt">Atendimentos clínicos supervisionados na Clínica Escola de Psicologia da FIMCA (sob orientação analítica freudiana), atuação em saúde mental no <strong>CAPS</strong> (Centro de Atenção Psicossocial), acompanhamento psicossocial no <strong>Centro do Idoso</strong> e escuta psicológica voluntária em <strong>centro espírita</strong> (articulada junto à supervisão de estágio).</span><span class="lang-en">Supervised clinical care at FIMCA's Psychology School Clinic (under Freudian analytical orientation), mental health work at <strong>CAPS</strong> (Psychosocial Care Center), psychosocial support at the <strong>Elderly Care Center</strong>, and volunteer psychological listening at a <strong>Spiritist center</strong> (articulated through internship supervision).</span></div></li>
-                            <li class="flex items-start"><span class="mr-3 text-accent text-lg">▹</span> <div><strong><span class="lang-pt">Monitoria & Projeto de Extensão - Plantão de Escuta Psicológica:</span><span class="lang-en">Teaching Assistantship & Extension Project - Psychological Listening Duty:</span></strong> <span class="lang-pt">Monitoria e atuação voluntária fundamentada na Abordagem Centrada na Pessoa (ACP) com base em Carl Rogers, prestando atendimento emergencial de escuta na clínica escola, na <strong>Casa Família Rosetta</strong> (acolhimento a adictos) e na Av. Jorge Teixeira com pessoas em situação de rua, além da <strong>organização de eventos e oficinas temáticas</strong> e da condução de <strong>grupos e oficinas de vivências e profissionais no Espaço ACUDA</strong>.</span><span class="lang-en">Peer mentoring and volunteer work based on the Person-Centered Approach (PCA) inspired by Carl Rogers, addressing emergency listening demands at the school clinic, at <strong>Casa Família Rosetta</strong> (support for addicts), and on Av. Jorge Teixeira with homeless individuals, as well as <strong>organizing thematic events and workshops</strong> and facilitating <strong>experiential and vocational groups and workshops at Espaço ACUDA</strong>.</span></div></li>
-                            <li class="flex items-start"><span class="mr-3 text-accent text-lg">▹</span> <div><strong><span class="lang-pt">Projetos de Extensão - Contando Minha História & Apadrinhando uma História:</span><span class="lang-en">Extension Projects - Telling My Story & Sponsoring a Story:</span></strong> <span class="lang-pt">Atendimento e acompanhamento direto a crianças e adolescentes em processo de adoção e acolhimento institucional.</span><span class="lang-en">Direct care and support for children and adolescents in the adoption process and institutional care.</span></div></li>
-                            <li class="flex items-start"><span class="mr-3 text-accent text-lg">▹</span> <div><strong><span class="lang-pt">Projetos Sociais em Parceria Governamental (Projeto Castanheira):</span><span class="lang-en">Social Projects in Partnership with Government Agencies (Projeto Castanheira):</span></strong> <span class="lang-pt">Atuação em projetos sociais articulados com órgãos governamentais, como o <strong>Projeto Castanheira</strong>, fortalecendo redes de proteção, inclusão e impacto comunitário.</span><span class="lang-en">Work on social initiatives developed alongside government agencies, such as <strong>Projeto Castanheira</strong>, strengthening community protection networks, inclusion, and social impact.</span></div></li>
-                            <li class="flex items-start"><span class="mr-3 text-accent text-lg">▹</span> <div><strong><span class="lang-pt">Liderança Feminista & Social (GEFEM & CAP Virgínia Bicudo):</span><span class="lang-en">Feminist & Social Leadership (GEFEM & CAP Virgínia Bicudo):</span></strong> <span class="lang-pt">Integrante do GEFEM (Grupo de Estudos Feministas Marielle Franco) e Coordenadora do CAP (Centro Acadêmico de Psicologia) Virgínia Bicudo (2018-2019), com atuação na <strong>organização de eventos acadêmicos, rodas de leitura, exibições de filmes com debates e oficinas práticas de autonomia</strong> (como autodefesa, mecânica básica, entre outras).</span><span class="lang-en">Member of GEFEM (Marielle Franco Feminist Study Group) and Coordinator of CAP (Psychology Academic Center) Virgínia Bicudo (2018-2019), leading the <strong>organization of academic events, reading circles, film screenings with discussions, and hands-on autonomy workshops</strong> (such as self-defense, basic mechanics, among others).</span></div></li>
-                            <li class="flex items-start"><span class="mr-3 text-accent text-lg">▹</span> <div><strong><span class="lang-pt">Psicologia Social (Estágio Profissionalizante & Atuação Institucional):</span><span class="lang-en">Social Psychology (Professional Internship & Institutional Practice):</span></strong> <span class="lang-pt">Condução do <strong>Grupo de Apoio ao público LGBTQ+</strong> de Porto Velho na FIMCA (2019), oferecendo espaço de acolhimento, escuta qualificada, troca de vivências e suporte psicossocial; acompanhamento e intervenção com adolescentes do sexo masculino em cumprimento de medidas socioeducativas, realização de <strong>visitas técnicas domiciliares às famílias e às instituições parceiras</strong> (como igrejas e entidades acolhedoras de prestação de serviços à comunidade) para mapeamento territorial, articulação em rede e suporte psicossocial, atendimento clínico, <strong>oficinas de vivências e profissionalizantes</strong> e <strong>projeto de leitura de gibi</strong> com adolescentes em regime fechado (internação), elaboração de relatórios para a justiça e treinamento com pais que vão adotar.</span><span class="lang-en">Facilitated the <strong>LGBTQ+ Support Group</strong> in Porto Velho at FIMCA (2019), providing a safe space for welcoming, qualified listening, sharing lived experiences, and psychosocial support; monitoring and intervention with male adolescents serving socio-educational measures, conducting <strong>technical visits to families and partner institutions</strong> (such as churches and community service host organizations) for territorial mapping, network coordination, and psychosocial support, clinical care, <strong>experiential and vocational workshops</strong>, and a <strong>comic book reading project</strong> with adolescents in a closed regime (internment), drafting reports for the judiciary, and training adoptive parents.</span></div></li>
+                        <ul class="relative text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-3.5 pl-6 border-l border-dotted border-pink-300/40">
+                            <!-- Marcadores com emoji botânico no lugar do travessão para dinamismo visual -->
+                            <li class="relative">
+                                <span class="absolute -left-[30px] top-1.5 w-2 h-2 text-pink-300 dark:text-pink-400" aria-hidden="true">🌱</span>
+                                <div><strong><span class="lang-pt">Atendimento Autônomo (Pós-Formação):</span><span class="lang-en">Autonomous Practice (Post-Graduation):</span></strong> <span class="lang-pt">Prática clínica particular exercida após a colação de grau, prestando suporte psicoterapêutico individual com crianças, adolescentes e idosos.</span><span class="lang-en">Private clinical practice carried out after graduation, providing individual psychotherapeutic support for children, adolescents, and older adults.</span></div>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[30.5px] top-1.5 w-2.5 h-2.5 text-pink-300/85" aria-hidden="true">✿</span>
+                                <div><strong><span class="lang-pt">Estágios Curriculares, Saúde Pública & Escuta Voluntária (FIMCA, CAPS e Centro do Idoso):</span><span class="lang-en">Curricular Internships, Public Health & Volunteer Listening (FIMCA, CAPS, and Elderly Care Center):</span></strong> <span class="lang-pt">Atendimentos clínicos supervisionados na Clínica Escola de Psicologia da FIMCA (sob orientação analítica freudiana), atuação em saúde mental no <strong>CAPS</strong> (Centro de Atenção Psicossocial), acompanhamento psicossocial no <strong>Centro do Idoso</strong> e escuta psicológica voluntária em <strong>centro espírita</strong> (articulada junto à supervisão de estágio).</span><span class="lang-en">Supervised clinical care at FIMCA's Psychology School Clinic (under Freudian analytical orientation), mental health work at <strong>CAPS</strong> (Psychosocial Care Center), psychosocial support at the <strong>Elderly Care Center</strong>, and volunteer psychological listening at a <strong>Spiritist center</strong> (articulated through internship supervision).</span></div>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[30.5px] top-1.5 w-2.5 h-2.5 text-pink-300/85" aria-hidden="true">✿</span>
+                                <div><strong><span class="lang-pt">Monitoria & Projeto de Extensão - Plantão de Escuta Psicológica:</span><span class="lang-en">Teaching Assistantship & Extension Project - Psychological Listening Duty:</span></strong> <span class="lang-pt">Monitoria e atuação voluntária fundamentada na Abordagem Centrada na Pessoa (ACP) com base em Carl Rogers, prestando atendimento emergencial de escuta na clínica escola, na <strong>Casa Família Rosetta</strong> (acolhimento a adictos) e na Av. Jorge Teixeira com pessoas em situação de rua, além da <strong>organização de eventos e oficinas temáticas</strong> e da condução de <strong>grupos e oficinas de vivências e profissionais no Espaço ACUDA</strong>.</span><span class="lang-en">Peer mentoring and volunteer work based on the Person-Centered Approach (PCA) inspired by Carl Rogers, addressing emergency listening demands at the school clinic, at <strong>Casa Família Rosetta</strong> (support for addicts), and on Av. Jorge Teixeira with homeless individuals, as well as <strong>organizing thematic events and workshops</strong> and facilitating <strong>experiential and vocational groups and workshops at Espaço ACUDA</strong>.</span></div>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[30px] top-1.5 w-2 h-2 text-pink-300/85" aria-hidden="true">🌿</span>
+                                <div><strong><span class="lang-pt">Projetos de Extensão - Contando Minha História & Apadrinhando uma História:</span><span class="lang-en">Extension Projects - Telling My Story & Sponsoring a Story:</span></strong> <span class="lang-pt">Atendimento e acompanhamento direto a crianças e adolescentes em processo de adoção e acolhimento institucional.</span><span class="lang-en">Direct care and support for children and adolescents in the adoption process and institutional care.</span></div>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[30.5px] top-1.5 w-2.5 h-2.5 text-pink-300/85" aria-hidden="true">✿</span>
+                                <div><strong><span class="lang-pt">Projetos Sociais em Parceria Governamental (Projeto Castanheira):</span><span class="lang-en">Social Projects in Partnership with Government Agencies (Projeto Castanheira):</span></strong> <span class="lang-pt">Atuação em projetos sociais articulados com órgãos governamentais, como o <strong>Projeto Castanheira</strong>, fortalecendo redes de proteção, inclusão e impacto comunitário.</span><span class="lang-en">Work on social initiatives developed alongside government agencies, such as <strong>Projeto Castanheira</strong>, strengthening community protection networks, inclusion, and social impact.</span></div>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[30px] top-1.5 w-2 h-2 text-pink-300/85" aria-hidden="true">🌿</span>
+                                <div><strong><span class="lang-pt">Liderança Feminista & Social (GEFEM & CAP Virgínia Bicudo):</span><span class="lang-en">Feminist & Social Leadership (GEFEM & CAP Virgínia Bicudo):</span></strong> <span class="lang-pt">Integrante do GEFEM (Grupo de Estudos Feministas Marielle Franco) e Coordenadora do CAP (Centro Acadêmico de Psicologia) Virgínia Bicudo (2018-2019), com atuação na <strong>organização de eventos acadêmicos, rodas de leitura, exibições de filmes com debates e oficinas práticas de autonomia</strong> (como autodefesa, mecânica básica, entre outras).</span><span class="lang-en">Member of GEFEM (Marielle Franco Feminist Study Group) and Coordinator of CAP (Psychology Academic Center) Virgínia Bicudo (2018-2019), leading the <strong>organization of academic events, reading circles, film screenings with discussions, and hands-on autonomy workshops</strong> (such as self-defense, basic mechanics, among others).</span></div>
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -left-[30.5px] top-1.5 w-2.5 h-2.5 text-pink-300/85" aria-hidden="true">✿</span>
+                                <div><strong><span class="lang-pt">Psicologia Social (Estágio Profissionalizante & Atuação Institucional):</span><span class="lang-en">Social Psychology (Professional Internship & Institutional Practice):</span></strong> <span class="lang-pt">Condução do <strong>Grupo de Apoio ao público LGBTQ+</strong> de Porto Velho na FIMCA (2019), oferecendo espaço de acolhimento, escuta qualificada, troca de vivências e suporte psicossocial; acompanhamento e intervenção com adolescentes do sexo masculino em cumprimento de medidas socioeducativas, realização de <strong>visitas técnicas domiciliares às famílias e às instituições parceiras</strong> (como igrejas e entidades acolhedoras de prestação de serviços à comunidade) para mapeamento territorial, articulação em rede e suporte psicossocial, atendimento clínico, <strong>oficinas de vivências e profissionalizantes</strong> e <strong>projeto de leitura de gibi</strong> com adolescentes em regime fechado (internação), elaboração de relatórios para a justiça e treinamento com pais que vão adotar.</span><span class="lang-en">Facilitated the <strong>LGBTQ+ Support Group</strong> in Porto Velho at FIMCA (2019), providing a safe space for welcoming, qualified listening, sharing lived experiences, and psychosocial support; monitoring and intervention with male adolescents serving socio-educational measures, conducting <strong>technical visits to families and partner institutions</strong> (such as churches and community service host organizations) for territorial mapping, network coordination, and psychosocial support, clinical care, <strong>experiential and vocational workshops</strong>, and a <strong>comic book reading project</strong> with adolescents in a closed regime (internment), drafting reports for the judiciary, and training adoptive parents.</span></div>
+                            </li>
                         </ul>
 
                         <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
@@ -652,65 +589,117 @@
                 </div>
             </section>
 
-            <!-- 06. FORMAÇÃO & LATTES (COM LINHA DO TEMPO FLORAL) -->
+            <!-- 06. FORMAÇÃO & LATTES -->
             <section id="formacao" class="reveal mb-16">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">06 / <span class="lang-pt">PRODUÇÃO CIENTÍFICA & LATTES</span><span class="lang-en">ACADEMIC & LATTES</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">Uma base sólida.</span><span class="lang-en">A solid foundation.</span></h3>
                 
-                <ul class="space-y-5 text-sm text-gray-600 dark:text-gray-400 border-l border-dashed border-pink-300/80 dark:border-pink-300/40 pl-6 ml-1.5">
+                <ul class="space-y-5 text-sm text-gray-600 dark:text-gray-400 border-l border-dotted border-pink-300/45 pl-6 animate-pulse-faint">
                     <li class="relative">
-                        <span class="absolute -left-[32px] top-1 bg-[#f8fafc] dark:bg-[#0a0a0a] p-0.5 rounded-full">
-                            <svg class="w-3.5 h-3.5 text-pink-300" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/><circle cx="12" cy="12" r="2.2" fill="#3b82f6"/></svg>
-                        </span>
+                        <!-- Flor microscópica na linha do tempo -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="currentColor" class="text-pink-300 dark:text-pink-400">
+                                <circle cx="5" cy="2" r="1.5" />
+                                <circle cx="8" cy="4" r="1.5" />
+                                <circle cx="7" cy="7.5" r="1.5" />
+                                <circle cx="3" cy="7.5" r="1.5" />
+                                <circle cx="2" cy="4" r="1.5" />
+                                <circle cx="5" cy="5" r="1" fill="#ffffff" />
+                            </svg>
+                        </div>
                         <strong class="text-gray-800 dark:text-gray-200 block text-base mb-0.5"><span class="lang-pt">Especialização em Cibersegurança e Gestão da Informação</span><span class="lang-en">Specialization in Cybersecurity and Information Management</span></strong>
                         UFRN | <span class="lang-pt">Cursando</span><span class="lang-en">Ongoing</span>
                     </li>
                     <li class="relative">
-                        <span class="absolute -left-[32px] top-1 bg-[#f8fafc] dark:bg-[#0a0a0a] p-0.5 rounded-full">
-                            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor"><g stroke="#f9a8d4" stroke-width="1.2"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/></g><circle cx="12" cy="12" r="2.2" fill="#f9a8d4"/></svg>
-                        </span>
+                        <!-- Broto delicado da cronologia -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2" class="text-pink-300 dark:text-pink-400">
+                                <path d="M 5 9 Q 2 5, 5 1 Q 8 5, 5 9" fill="currentColor" fill-opacity="0.1"/>
+                                <circle cx="5" cy="5" r="1.2" fill="#ffffff" stroke="none"/>
+                            </svg>
+                        </div>
                         <strong class="text-gray-800 dark:text-gray-200 block text-base mb-0.5"><span class="lang-pt">Pós-Graduação Lato Sensu em Engenharia DevOps</span><span class="lang-en">Postgraduate in DevOps Engineering</span></strong>
                         IFMT | <span class="lang-pt">Cursando (390h)</span><span class="lang-en">Ongoing (390h)</span>
                     </li>
                     <li class="relative">
-                        <span class="absolute -left-[32px] top-1 bg-[#f8fafc] dark:bg-[#0a0a0a] p-0.5 rounded-full">
-                            <svg class="w-3.5 h-3.5 text-pink-300" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/><circle cx="12" cy="12" r="2.2" fill="#ffffff"/></svg>
-                        </span>
+                        <!-- Flor microscópica na linha do tempo -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="currentColor" class="text-pink-300 dark:text-pink-400">
+                                <circle cx="5" cy="2" r="1.5" />
+                                <circle cx="8" cy="4" r="1.5" />
+                                <circle cx="7" cy="7.5" r="1.5" />
+                                <circle cx="3" cy="7.5" r="1.5" />
+                                <circle cx="2" cy="4" r="1.5" />
+                                <circle cx="5" cy="5" r="1" fill="#ffffff" />
+                            </svg>
+                        </div>
                         <strong class="text-gray-800 dark:text-gray-200 block text-base mb-0.5"><span class="lang-pt">Pós-Graduação em Administração de Banco de Dados</span><span class="lang-en">Postgraduate in Database Administration</span></strong>
                         UNOPAR | 2024 - 2025 (360h)
                     </li>
                     <li class="relative">
-                        <span class="absolute -left-[32px] top-1 bg-[#f8fafc] dark:bg-[#0a0a0a] p-0.5 rounded-full">
-                            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor"><g stroke="#f9a8d4" stroke-width="1.2"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/></g><circle cx="12" cy="12" r="2.2" fill="#f9a8d4"/></svg>
-                        </span>
+                        <!-- Flor microscópica na linha do tempo -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="currentColor" class="text-pink-300 dark:text-pink-400">
+                                <circle cx="5" cy="2" r="1.5" />
+                                <circle cx="8" cy="4" r="1.5" />
+                                <circle cx="7" cy="7.5" r="1.5" />
+                                <circle cx="3" cy="7.5" r="1.5" />
+                                <circle cx="2" cy="4" r="1.5" />
+                                <circle cx="5" cy="5" r="1" fill="#ffffff" />
+                            </svg>
+                        </div>
                         <strong class="text-gray-800 dark:text-gray-200 block text-base mb-0.5"><span class="lang-pt">MBA em Business Intelligence</span><span class="lang-en">MBA in Business Intelligence</span></strong>
                         Faculdade Descomplica | 2021 - 2023 (390h)
                     </li>
                     <li class="relative">
-                        <span class="absolute -left-[32px] top-1 bg-[#f8fafc] dark:bg-[#0a0a0a] p-0.5 rounded-full">
-                            <svg class="w-3.5 h-3.5 text-pink-300" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/><circle cx="12" cy="12" r="2.2" fill="#ffffff"/></svg>
-                        </span>
+                        <!-- Broto delicado da cronologia -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2" class="text-pink-300/70 dark:text-pink-400/50">
+                                <path d="M 5 9 Q 2 5, 5 1 Q 8 5, 5 9" fill="currentColor" fill-opacity="0.1"/>
+                                <circle cx="5" cy="5" r="1.2" fill="#ffffff" stroke="none"/>
+                            </svg>
+                        </div>
                         <strong class="text-gray-800 dark:text-gray-200 block text-base mb-0.5"><span class="lang-pt">Pós-Graduação em Análise e Desenvolvimento de Programas</span><span class="lang-en">Postgraduate in Program Analysis and Development</span></strong>
                         Faculdade Descomplica | 2021 - 2023 (390h)
                     </li>
                     <li class="relative">
-                        <span class="absolute -left-[32px] top-1 bg-[#f8fafc] dark:bg-[#0a0a0a] p-0.5 rounded-full">
-                            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor"><g stroke="#f9a8d4" stroke-width="1.2"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/></g><circle cx="12" cy="12" r="2.2" fill="#f9a8d4"/></svg>
-                        </span>
+                        <!-- Flor microscópica na linha do tempo -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="currentColor" class="text-pink-300/70 dark:text-pink-400/60">
+                                <circle cx="5" cy="2" r="1.5" />
+                                <circle cx="8" cy="4" r="1.5" />
+                                <circle cx="7" cy="7.5" r="1.5" />
+                                <circle cx="3" cy="7.5" r="1.5" />
+                                <circle cx="2" cy="4" r="1.5" />
+                                <circle cx="5" cy="5" r="1" fill="#ffffff" />
+                            </svg>
+                        </div>
                         <strong class="text-gray-800 dark:text-gray-200 block text-base mb-0.5"><span class="lang-pt">MBA em Gestão Pública</span><span class="lang-en">MBA in Public Management</span></strong>
                         IFRO | 2019 - 2021
                     </li>
                     <li class="relative">
-                        <span class="absolute -left-[32px] top-1 bg-[#f8fafc] dark:bg-[#0a0a0a] p-0.5 rounded-full">
-                            <svg class="w-3.5 h-3.5 text-pink-300" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/><circle cx="12" cy="12" r="2.2" fill="#ffffff"/></svg>
-                        </span>
+                        <!-- Broto delicado da cronologia -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.2" class="text-pink-300/60 dark:text-pink-400/50">
+                                <path d="M 5 9 Q 2 5, 5 1 Q 8 5, 5 9" fill="currentColor" fill-opacity="0.1"/>
+                                <circle cx="5" cy="5" r="1.2" fill="#ffffff" stroke="none"/>
+                            </svg>
+                        </div>
                         <strong class="text-gray-800 dark:text-gray-200 block text-base mb-0.5"><span class="lang-pt">Tecnologia em Análise e Desenvolvimento de Sistemas (TADS)</span><span class="lang-en">Technology Degree in Systems Analysis and Development (TADS)</span></strong>
                         UNINORTE | 2021 - 2023
                     </li>
                     <li class="relative">
-                        <span class="absolute -left-[32px] top-1 bg-[#f8fafc] dark:bg-[#0a0a0a] p-0.5 rounded-full">
-                            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="currentColor"><g stroke="#f9a8d4" stroke-width="1.2"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/></g><circle cx="12" cy="12" r="2.2" fill="#f9a8d4"/></svg>
-                        </span>
+                        <!-- Flor microscópica na linha do tempo -->
+                        <div class="absolute -left-[30px] top-1.5 w-[9px] h-[9px]" aria-hidden="true">
+                            <svg viewBox="0 0 10 10" fill="currentColor" class="text-pink-300/70 dark:text-pink-400/60">
+                                <circle cx="5" cy="2" r="1.5" />
+                                <circle cx="8" cy="4" r="1.5" />
+                                <circle cx="7" cy="7.5" r="1.5" />
+                                <circle cx="3" cy="7.5" r="1.5" />
+                                <circle cx="2" cy="4" r="1.5" />
+                                <circle cx="5" cy="5" r="1" fill="#ffffff" />
+                            </svg>
+                        </div>
                         <strong class="text-gray-800 dark:text-gray-200 block text-base mb-0.5"><span class="lang-pt">Bacharelado em Psicologia</span><span class="lang-en">Bachelor's Degree in Psychology</span></strong>
                         FIMCA | 2014 - 2019
                     </li>
@@ -735,33 +724,14 @@
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">07 / <span class="lang-pt">ESCUTA & CRIAÇÃO</span><span class="lang-en">LISTENING & CREATION</span></div>
                 
                 <div class="relative overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-2xl p-6 md:p-8 hover:border-accent/50 transition duration-300">
-                    <!-- Arte Teia / Rede no canto inferior direito do card -->
-                    <div class="pointer-events-none select-none absolute -bottom-6 -right-6 w-48 h-48 md:w-56 md:h-56 opacity-35 dark:opacity-25" aria-hidden="true">
-                        <svg viewBox="0 0 240 240" fill="none" class="w-full h-full">
-                            <defs>
-                                <radialGradient id="webGradCta" cx="90%" cy="90%" r="85%">
-                                    <stop offset="0%" stop-color="#f9a8d4" stop-opacity="0.8"/>
-                                    <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.45"/>
-                                    <stop offset="100%" stop-color="#94a3b8" stop-opacity="0"/>
-                                </radialGradient>
-                            </defs>
-                            <g stroke="url(#webGradCta)" stroke-width="0.9">
-                                <line x1="220" y1="220" x2="25" y2="215"/>
-                                <line x1="220" y1="220" x2="50" y2="135"/>
-                                <line x1="220" y1="220" x2="115" y2="65"/>
-                                <line x1="220" y1="220" x2="195" y2="25"/>
-                            </g>
-                            <g stroke="url(#webGradCta)" stroke-width="0.85" fill="none">
-                                <path d="M 170 218.7 Q 174 208 175.3 197.5 Q 184 188 192.4 179.2 Q 203 175 213.6 170.6"/>
-                                <path d="M 120 217.4 Q 128 196 130.6 175.0 Q 148 156 164.8 138.4 Q 186 130 207.2 121.2"/>
-                                <path d="M 70 216.1 Q 82 184 85.9 152.5 Q 112 124 137.2 97.6 Q 169 85 200.8 71.8"/>
-                            </g>
-                            <circle cx="175.3" cy="197.5" r="2" fill="#f9a8d4"/>
-                            <circle cx="192.4" cy="179.2" r="2" fill="#3b82f6"/>
-                            <circle cx="130.6" cy="175.0" r="2.2" fill="#3b82f6"/>
-                            <circle cx="164.8" cy="138.4" r="2.4" fill="#f9a8d4"/>
-                            <circle cx="85.9" cy="152.5" r="2" fill="#f9a8d4"/>
-                            <circle cx="137.2" cy="97.6" r="2.2" fill="#3b82f6"/>
+                    <!-- Ramo sutil no background do card -->
+                    <div class="pointer-events-none select-none absolute -bottom-8 -right-8 w-40 h-52 opacity-30 dark:opacity-20" aria-hidden="true">
+                        <svg viewBox="0 0 100 160" fill="none" class="w-full h-full">
+                            <path d="M 80 150 C 70 110, 52 80, 24 55" stroke="#f9a8d4" stroke-width="0.8"/>
+                            <path d="M 24 55 C 26 78, 38 98, 44 116" stroke="#3b82f6" stroke-width="0.8"/>
+                            <path d="M 24 55 H 2 V 72 H 20" stroke="#3b82f6" stroke-width="0.75"/>
+                            <circle cx="2" cy="72" r="1.5" fill="#3b82f6"/>
+                            <circle cx="44" cy="116" r="1.5" fill="#ffffff"/>
                         </svg>
                     </div>
 
@@ -808,7 +778,7 @@
                 </div>
             </section>
 
-            <!-- Fechamento Floral Rosa Bebê & Branco no Rodapé -->
+            <!-- Rodapé com fechamento floral -->
             <div class="flex items-center justify-center gap-3 pt-4" aria-hidden="true">
                 <span class="h-px flex-1 bg-gradient-to-r from-transparent via-pink-300/60 dark:via-pink-300/40 to-pink-300/80"></span>
                 <div class="flex items-center gap-2">
@@ -846,7 +816,7 @@
     </div>
 
     <script>
-        // Copy Email Logic with Fallback
+        // Copiar e-mail com retorno de sucesso ou fallback
         function copyEmail(buttonEl) {
             const email = 'isabellactlemess@gmail.com';
             const feedback = buttonEl.querySelector('.copy-feedback');
@@ -887,13 +857,13 @@
             document.body.removeChild(textArea);
         }
 
-        // Theme Toggle Logic
+        // Troca de Tema (Claro / Escuro)
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
         });
 
-        // Language Toggle Logic
+        // Alternância de Idioma (PT / EN)
         const langToggle = document.getElementById('langToggle');
         const gmailLink = document.getElementById('gmailLink');
         langToggle.addEventListener('click', () => {
@@ -909,21 +879,19 @@
             }
         });
 
-        // Scrollspy & Reveal Animations
+        // Controle de ativação do menu (Scrollspy) e animações de surgimento gradual (Reveal)
         const sections = document.querySelectorAll('section');
         const navItems = document.querySelectorAll('.nav-item');
         const reveals = document.querySelectorAll('.reveal');
 
         window.addEventListener('scroll', () => {
             let current = '';
-            // Scrollspy
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 if (scrollY >= sectionTop - 200) {
                     current = section.getAttribute('id');
                 }
             });
-            // Garante ativação da última seção ao chegar no fim da página
             if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 40) {
                 current = 'criar';
             }
@@ -934,7 +902,6 @@
                 }
             });
 
-            // Reveal animations
             reveals.forEach(reveal => {
                 const windowHeight = window.innerHeight;
                 const revealTop = reveal.getBoundingClientRect().top;
@@ -944,7 +911,7 @@
             });
         });
         
-        // Trigger inicial do reveal
+        // Iniciar scrollspy
         window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
