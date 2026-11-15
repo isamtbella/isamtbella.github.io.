@@ -1217,7 +1217,7 @@
 
             try {
                 // Faz o POST para o servidor local na porta 3000
-                const response = await fetch('http://localhost:3000/api/chat', {
+                const response = await fetch('https://isa-back-xkm5.onrender.com/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message })
