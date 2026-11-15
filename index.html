@@ -36,7 +36,7 @@
         }
         .dark .spotlight { background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.03), transparent 40%); }
 
-        /* Comportamento de tradução rigoroso (PT / EN / ES) */
+        /* Comportamento de tradução (PT / EN / ES) */
         body[data-lang="pt"] .lang-en, body[data-lang="pt"] .lang-es { display: none !important; }
         body[data-lang="en"] .lang-pt, body[data-lang="en"] .lang-es { display: none !important; }
         body[data-lang="es"] .lang-pt, body[data-lang="es"] .lang-en { display: none !important; }
@@ -68,7 +68,6 @@
 
     <!-- Toggles Fixos com Bandeirinhas -->
     <div class="fixed top-4 right-4 z-50 flex gap-3 text-xs font-semibold tracking-wider items-center">
-        <!-- SELECT DE IDIOMAS COM BANDEIRAS -->
         <select id="langSelect" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition cursor-pointer outline-none border border-transparent focus:border-accent">
             <option value="pt">🇧🇷 PT-BR</option>
             <option value="en">🇺🇸 EN</option>
@@ -144,6 +143,27 @@
                     <a href="#formacao" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Produção & Lattes</span><span class="lang-en">Academic & Lattes</span><span class="lang-es">Producción & Lattes</span></a>
                     <a href="#criar" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Escuta & Criação</span><span class="lang-en">Listening & Creation</span><span class="lang-es">Escucha & Creación</span></a>
                 </nav>
+            </div>
+
+            <!-- Ramo Botânico-Digital -->
+            <div class="hidden md:block opacity-50 dark:opacity-40 w-20 h-32 my-4 ml-1" aria-hidden="true">
+                <svg viewBox="0 0 90 150" fill="none" class="w-full h-full">
+                    <path d="M 38 78 C 40 58, 52 38, 68 18" stroke="#f9a8d4" stroke-width="0.9"/>
+                    <path d="M 48 54 C 36 46, 26 38, 22 26" stroke="#f9a8d4" stroke-width="0.85"/>
+                    <path d="M 56 38 C 66 36, 74 30, 78 24" stroke="#f9a8d4" stroke-width="0.85"/>
+                    <path d="M 42 64 Q 54 62, 50 72 Q 40 72, 42 64 Z" stroke="#f9a8d4" stroke-width="0.8"/>
+                    <path d="M 34 45 Q 24 48, 28 56 Q 38 54, 34 45 Z" stroke="#ffffff" stroke-width="0.75"/>
+                    <g transform="translate(68, 18)" stroke="#f9a8d4" stroke-width="0.8"><circle cx="0" cy="-3.5" r="2.2"/><circle cx="3.3" cy="-1.1" r="2.2"/><circle cx="2.1" cy="2.8" r="2.2"/><circle cx="-2.1" cy="2.8" r="2.2"/><circle cx="-3.3" cy="-1.1" r="2.2"/><circle cx="0" cy="0" r="1.2" fill="#ffffff" stroke="none"/></g>
+                    <g transform="translate(22, 26)" stroke="#f9a8d4" stroke-width="0.8"><circle cx="0" cy="-3" r="1.9"/><circle cx="2.8" cy="-0.9" r="1.9"/><circle cx="1.8" cy="2.4" r="1.9"/><circle cx="-1.8" cy="2.4" r="1.9"/><circle cx="-2.8" cy="-0.9" r="1.9"/><circle cx="0" cy="0" r="1" fill="#ffffff" stroke="none"/></g>
+                    <path d="M 38 78 L 38 112 L 26 124 L 26 140" stroke="#3b82f6" stroke-width="0.9"/>
+                    <path d="M 38 86 L 54 102 L 54 130" stroke="#3b82f6" stroke-width="0.85"/>
+                    <path d="M 38 96 L 20 112 L 12 112" stroke="#3b82f6" stroke-width="0.85"/>
+                    <path d="M 46 94 L 66 94 L 74 104" stroke="#3b82f6" stroke-width="0.8"/>
+                    <circle cx="26" cy="140" r="1.8" stroke="#3b82f6" stroke-width="0.85" fill="#0a0a0a"/>
+                    <circle cx="54" cy="130" r="1.8" fill="#3b82f6"/>
+                    <circle cx="12" cy="112" r="1.6" fill="#f9a8d4"/>
+                    <circle cx="74" cy="104" r="1.6" stroke="#3b82f6" stroke-width="0.85" fill="#0a0a0a"/>
+                </svg>
             </div>
 
             <!-- Rodapé Lateral -->
@@ -265,8 +285,79 @@
                             </ul>
                         </div>
                     </div>
+
+                    <!-- VORTENS -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
+                        <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">2025</div>
+                        <div class="md:col-span-3">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-200">Vortens Tecnologia</h4>
+                            <div class="text-xs text-gray-600 dark:text-gray-400 mb-3 font-medium">
+                                <span class="lang-pt">Desenvolvedora Full Stack (Freelancer)</span>
+                                <span class="lang-en">Full Stack Developer (Freelance)</span>
+                                <span class="lang-es">Desarrolladora Full Stack (Freelancer)</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-2">
+                                <li class="flex items-start"><span class="mr-2 text-accent">▹</span> <span class="lang-pt">Desenvolvimento Full Stack do Sistema de Gestão Contábil.</span><span class="lang-en">Full Stack development of the Accounting Management System.</span><span class="lang-es">Desarrollo Full Stack del Sistema de Gestión Contable.</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
+
+            <!-- DIVISOR -->
+            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
+                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
+                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <!-- 03. PRODUTOS & PAINÉIS -->
+            <section id="paineis" class="reveal mb-10">
+                <div class="text-accent text-xs font-bold tracking-widest mb-3">03 / <span class="lang-pt">PRODUTOS & PAINÉIS</span><span class="lang-en">PRODUCTS & DASHBOARDS</span><span class="lang-es">PRODUCTOS & PANELES</span></div>
+                <h3 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                    <span class="lang-pt">Inteligência Governamental & Visualização.</span>
+                    <span class="lang-en">Government Intelligence & Visualization.</span>
+                    <span class="lang-es">Inteligencia Gubernamental & Visualización.</span>
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed text-justify">
+                    <span class="lang-pt">Desenho e execução de painéis analíticos estratégicos, convertendo dores operacionais e dados complexos em plataformas interativas para suporte à tomada de decisão de alto nível.</span>
+                    <span class="lang-en">Design and execution of strategic analytical dashboards, converting operational pain points and complex data into interactive platforms to support high-level decision-making.</span>
+                    <span class="lang-es">Diseño y ejecución de paneles analíticos estratégicos, convirtiendo dolores operativos y datos complejos en plataformas interactivas para la toma de decisiones.</span>
+                </p>
+            </section>
+
+            <!-- 04. PSICOLOGIA & IMPACTO SOCIAL -->
+            <section id="psicologia" class="reveal mb-10">
+                <div class="text-accent text-xs font-bold tracking-widest mb-3">04 / <span class="lang-pt">PSICOLOGIA & IMPACTO SOCIAL</span><span class="lang-en">PSYCHOLOGY & SOCIAL IMPACT</span><span class="lang-es">PSICOLOGÍA & IMPACTO SOCIAL</span></div>
+                <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
+                    <span class="lang-pt">A base humana.</span><span class="lang-en">The human foundation.</span><span class="lang-es">La base humana.</span>
+                </h3>
+            </section>
+
+            <!-- 05. COMPETÊNCIAS & IDIOMAS -->
+            <section id="competencias" class="reveal mb-10">
+                <div class="text-accent text-xs font-bold tracking-widest mb-3">05 / <span class="lang-pt">COMPETÊNCIAS & IDIOMAS</span><span class="lang-en">SKILLS & LANGUAGES</span><span class="lang-es">COMPETENCIAS & IDIOMAS</span></div>
+                <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
+                    <span class="lang-pt">Ferramentas, Tecnologias & Idiomas.</span><span class="lang-en">Tools, Technologies & Languages.</span><span class="lang-es">Herramientas, Tecnologías & Idiomas.</span>
+                </h3>
+            </section>
+
+            <!-- 06. PRODUÇÃO CIENTÍFICA & LATTES -->
+            <section id="formacao" class="reveal mb-10">
+                <div class="text-accent text-xs font-bold tracking-widest mb-3">06 / <span class="lang-pt">PRODUÇÃO CIENTÍFICA & LATTES</span><span class="lang-en">ACADEMIC & LATTES</span><span class="lang-es">PRODUCCIÓN CIENTÍFICA & LATTES</span></div>
+                <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
+                    <span class="lang-pt">Uma base sólida.</span><span class="lang-en">A solid foundation.</span><span class="lang-es">Una base sólida.</span>
+                </h3>
+            </section>
+
+            <!-- DIVISOR -->
+            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
+                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
+                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
+                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
+                </svg>
+            </div>
 
             <!-- 07. ESCUTA & CRIAÇÃO (CTA) -->
             <section id="criar" class="reveal mb-12">
@@ -288,9 +379,9 @@
                             <span class="lang-es">¿Vamos a abstraer y elaborar ese dolor para transformar, en lugar de repetir, los mismos problemas?</span>
                         </h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                            <span class="lang-pt">Stratos, pipelines, Business Intelligence, aplicações web, automações em Python ou arquiteturas centradas nas pessoas: estou aberta a novos projetos e parcerias.</span>
-                            <span class="lang-en">Whether structuring Business Intelligence pipelines, web apps, Python automations, or human-centered data architectures, I am open to new projects and partnerships.</span>
-                            <span class="lang-es">Ya sea para estructurar pipelines, Business Intelligence, aplicaciones web, automatizaciones en Python o arquitecturas centradas en las personas, estoy abierta a nuevos proyectos.</span>
+                            <span class="lang-pt">Toda solução tecnológica real nasce de uma escuta atenta. Estou aberta a novos projetos, consultorias e parcerias remotas.</span>
+                            <span class="lang-en">Every meaningful technological solution begins with attentive listening. I am open to new projects, consulting, and remote partnerships.</span>
+                            <span class="lang-es">Toda solución tecnológica real nace de una escucha atenta. Estoy abierta a nuevos proyectos, consultorías y asociaciones remotas.</span>
                         </p>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                             <a id="gmailLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Vamos%20tramar%20uma%20nova%20l%C3%ADngua%3F" target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition shadow-lg inline-flex items-center justify-center gap-2 text-center">
@@ -360,7 +451,7 @@
             }
         });
 
-        // Chatbot
+        // Chatbot Toggle & Envio
         const chatBtn = document.getElementById('chatbot-btn');
         const chatWindow = document.getElementById('chatbot-window');
         const closeChat = document.getElementById('close-chat');
