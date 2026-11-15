@@ -74,9 +74,15 @@
     <div class="spotlight" style="--x: 50vw; --y: 50vh;"></div>
 
     <!-- Toggles Fixos -->
-    <div class="fixed top-4 right-4 z-50 flex gap-3 text-xs font-semibold tracking-wider">
-        <button id="langToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">PT / EN / ES</button>
-        <button id="themeToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">
+    <div class="fixed top-4 right-4 z-50 flex gap-3 text-xs font-semibold tracking-wider items-center">
+        <!-- Substituímos o button pelo select abaixo -->
+        <select id="langSelect" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition cursor-pointer outline-none border border-transparent focus:border-accent">
+            <option value="pt">PT-BR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+        </select>
+
+        <button id="themeToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition flex items-center gap-1.5">
             🌓 <span class="lang-pt">TEMA</span><span class="lang-en">THEME</span><span class="lang-es">TEMA</span>
         </button>
     </div>
@@ -160,13 +166,13 @@
                 </div>
 
                 <nav class="hidden md:flex flex-col gap-2.5 text-xs text-gray-500 font-medium">
-                    <a href="#visao" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Visão Geral</span><span class="lang-en">Overview</span></a>
-                    <a href="#experiencia" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Experiência</span><span class="lang-en">Experience</span></a>
-                    <a href="#paineis" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Produtos & Painéis</span><span class="lang-en">Products & Dashboards</span></a>
-                    <a href="#psicologia" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Psicologia & Impacto</span><span class="lang-en">Psychology & Impact</span></a>
-                    <a href="#competencias" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Competências</span><span class="lang-en">Skills</span></a>
-                    <a href="#formacao" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Produção & Lattes</span><span class="lang-en">Academic & Lattes</span></a>
-                    <a href="#criar" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Escuta & Criação</span><span class="lang-en">Listening & Creation</span></a>
+                    <a href="#visao" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Visão Geral</span><span class="lang-en">Overview</span><span class="lang-es">Visión General</span></a>
+                    <a href="#experiencia" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Experiência</span><span class="lang-en">Experience</span><span class="lang-es">Experiencia</span></a>
+                    <a href="#paineis" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Produtos & Painéis</span><span class="lang-en">Products & Dashboards</span><span class="lang-es">Productos & Paneles</span></a>
+                    <a href="#psicologia" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Psicologia & Impacto</span><span class="lang-en">Psychology & Impact</span><span class="lang-es">Psicología & Impacto</span></a>
+                    <a href="#competencias" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Competências</span><span class="lang-en">Skills</span><span class="lang-es">Competencias</span></a>
+                    <a href="#formacao" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Produção & Lattes</span><span class="lang-en">Academic & Lattes</span><span class="lang-es">Producción & Lattes</span></a>
+                    <a href="#criar" class="nav-item transition hover:text-gray-900 dark:hover:text-white uppercase tracking-widest"><span class="lang-pt">Escuta & Criação</span><span class="lang-en">Listening & Creation</span><span class="lang-es">Escucha & Creación</span></a>
                 </nav>
             </div>
 
@@ -1123,21 +1129,22 @@
             document.documentElement.classList.toggle('dark');
         });
 
-       // Alternância de Idioma (PT / EN / ES)
-        const langs = ['pt', 'en', 'es'];
-        let currentLangIndex = 0;
-        let currentLang = 'pt'; // Variável global para a IsA
+      // ==========================================
+        // LÓGICA DE IDIOMAS (SELECT SUSPENSO)
+        // ==========================================
+        const langSelect = document.getElementById('langSelect');
+        let currentLang = 'pt'; // Variável global usada pela IsA no chat
 
-        const langToggle = document.getElementById('langToggle');
         const gmailLink = document.getElementById('gmailLink');
 
-        langToggle.addEventListener('click', () => {
-            currentLangIndex = (currentLangIndex + 1) % langs.length;
-            currentLang = langs[currentLangIndex];
+        langSelect.addEventListener('change', (e) => {
+            currentLang = e.target.value; // Pega o valor selecionado ('pt', 'en' ou 'es')
             
+            // Altera o atributo no body para o CSS exibir apenas o idioma escolhido
             document.body.setAttribute('data-lang', currentLang);
             document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang;
 
+            // Ajusta o título da página e o link do Gmail conforme o idioma ativo
             if (currentLang === 'en') {
                 document.title = 'Isabella Carvalho | Technology, Management, Data & Impact';
                 if (gmailLink) gmailLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Shall%20we%20weave%20a%20new%20language%3F%20%7C%20Portfolio%20Contact';
@@ -1149,7 +1156,6 @@
                 if (gmailLink) gmailLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Vamos%20tramar%20uma%20nova%20l%C3%ADngua%3F%20%7C%20Contato%20Portf%C3%B3lio';
             }
         });
-
         // Controle de ativação do menu (Scrollspy) e animações de surgimento gradual (Reveal)
         const sections = document.querySelectorAll('section');
         const navItems = document.querySelectorAll('.nav-item');
