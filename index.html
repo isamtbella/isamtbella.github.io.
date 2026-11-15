@@ -23,12 +23,10 @@
         }
     </script>
     <style>
-        /* Estilos Base */
         body { transition: background-color 0.3s, color 0.3s; cursor: default; }
         .dark body { background-color: #0a0a0a; color: #e5e7eb; }
         body { background-color: #f8fafc; color: #1e293b; }
         
-        /* Efeito de Luz de Fundo (Spotlight) */
         .spotlight {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none; z-index: 40;
@@ -36,16 +34,13 @@
         }
         .dark .spotlight { background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.03), transparent 40%); }
 
-        /* Comportamento de tradução rigoroso (PT / EN / ES) */
         body[data-lang="pt"] .lang-en, body[data-lang="pt"] .lang-es { display: none !important; }
         body[data-lang="en"] .lang-pt, body[data-lang="en"] .lang-es { display: none !important; }
         body[data-lang="es"] .lang-pt, body[data-lang="es"] .lang-en { display: none !important; }
         
-        /* Efeito de aparecimento gradual */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* Menu ativo */
         .nav-item.active { font-weight: 600; }
         .dark .nav-item.active { color: #fff; }
         .nav-item.active { color: #0f172a; }
@@ -57,7 +52,6 @@
         .nav-item.active::before { width: 2rem; background-color: #0f172a; }
         .dark .nav-item.active::before { background-color: #fff; }
 
-        /* Scrollbar customizada para o chat */
         #chat-messages::-webkit-scrollbar { width: 6px; }
         #chat-messages::-webkit-scrollbar-track { background: transparent; }
         #chat-messages::-webkit-scrollbar-thumb { background-color: rgba(156, 163, 175, 0.5); border-radius: 10px; }
@@ -66,23 +60,18 @@
 <body data-lang="pt" class="antialiased selection:bg-accent selection:text-white" onmousemove="document.querySelector('.spotlight').style.setProperty('--x', event.clientX + 'px'); document.querySelector('.spotlight').style.setProperty('--y', event.clientY + 'px');">    
     <div class="spotlight" style="--x: 50vw; --y: 50vh;"></div>
 
-    <!-- Toggles Fixos com Bandeirinhas -->
     <div class="fixed top-4 right-4 z-50 flex gap-3 text-xs font-semibold tracking-wider items-center">
-        <!-- SELECT DE IDIOMAS COM BANDEIRAS -->
         <select id="langSelect" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition cursor-pointer outline-none border border-transparent focus:border-accent">
             <option value="pt">🇧🇷 PT-BR</option>
             <option value="en">🇺🇸 EN</option>
             <option value="es">🇪🇸 ES</option>
         </select>
-
         <button id="themeToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition flex items-center gap-1.5 cursor-pointer">
             🌓 <span class="lang-pt">TEMA</span><span class="lang-en">THEME</span><span class="lang-es">TEMA</span>
         </button>
     </div>
 
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row relative items-start">
-        
-        <!-- BARRA LATERAL FIXA -->
         <aside class="w-full md:w-[35%] md:sticky md:top-0 md:h-screen p-8 pb-4 md:p-12 flex flex-col justify-between md:border-r border-gray-200 dark:border-gray-800 overflow-y-auto shrink-0">
             <div>
                 <img src="https://github.com/isamtbella.png" alt="Isabella Carvalho" class="w-24 h-24 rounded-full mb-4 border border-gray-300 dark:border-gray-800 object-cover shadow-xl transition duration-500">
@@ -92,15 +81,14 @@
                 <h2 class="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 lang-en">Technology, Management, Data & Social Impact</h2>
                 <h2 class="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 lang-es">Tecnología, Gestión, Datos & Impacto Social</h2>
 
-                <!-- Epígrafe Poética -->
                 <blockquote class="border-l-2 border-accent pl-3 py-1 mb-5 text-xs italic text-gray-500 dark:text-gray-400 leading-relaxed">
                     <span class="lang-pt">“A palavra é uma tecnologia entre-mundos; vamos tramar uma nova língua.”</span>
                     <span class="lang-en">“The word is a technology between worlds; let's weave a new language.”</span>
                     <span class="lang-es">“La palabra es una tecnología entre mundos; vamos a tejer una nueva lengua.”</span>
-                    <footer class="mt-1 not-italic text-[11px] text-gray-400 dark:text-gray-500">
-                        <span class="lang-pt">Livre adaptação de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
-                        <span class="lang-en">Freely adapted from <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
-                        <span class="lang-es">Libre adaptación de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
+                    <footer class="not-italic text-[11px] text-gray-400 dark:text-gray-500 mt-1">
+                        <span class="lang-pt">Livre adaptação de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
+                        <span class="lang-en">Freely adapted from <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
+                        <span class="lang-es">Libre adaptación de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
                     </footer>
                 </blockquote>
                 
@@ -124,7 +112,6 @@
                     </p>
                 </div>
 
-                <!-- Divisor Floral -->
                 <div class="flex items-center justify-center gap-3 my-6" aria-hidden="true">
                     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-pink-300/60 dark:via-pink-300/40 to-pink-300/80"></span>
                     <div class="flex items-center gap-2">
@@ -146,36 +133,12 @@
                 </nav>
             </div>
 
-            <!-- Ramo Botânico-Digital -->
-            <div class="hidden md:block opacity-50 dark:opacity-40 w-20 h-32 my-4 ml-1" aria-hidden="true">
-                <svg viewBox="0 0 90 150" fill="none" class="w-full h-full">
-                    <path d="M 38 78 C 40 58, 52 38, 68 18" stroke="#f9a8d4" stroke-width="0.9"/>
-                    <path d="M 48 54 C 36 46, 26 38, 22 26" stroke="#f9a8d4" stroke-width="0.85"/>
-                    <path d="M 56 38 C 66 36, 74 30, 78 24" stroke="#f9a8d4" stroke-width="0.85"/>
-                    <path d="M 42 64 Q 54 62, 50 72 Q 40 72, 42 64 Z" stroke="#f9a8d4" stroke-width="0.8"/>
-                    <path d="M 34 45 Q 24 48, 28 56 Q 38 54, 34 45 Z" stroke="#ffffff" stroke-width="0.75"/>
-                    <g transform="translate(68, 18)" stroke="#f9a8d4" stroke-width="0.8"><circle cx="0" cy="-3.5" r="2.2"/><circle cx="3.3" cy="-1.1" r="2.2"/><circle cx="2.1" cy="2.8" r="2.2"/><circle cx="-2.1" cy="2.8" r="2.2"/><circle cx="-3.3" cy="-1.1" r="2.2"/><circle cx="0" cy="0" r="1.2" fill="#ffffff" stroke="none"/></g>
-                    <g transform="translate(22, 26)" stroke="#f9a8d4" stroke-width="0.8"><circle cx="0" cy="-3" r="1.9"/><circle cx="2.8" cy="-0.9" r="1.9"/><circle cx="1.8" cy="2.4" r="1.9"/><circle cx="-1.8" cy="2.4" r="1.9"/><circle cx="-2.8" cy="-0.9" r="1.9"/><circle cx="0" cy="0" r="1" fill="#ffffff" stroke="none"/></g>
-                    <path d="M 38 78 L 38 112 L 26 124 L 26 140" stroke="#3b82f6" stroke-width="0.9"/>
-                    <path d="M 38 86 L 54 102 L 54 130" stroke="#3b82f6" stroke-width="0.85"/>
-                    <path d="M 38 96 L 20 112 L 12 112" stroke="#3b82f6" stroke-width="0.85"/>
-                    <path d="M 46 94 L 66 94 L 74 104" stroke="#3b82f6" stroke-width="0.8"/>
-                    <circle cx="26" cy="140" r="1.8" stroke="#3b82f6" stroke-width="0.85" fill="#0a0a0a"/>
-                    <circle cx="54" cy="130" r="1.8" fill="#3b82f6"/>
-                    <circle cx="12" cy="112" r="1.6" fill="#f9a8d4"/>
-                    <circle cx="74" cy="104" r="1.6" stroke="#3b82f6" stroke-width="0.85" fill="#0a0a0a"/>
-                </svg>
-            </div>
-
-            <!-- Rodapé Lateral -->
-            <div class="hidden md:block text-[11px] text-gray-500 pt-4">
+            <div class="hidden md:block text-[11px] text-gray-500 pt-4 mt-8">
                 <p>© 2026 Isabella Carvalho</p>
             </div>
         </aside>
 
-        <!-- CONTEÚDO PRINCIPAL -->
         <main class="w-full md:w-[65%] p-8 pt-4 md:p-16 pb-24 overflow-x-hidden">
-            
             <!-- 01. VISÃO GERAL -->
             <section id="visao" class="reveal relative mb-10 pt-2 md:pt-6">
                 <div class="relative z-10">
@@ -203,148 +166,27 @@
                         <p>Con formación en <strong>Psicología</strong> (de orientación psicoanalítica) y <strong>Análisis y Desarrollo de Sistemas</strong>, parto del principio freudiano de que aquello que no es escuchado y elaborado insiste en repetirse en las personas, en los equipos y en los sistemas. Comprendo que detrás de cada cuello de botella operativo, base de datos desconectada o falla recurrente existe un dolor real que necesita ser elaborado para transformar procesos y romper ciclos de repetición, antes incluso de ser abstraído en código. Traduzco esa escucha en arquitecturas eficientes: pipelines ETL automatizados, sistemas web a medida y ecosistemas de inteligencia analítica en Power BI, Superset, Metabase y Qlik Sense.</p>
                         <p>Lidero equipos ágiles fomentando la cultura <em>data-driven</em> y la decisión basada en evidencias. Como mujer, LGBTQIAPN+ y PCD, invito a personas, empresas e instituciones a co-crear tecnologías que no solo procesen información, sino que generen sentido, autonomía y transformación social.</p>
                     </div>
-
-                    <!-- Tríade de Visões -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition group overflow-hidden">
-                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">01. Tech & AI</div>
-                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
-                                <span class="lang-pt">Visão Computacional & Engenharia</span>
-                                <span class="lang-en">Computer Vision & Engineering</span>
-                                <span class="lang-es">Visión Computacional e Ingeniería</span>
-                            </h4>
-                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                                <span class="lang-pt">Automação inteligente, leitura computacional de padrões, integração de APIs, desenvolvimento Full Stack e infraestrutura resiliente.</span>
-                                <span class="lang-en">Intelligent automation, computational pattern recognition, API integration, Full Stack development, and resilient infrastructure.</span>
-                                <span class="lang-es">Automatización inteligente, lectura computacional de patrones, integración de APIs, desarrollo Full Stack e infraestructura resiliente.</span>
-                            </p>
-                        </div>
-
-                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-pink-300 dark:hover:border-pink-500/40 transition group overflow-hidden">
-                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">02. Data-Driven</div>
-                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
-                                <span class="lang-pt">Visão Analítica & Estratégica</span>
-                                <span class="lang-en">Analytical & Strategic Vision</span>
-                                <span class="lang-es">Visión Analítica y Estratégica</span>
-                            </h4>
-                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                                <span class="lang-pt">Governança de dados, pipelines ETL/ELT e storytelling visual que transformam incerteza em tomada de decisão de alto impacto.</span>
-                                <span class="lang-en">Data governance, ETL/ELT pipelines, and visual storytelling that turn uncertainty into high-impact decision-making.</span>
-                                <span class="lang-es">Gobernanza de datos, pipelines ETL/ELT y storytelling visual que transforman la incertidumbre en toma de decisiones de alto impacto.</span>
-                            </p>
-                        </div>
-
-                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition group overflow-hidden">
-                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">03. Human-Centered</div>
-                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
-                                <span class="lang-pt">Visão Humanista & Escuta</span>
-                                <span class="lang-en">Humanist Vision & Listening</span>
-                                <span class="lang-es">Visión Humanista y Escucha</span>
-                            </h4>
-                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                                <span class="lang-pt">Escuta clínica e organizacional aplicada à tecnologia: compreender a dor real de quem usa antes de escrever a primeira linha de código.</span>
-                                <span class="lang-en">Clinical and organizational listening applied to technology: understanding the user's real pain before writing the first line of code.</span>
-                                <span class="lang-es">Escucha clínica y organizacional aplicada a la tecnología: comprender el dolor real de quien usa antes de escribir la primera línea de código.</span>
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </section>
 
-            <!-- DIVISOR -->
-            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
-                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
-                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
-                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
-                </svg>
-            </div>
-
             <!-- 02. EXPERIÊNCIA TECH -->
-            <section id="experiencia" class="reveal mb-10">
+            <section id="experiencia" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">02 / <span class="lang-pt">TECNOLOGIA & GOVERNANÇA</span><span class="lang-en">TECHNOLOGY & GOVERNANCE</span><span class="lang-es">TECNOLOGÍA & GOBERNANZA</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
                     <span class="lang-pt">O caminho até aqui.</span><span class="lang-en">The path so far.</span><span class="lang-es">El camino hasta aquí.</span>
                 </h3>
-
-                <div class="relative flex flex-col gap-10 pl-6 border-l border-dotted border-pink-300/60 dark:border-pink-300/40">
-                    <!-- SETIC -->
-                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
-                        <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">
-                            <span class="lang-pt">2015 - Atual</span><span class="lang-en">2015 - Present</span><span class="lang-es">2015 - Actual</span>
-                        </div>
-                        <div class="md:col-span-3">
-                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-200">SETIC - Rondônia</h4>
-                            <div class="text-xs text-gray-600 dark:text-gray-400 mb-3 font-medium">
-                                <span class="lang-pt">Gerente de Análise de Dados / Analista / Chefe de Núcleo / Assessora</span>
-                                <span class="lang-en">Data Analytics Manager / Analyst / Head of Unit / Advisor</span>
-                                <span class="lang-es">Gerente de Análisis de Datos / Analista / Jefa de Núcleo / Asesora</span>
-                            </div>
-                            <ul class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-2.5">
-                                <li class="flex items-start"><span class="mr-2 text-accent">▹</span> <span class="lang-pt">Liderança técnica multidisciplinar via Scrum/Jira para sprints analíticas de alto impacto.</span><span class="lang-en">Multidisciplinary technical leadership via Scrum/Jira for high-impact analytical sprints.</span><span class="lang-es">Liderazgo técnico multidisciplinario vía Scrum/Jira para sprints analíticos de alto impacto.</span></li>
-                                <li class="flex items-start"><span class="mr-2 text-accent">▹</span> <span class="lang-pt">Criação de Padrão de Identidade Visual em BI e governança de dados governamentais.</span><span class="lang-en">Creation of Visual Identity Standards for BI and government data governance.</span><span class="lang-es">Creación de Estándares de Identidad Visual en BI y gobernanza de datos gubernamentales.</span></li>
-                                <li class="flex items-start"><span class="mr-2 text-accent">▹</span> <span class="lang-pt">Ministração de oficinas e treinamentos práticos de Power BI e capacitação em dados para equipes.</span><span class="lang-en">Conducting practical Power BI workshops and data training sessions for teams.</span><span class="lang-es">Impartición de talleres prácticos de Power BI y capacitación en datos para equipos.</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- VORTENS -->
-                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
-                        <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">2025</div>
-                        <div class="md:col-span-3">
-                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-200">Vortens Tecnologia</h4>
-                            <div class="text-xs text-gray-600 dark:text-gray-400 mb-3 font-medium">
-                                <span class="lang-pt">Desenvolvedora Full Stack (Freelancer)</span>
-                                <span class="lang-en">Full Stack Developer (Freelance)</span>
-                                <span class="lang-es">Desarrolladora Full Stack (Freelancer)</span>
-                            </div>
-                            <ul class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-2">
-                                <li class="flex items-start"><span class="mr-2 text-accent">▹</span> <span class="lang-pt">Desenvolvimento Full Stack do Sistema de Gestão Contábil.</span><span class="lang-en">Full Stack development of the Accounting Management System.</span><span class="lang-es">Desarrollo Full Stack del Sistema de Gestión Contable.</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </section>
 
-            <!-- DIVISOR -->
-            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
-                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
-                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
-                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
-                </svg>
-            </div>
-
             <!-- 03. PRODUTOS & PAINÉIS -->
-            <section id="paineis" class="reveal mb-10">
+            <section id="paineis" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">03 / <span class="lang-pt">PRODUTOS & PAINÉIS</span><span class="lang-en">PRODUCTS & DASHBOARDS</span><span class="lang-es">PRODUCTOS & PANELES</span></div>
                 <h3 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
-                    <span class="lang-pt">Inteligência Governamental & Visualização.</span>
-                    <span class="lang-en">Government Intelligence & Visualization.</span>
-                    <span class="lang-es">Inteligencia Gubernamental & Visualización.</span>
+                    <span class="lang-pt">Inteligência Governamental & Visualização.</span><span class="lang-en">Government Intelligence & Visualization.</span><span class="lang-es">Inteligencia Gubernamental & Visualización.</span>
                 </h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-8 leading-relaxed text-justify">
-                    <span class="lang-pt">Desenho e execução de painéis analíticos estratégicos, convertendo dores operacionais e dados complexos em plataformas interativas para suporte à tomada de decisão de alto nível.</span>
-                    <span class="lang-en">Design and execution of strategic analytical dashboards, converting operational pain points and complex data into interactive platforms to support high-level decision-making.</span>
-                    <span class="lang-es">Diseño y ejecución de paneles analíticos estratégicos, convirtiendo dolores operativos y datos complejos en plataformas interactivas para la toma de decisiones.</span>
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-red-500 transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[10px] text-red-500 uppercase tracking-widest font-semibold mb-2"><span class="lang-pt">Monitoramento Operacional</span><span class="lang-en">Operational Monitoring</span><span class="lang-es">Monitoreo Operativo</span></div>
-                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-pt">Monitoramento de Focos de Incêndio</span><span class="lang-en">Wildfire Monitoring</span><span class="lang-es">Monitoreo de Incendios Forestales</span></h4>
-                        </div>
-                    </div>
-                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-blue-500 transition duration-300 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[10px] text-blue-500 uppercase tracking-widest font-semibold mb-2"><span class="lang-pt">Gestão Urbana</span><span class="lang-en">Urban Management</span><span class="lang-es">Gestión Urbana</span></div>
-                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-pt">Plataforma de Mobilidade Urbana</span><span class="lang-en">Urban Mobility Platform</span><span class="lang-es">Plataforma de Movilidad Urbana</span></h4>
-                        </div>
-                    </div>
-                </div>
             </section>
 
             <!-- 04. PSICOLOGIA & IMPACTO SOCIAL -->
-            <section id="psicologia" class="reveal mb-10">
+            <section id="psicologia" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">04 / <span class="lang-pt">PSICOLOGIA & IMPACTO SOCIAL</span><span class="lang-en">PSYCHOLOGY & SOCIAL IMPACT</span><span class="lang-es">PSICOLOGÍA & IMPACTO SOCIAL</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
                     <span class="lang-pt">A base humana.</span><span class="lang-en">The human foundation.</span><span class="lang-es">La base humana.</span>
@@ -352,7 +194,7 @@
             </section>
 
             <!-- 05. COMPETÊNCIAS & IDIOMAS -->
-            <section id="competencias" class="reveal mb-10">
+            <section id="competencias" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">05 / <span class="lang-pt">COMPETÊNCIAS & IDIOMAS</span><span class="lang-en">SKILLS & LANGUAGES</span><span class="lang-es">COMPETENCIAS & IDIOMAS</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
                     <span class="lang-pt">Ferramentas, Tecnologias & Idiomas.</span><span class="lang-en">Tools, Technologies & Languages.</span><span class="lang-es">Herramientas, Tecnologías & Idiomas.</span>
@@ -360,23 +202,15 @@
             </section>
 
             <!-- 06. PRODUÇÃO CIENTÍFICA & LATTES -->
-            <section id="formacao" class="reveal mb-10">
+            <section id="formacao" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">06 / <span class="lang-pt">PRODUÇÃO CIENTÍFICA & LATTES</span><span class="lang-en">ACADEMIC & LATTES</span><span class="lang-es">PRODUCCIÓN CIENTÍFICA & LATTES</span></div>
                 <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
                     <span class="lang-pt">Uma base sólida.</span><span class="lang-en">A solid foundation.</span><span class="lang-es">Una base sólida.</span>
                 </h3>
             </section>
 
-            <!-- DIVISOR -->
-            <div class="my-10 flex items-center justify-center opacity-75 dark:opacity-65" aria-hidden="true">
-                <svg viewBox="0 0 360 36" fill="none" class="w-full max-w-md h-7">
-                    <path d="M 0 15 L 90 15 C 110 15, 115 27, 135 27 C 155 27, 160 9, 180 9 C 200 9, 205 27, 225 27 C 245 27, 250 15, 270 15 L 360 15" stroke="#f9a8d4" stroke-width="1.15" stroke-linecap="round"/>
-                    <path d="M 0 21 L 90 21 C 110 21, 115 9, 135 9 C 155 9, 160 27, 180 27 C 200 27, 205 9, 225 9 C 245 9, 250 21, 270 21 L 360 21" stroke="#3b82f6" stroke-width="1.15" stroke-linecap="round"/>
-                </svg>
-            </div>
-
             <!-- 07. ESCUTA & CRIAÇÃO (CTA) -->
-            <section id="criar" class="reveal mb-12">
+            <section id="criar" class="reveal mb-12 pt-10 border-t border-gray-200 dark:border-gray-800">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">07 / <span class="lang-pt">ESCUTA & CRIAÇÃO</span><span class="lang-en">LISTENING & CREATION</span><span class="lang-es">ESCUCHA & CREACIÓN</span></div>
                 
                 <div class="relative overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-2xl p-6 md:p-8 hover:border-accent/50 transition duration-300">
@@ -399,7 +233,7 @@
                             <span class="lang-en">Every meaningful technological solution begins with attentive listening. I am open to new projects, consulting, and remote partnerships.</span>
                             <span class="lang-es">Toda solución tecnológica real nace de una escucha atenta. Estoy abierta a nuevos proyectos, consultorías y asociaciones remotas.</span>
                         </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md">
                             <a id="gmailLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Vamos%20tramar%20uma%20nova%20l%C3%ADngua%3F" target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition shadow-lg inline-flex items-center justify-center gap-2 text-center">
                                 <span class="lang-pt">Enviar no Gmail</span><span class="lang-en">Send via Gmail</span><span class="lang-es">Enviar vía Gmail</span>
                             </a>
@@ -439,19 +273,16 @@
     </div>
 
     <script>
-        // Troca de Tema
         document.getElementById('themeToggle').addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
         });
 
-        // Lógica de Idiomas com Bandeirinhas
         const langSelect = document.getElementById('langSelect');
         let currentLang = 'pt';
         const gmailLink = document.getElementById('gmailLink');
 
         langSelect.addEventListener('change', (e) => {
             currentLang = e.target.value;
-            
             document.body.setAttribute('data-lang', currentLang);
             document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang;
 
@@ -467,7 +298,6 @@
             }
         });
 
-        // Chatbot Toggle & Envio
         const chatBtn = document.getElementById('chatbot-btn');
         const chatWindow = document.getElementById('chatbot-window');
         const closeChat = document.getElementById('close-chat');
@@ -510,7 +340,8 @@
                 const data = await response.json();
                 document.getElementById(typingId)?.remove();
                 
-                chatMessages.innerHTML += `<div class="bg-gray-200 dark:bg-slate-700 p-2.5 rounded-lg rounded-tl-none self-start max-w-[85%] text-gray-800 dark:text-gray-200 shadow-sm">${data.reply.replace(/\n/g, '<br>')}</div>`;
+                chatMessages.innerHTML += `<div class="bg-gray-200 dark:bg-slate-700 p-2.5 rounded-lg rounded-tl-none self-start max-w-[85%] text-gray-800 dark:text-gray-200 shadow-sm">${data.reply.replace(/
+/g, '<br>')}</div>`;
                 chatMessages.scrollTop = chatMessages.scrollHeight;
 
             } catch (error) {
