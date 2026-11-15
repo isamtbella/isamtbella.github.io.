@@ -1031,10 +1031,24 @@
     <!-- WIDGET DO CHATBOT DA ISA -->
     <!-- ========================================== -->
     
-    <!-- Botão flutuante -->
-    <button id="chatbot-btn" class="fixed bottom-6 right-6 bg-pink-500 text-white rounded-full shadow-lg hover:bg-pink-600 transition z-50 flex items-center justify-center group overflow-hidden w-14 h-14 border-2 border-white dark:border-slate-800 cursor-pointer" aria-label="Abrir Chat">
-        <img src="isa-avatar.png" alt="IsA Avatar" class="w-full h-full object-cover transform group-hover:scale-110 transition">
-    </button>
+    <!-- Botão flutuante com balão de fala da IsA -->
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+        <!-- Balão de Fala (Convite para iniciar o chat) -->
+        <div id="chat-tooltip" class="bg-white dark:bg-slate-800 text-gray-800 dark:text-white text-xs px-4 py-2.5 rounded-2xl shadow-xl border border-pink-200 dark:border-slate-700 relative animate-bounce cursor-pointer flex items-center gap-2" onclick="document.getElementById('chatbot-btn').click()">
+            <span class="text-base">👋</span>
+            <div>
+                <p class="font-semibold text-pink-500 dark:text-pink-400">Olá! Sou a IsA</p>
+                <p class="text-[11px] text-gray-500 dark:text-gray-300">Clique aqui para falar comigo!</p>
+            </div>
+            <!-- Seta do balão -->
+            <div class="absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-8 border-l-white dark:border-l-slate-800"></div>
+        </div>
+
+        <!-- Botão flutuante com a miniatura da IsA -->
+        <button id="chatbot-btn" class="bg-pink-500 text-white rounded-full shadow-lg hover:bg-pink-600 transition flex items-center justify-center group overflow-hidden w-14 h-14 border-2 border-white dark:border-slate-800 cursor-pointer shrink-0" aria-label="Abrir Chat">
+            <img src="isa-avatar.png" alt="IsA Avatar" class="w-full h-full object-cover transform group-hover:scale-110 transition">
+        </button>
+    </div>
 
     <!-- Janela do Chat -->
     <div id="chatbot-window" class="hidden fixed bottom-24 right-6 w-[90vw] md:w-80 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl shadow-2xl flex-col overflow-hidden text-gray-800 dark:text-white z-50 transition-all">
@@ -1182,6 +1196,7 @@
             chatWindow.classList.remove('hidden');
             chatWindow.classList.add('flex');
             chatBtn.classList.add('hidden'); // Esconde o botão quando o chat abre
+            document.getElementById('chat-tooltip').style.display = 'none'; // Esconde o balão de fala
             chatInput.focus();
         });
         
@@ -1189,6 +1204,7 @@
             chatWindow.classList.add('hidden');
             chatWindow.classList.remove('flex');
             chatBtn.classList.remove('hidden'); // Mostra o botão de novo
+            document.getElementById('chat-tooltip').style.display = 'flex'; // Mostra o balão de novo
         });
 
         // Função para enviar mensagem
