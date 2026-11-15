@@ -23,10 +23,12 @@
         }
     </script>
     <style>
+        /* Estilos Base */
         body { transition: background-color 0.3s, color 0.3s; cursor: default; }
         .dark body { background-color: #0a0a0a; color: #e5e7eb; }
         body { background-color: #f8fafc; color: #1e293b; }
         
+        /* Efeito de Luz de Fundo (Spotlight) */
         .spotlight {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none; z-index: 40;
@@ -34,13 +36,16 @@
         }
         .dark .spotlight { background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.03), transparent 40%); }
 
+        /* Comportamento de tradução (Oculta os que NÃO são do idioma ativo) */
         body[data-lang="pt"] .lang-en, body[data-lang="pt"] .lang-es { display: none !important; }
         body[data-lang="en"] .lang-pt, body[data-lang="en"] .lang-es { display: none !important; }
         body[data-lang="es"] .lang-pt, body[data-lang="es"] .lang-en { display: none !important; }
         
+        /* Efeito de aparecimento gradual */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
+        /* Menu ativo */
         .nav-item.active { font-weight: 600; }
         .dark .nav-item.active { color: #fff; }
         .nav-item.active { color: #0f172a; }
@@ -52,6 +57,7 @@
         .nav-item.active::before { width: 2rem; background-color: #0f172a; }
         .dark .nav-item.active::before { background-color: #fff; }
 
+        /* Scrollbar customizada para o chat */
         #chat-messages::-webkit-scrollbar { width: 6px; }
         #chat-messages::-webkit-scrollbar-track { background: transparent; }
         #chat-messages::-webkit-scrollbar-thumb { background-color: rgba(156, 163, 175, 0.5); border-radius: 10px; }
@@ -60,18 +66,23 @@
 <body data-lang="pt" class="antialiased selection:bg-accent selection:text-white" onmousemove="document.querySelector('.spotlight').style.setProperty('--x', event.clientX + 'px'); document.querySelector('.spotlight').style.setProperty('--y', event.clientY + 'px');">    
     <div class="spotlight" style="--x: 50vw; --y: 50vh;"></div>
 
+    <!-- Toggles Fixos -->
     <div class="fixed top-4 right-4 z-50 flex gap-3 text-xs font-semibold tracking-wider items-center">
+        <!-- SELECT DE IDIOMA -->
         <select id="langSelect" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition cursor-pointer outline-none border border-transparent focus:border-accent">
-            <option value="pt">🇧🇷 PT-BR</option>
-            <option value="en">🇺🇸 EN</option>
-            <option value="es">🇪🇸 ES</option>
+            <option value="pt">PT-BR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
         </select>
-        <button id="themeToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition flex items-center gap-1.5 cursor-pointer">
+
+        <button id="themeToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition flex items-center gap-1.5">
             🌓 <span class="lang-pt">TEMA</span><span class="lang-en">THEME</span><span class="lang-es">TEMA</span>
         </button>
     </div>
 
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row relative items-start">
+        
+        <!-- BARRA LATERAL FIXA -->
         <aside class="w-full md:w-[35%] md:sticky md:top-0 md:h-screen p-8 pb-4 md:p-12 flex flex-col justify-between md:border-r border-gray-200 dark:border-gray-800 overflow-y-auto shrink-0">
             <div>
                 <img src="https://github.com/isamtbella.png" alt="Isabella Carvalho" class="w-24 h-24 rounded-full mb-4 border border-gray-300 dark:border-gray-800 object-cover shadow-xl transition duration-500">
@@ -81,14 +92,15 @@
                 <h2 class="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 lang-en">Technology, Management, Data & Social Impact</h2>
                 <h2 class="text-base text-gray-600 dark:text-gray-400 font-medium mb-3 lang-es">Tecnología, Gestión, Datos & Impacto Social</h2>
 
+                <!-- Epígrafe Poética -->
                 <blockquote class="border-l-2 border-accent pl-3 py-1 mb-5 text-xs italic text-gray-500 dark:text-gray-400 leading-relaxed">
                     <span class="lang-pt">“A palavra é uma tecnologia entre-mundos; vamos tramar uma nova língua.”</span>
                     <span class="lang-en">“The word is a technology between worlds; let's weave a new language.”</span>
                     <span class="lang-es">“La palabra es una tecnología entre mundos; vamos a tejer una nueva lengua.”</span>
-                    <footer class="not-italic text-[11px] text-gray-400 dark:text-gray-500 mt-1">
-                        <span class="lang-pt">Livre adaptação de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
-                        <span class="lang-en">Freely adapted from <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
-                        <span class="lang-es">Libre adaptación de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica (@poeticasdaclinica__)</a></span>
+                    <footer class="mt-1 not-italic text-[11px] text-gray-400 dark:text-gray-500">
+                        <span class="lang-pt">Livre adaptação de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica</a></span>
+                        <span class="lang-en">Freely adapted from <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica</a></span>
+                        <span class="lang-es">Libre adaptación de <a href="https://www.instagram.com/poeticasdaclinica__/" target="_blank" class="text-accent hover:underline">Poéticas da Clínica</a></span>
                     </footer>
                 </blockquote>
                 
@@ -101,7 +113,7 @@
                         <button type="button" onclick="copyEmail(this)" class="hover:text-gray-900 dark:hover:text-white transition flex items-center gap-2 text-left group cursor-pointer" title="Clique para copiar o e-mail">
                             <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             <span>isabellactlemess@gmail.com</span>
-                            <span class="copy-feedback hidden text-[10px] bg-emerald-500/15 text-emerald-500 border border-emerald-500/30 px-1.5 py-0.5 rounded font-semibold"><span class="lang-pt">✓ Copiado!</span><span class="lang-en">✓ Copied!</span><span class="lang-es">✓ ¡Copiado!</span></span>
+                            <span class="copy-feedback hidden text-[10px] bg-emerald-500/15 text-emerald-500 border border-emerald-500/30 px-1.5 py-0.5 rounded font-semibold">✓</span>
                         </button>
                     </p>
                     <p class="pt-0.5">
@@ -112,12 +124,22 @@
                     </p>
                 </div>
 
+                <!-- Divisor Floral Rosa Bebê & Branco (Mobile & Web) -->
                 <div class="flex items-center justify-center gap-3 my-6" aria-hidden="true">
                     <span class="h-px flex-1 bg-gradient-to-r from-transparent via-pink-300/60 dark:via-pink-300/40 to-pink-300/80"></span>
                     <div class="flex items-center gap-2">
-                        <svg class="w-4 h-4 text-pink-300 drop-shadow-sm" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/><circle cx="12" cy="12" r="2.1" fill="#ffffff"/></svg>
-                        <svg class="w-5 h-5 text-white drop-shadow-sm" viewBox="0 0 24 24" fill="currentColor"><g stroke="#f9a8d4" stroke-width="0.9"><circle cx="12" cy="6" r="3.4"/><circle cx="17.7" cy="10.1" r="3.4"/><circle cx="15.5" cy="16.9" r="3.4"/><circle cx="8.5" cy="16.9" r="3.4"/><circle cx="6.3" cy="10.1" r="3.4"/></g><circle cx="12" cy="12" r="2.2" fill="#f9a8d4"/></svg>
-                        <svg class="w-4 h-4 text-pink-300 drop-shadow-sm" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/><circle cx="12" cy="12" r="2.1" fill="#ffffff"/></svg>
+                        <svg class="w-4 h-4 text-pink-300 drop-shadow-sm" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/><circle cx="12" cy="12" r="2.1" fill="#ffffff"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-white drop-shadow-sm" viewBox="0 0 24 24" fill="currentColor">
+                            <g stroke="#f9a8d4" stroke-width="0.9">
+                                <circle cx="12" cy="6" r="3.4"/><circle cx="17.7" cy="10.1" r="3.4"/><circle cx="15.5" cy="16.9" r="3.4"/><circle cx="8.5" cy="16.9" r="3.4"/><circle cx="6.3" cy="10.1" r="3.4"/>
+                            </g>
+                            <circle cx="12" cy="12" r="2.2" fill="#f9a8d4"/>
+                        </svg>
+                        <svg class="w-4 h-4 text-pink-300 drop-shadow-sm" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="6.5" r="3.2"/><circle cx="17.2" cy="10.3" r="3.2"/><circle cx="15.2" cy="16.5" r="3.2"/><circle cx="8.8" cy="16.5" r="3.2"/><circle cx="6.8" cy="10.3" r="3.2"/><circle cx="12" cy="12" r="2.1" fill="#ffffff"/>
+                        </svg>
                     </div>
                     <span class="h-px flex-1 bg-gradient-to-l from-transparent via-pink-300/60 dark:via-pink-300/40 to-pink-300/80"></span>
                 </div>
@@ -133,14 +155,39 @@
                 </nav>
             </div>
 
+            <!-- Rodapé -->
             <div class="hidden md:block text-[11px] text-gray-500 pt-4 mt-8">
                 <p>© 2026 Isabella Carvalho</p>
             </div>
         </aside>
 
+        <!-- CONTEÚDO PRINCIPAL -->
         <main class="w-full md:w-[65%] p-8 pt-4 md:p-16 pb-24 overflow-x-hidden">
+            
             <!-- 01. VISÃO GERAL -->
             <section id="visao" class="reveal relative mb-10 pt-2 md:pt-6">
+                <!-- Arte Teia -->
+                <div class="pointer-events-none select-none absolute -top-4 -right-6 md:-top-8 md:-right-10 w-52 h-52 md:w-72 md:h-72 opacity-45 dark:opacity-35" aria-hidden="true">
+                    <svg viewBox="0 0 280 280" fill="none" class="w-full h-full">
+                        <defs>
+                            <radialGradient id="webGradHero" cx="92%" cy="14%" r="86%">
+                                <stop offset="0%" stop-color="#f9a8d4" stop-opacity="0.85"/>
+                                <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.5"/>
+                                <stop offset="100%" stop-color="#94a3b8" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                        <g stroke="url(#webGradHero)" stroke-width="0.9">
+                            <line x1="260" y1="40" x2="35" y2="20"/>
+                            <line x1="260" y1="40" x2="45" y2="110"/>
+                            <line x1="260" y1="40" x2="90" y2="188"/>
+                            <line x1="260" y1="40" x2="160" y2="245"/>
+                            <line x1="260" y1="40" x2="248" y2="265"/>
+                        </g>
+                        <circle cx="160.1" cy="72.4" r="2.2" fill="#3b82f6"/>
+                        <circle cx="143.0" cy="141.7" r="2.5" fill="#3b82f6"/>
+                    </svg>
+                </div>
+
                 <div class="relative z-10">
                     <div class="text-accent text-xs font-bold tracking-widest mb-3">01 / <span class="lang-pt">VISÃO GERAL</span><span class="lang-en">OVERVIEW</span><span class="lang-es">VISIÓN GENERAL</span></div>
                     <h3 class="text-3xl font-semibold mb-6 text-gray-900 dark:text-gray-100 leading-tight">
@@ -166,47 +213,89 @@
                         <p>Con formación en <strong>Psicología</strong> (de orientación psicoanalítica) y <strong>Análisis y Desarrollo de Sistemas</strong>, parto del principio freudiano de que aquello que no es escuchado y elaborado insiste en repetirse en las personas, en los equipos y en los sistemas. Comprendo que detrás de cada cuello de botella operativo, base de datos desconectada o falla recurrente existe un dolor real que necesita ser elaborado para transformar procesos y romper ciclos de repetición, antes incluso de ser abstraído en código. Traduzco esa escucha en arquitecturas eficientes: pipelines ETL automatizados, sistemas web a medida y ecosistemas de inteligencia analítica en Power BI, Superset, Metabase y Qlik Sense.</p>
                         <p>Lidero equipos ágiles fomentando la cultura <em>data-driven</em> y la decisión basada en evidencias. Como mujer, LGBTQIAPN+ y PCD, invito a personas, empresas e instituciones a co-crear tecnologías que no solo procesen información, sino que generen sentido, autonomía y transformación social.</p>
                     </div>
+
+                    <!-- Tríade de Visões -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition group overflow-hidden">
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">01. Tech & AI</div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                                <span class="lang-pt">Visão Computacional & Engenharia</span>
+                                <span class="lang-en">Computer Vision & Engineering</span>
+                                <span class="lang-es">Visión Computacional e Ingeniería</span>
+                            </h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                                <span class="lang-pt">Automação inteligente, leitura computacional de padrões, integração de APIs, desenvolvimento Full Stack e infraestrutura resiliente.</span>
+                                <span class="lang-en">Intelligent automation, computational pattern recognition, API integration, Full Stack development, and resilient infrastructure.</span>
+                                <span class="lang-es">Automatización inteligente, lectura computacional de patrones, integración de APIs, desarrollo Full Stack e infraestructura resiliente.</span>
+                            </p>
+                        </div>
+
+                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-pink-300 dark:hover:border-pink-500/40 transition group overflow-hidden">
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">02. Data-Driven</div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                                <span class="lang-pt">Visão Analítica & Estratégica</span>
+                                <span class="lang-en">Analytical & Strategic Vision</span>
+                                <span class="lang-es">Visión Analítica y Estratégica</span>
+                            </h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                                <span class="lang-pt">Governança de dados, pipelines ETL/ELT e storytelling visual que transformam incerteza em tomada de decisão de alto impacto.</span>
+                                <span class="lang-en">Data governance, ETL/ELT pipelines, and visual storytelling that turn uncertainty into high-impact decision-making.</span>
+                                <span class="lang-es">Gobernanza de datos, pipelines ETL/ELT y storytelling visual que transforman la incertidumbre en toma de decisiones de alto impacto.</span>
+                            </p>
+                        </div>
+
+                        <div class="relative border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker p-5 rounded-xl hover:border-accent transition group overflow-hidden">
+                            <div class="text-accent text-xs font-mono uppercase tracking-wider mb-1.5">03. Human-Centered</div>
+                            <h4 class="font-semibold text-gray-900 dark:text-white text-sm mb-2">
+                                <span class="lang-pt">Visão Humanista & Escuta</span>
+                                <span class="lang-en">Humanist Vision & Listening</span>
+                                <span class="lang-es">Visión Humanista y Escucha</span>
+                            </h4>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                                <span class="lang-pt">Escuta clínica e organizacional aplicada à tecnologia: compreender a dor real de quem usa antes de escrever a primeira linha de código.</span>
+                                <span class="lang-en">Clinical and organizational listening applied to technology: understanding the user's real pain before writing the first line of code.</span>
+                                <span class="lang-es">Escucha clínica y organizacional aplicada a la tecnología: comprender el dolor real de quien usa antes de escribir la primera línea de código.</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- 02. EXPERIÊNCIA TECH -->
             <section id="experiencia" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
                 <div class="text-accent text-xs font-bold tracking-widest mb-3">02 / <span class="lang-pt">TECNOLOGIA & GOVERNANÇA</span><span class="lang-en">TECHNOLOGY & GOVERNANCE</span><span class="lang-es">TECNOLOGÍA & GOBERNANZA</span></div>
-                <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
-                    <span class="lang-pt">O caminho até aqui.</span><span class="lang-en">The path so far.</span><span class="lang-es">El camino hasta aquí.</span>
-                </h3>
-            </section>
+                <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100"><span class="lang-pt">O caminho até aqui.</span><span class="lang-en">The path so far.</span><span class="lang-es">El camino hasta aquí.</span></h3>
 
-            <!-- 03. PRODUTOS & PAINÉIS -->
-            <section id="paineis" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
-                <div class="text-accent text-xs font-bold tracking-widest mb-3">03 / <span class="lang-pt">PRODUTOS & PAINÉIS</span><span class="lang-en">PRODUCTS & DASHBOARDS</span><span class="lang-es">PRODUCTOS & PANELES</span></div>
-                <h3 class="text-3xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
-                    <span class="lang-pt">Inteligência Governamental & Visualização.</span><span class="lang-en">Government Intelligence & Visualization.</span><span class="lang-es">Inteligencia Gubernamental & Visualización.</span>
-                </h3>
-            </section>
+                <div class="relative flex flex-col gap-10 pl-6 border-l border-dotted border-pink-300/60 dark:border-pink-300/40">
+                    
+                    <!-- SETIC -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
+                        <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">
+                            <span class="lang-pt">2015 - Atual</span><span class="lang-en">2015 - Present</span><span class="lang-es">2015 - Actual</span>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-200">SETIC - Rondônia</h4>
+                            <div class="text-xs text-gray-600 dark:text-gray-400 mb-3 font-medium"><span class="lang-pt">Gerente de Análise de Dados / Analista / Chefe de Núcleo / Assessora</span><span class="lang-en">Data Analytics Manager / Analyst / Head of Unit / Advisor</span><span class="lang-es">Gerente de Análisis de Datos / Analista / Jefa de Núcleo / Asesora</span></div>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-2.5">
+                                <li class="flex items-start"><span class="mr-2 text-accent">▹</span> <span class="lang-pt">Liderança técnica multidisciplinar via Scrum/Jira para sprints analíticas de alto impacto.</span><span class="lang-en">Multidisciplinary technical leadership via Scrum/Jira for high-impact analytical sprints.</span><span class="lang-es">Liderazgo técnico multidisciplinario vía Scrum/Jira para sprints analíticos de alto impacto.</span></li>
+                                <li class="flex items-start"><span class="mr-2 text-accent">▹</span> <span class="lang-pt">Ministração de oficinas e treinamentos práticos de Power BI e capacitação em dados para equipes.</span><span class="lang-en">Conducting practical Power BI workshops and data training sessions for teams.</span><span class="lang-es">Impartición de talleres y capacitaciones prácticas de Power BI para equipos.</span></li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <!-- 04. PSICOLOGIA & IMPACTO SOCIAL -->
-            <section id="psicologia" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
-                <div class="text-accent text-xs font-bold tracking-widest mb-3">04 / <span class="lang-pt">PSICOLOGIA & IMPACTO SOCIAL</span><span class="lang-en">PSYCHOLOGY & SOCIAL IMPACT</span><span class="lang-es">PSICOLOGÍA & IMPACTO SOCIAL</span></div>
-                <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
-                    <span class="lang-pt">A base humana.</span><span class="lang-en">The human foundation.</span><span class="lang-es">La base humana.</span>
-                </h3>
-            </section>
+                    <!-- VORTENS -->
+                    <div class="relative grid grid-cols-1 md:grid-cols-4 gap-3">
+                        <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">2025</div>
+                        <div class="md:col-span-3">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-200">Vortens Tecnologia</h4>
+                            <div class="text-xs text-gray-600 dark:text-gray-400 mb-3 font-medium"><span class="lang-pt">Desenvolvedora Full Stack (Freelancer)</span><span class="lang-en">Full Stack Developer (Freelance)</span><span class="lang-es">Desarrolladora Full Stack (Freelancer)</span></div>
+                            <ul class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed space-y-2">
+                                <li class="flex items-start"><span class="mr-2 text-accent">▹</span> <span class="lang-pt">Desenvolvimento Full Stack do Sistema de Gestão Contábil.</span><span class="lang-en">Full Stack development of the Accounting Management System.</span><span class="lang-es">Desarrollo Full Stack del Sistema de Gestión Contable.</span></li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <!-- 05. COMPETÊNCIAS & IDIOMAS -->
-            <section id="competencias" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
-                <div class="text-accent text-xs font-bold tracking-widest mb-3">05 / <span class="lang-pt">COMPETÊNCIAS & IDIOMAS</span><span class="lang-en">SKILLS & LANGUAGES</span><span class="lang-es">COMPETENCIAS & IDIOMAS</span></div>
-                <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
-                    <span class="lang-pt">Ferramentas, Tecnologias & Idiomas.</span><span class="lang-en">Tools, Technologies & Languages.</span><span class="lang-es">Herramientas, Tecnologías & Idiomas.</span>
-                </h3>
-            </section>
-
-            <!-- 06. PRODUÇÃO CIENTÍFICA & LATTES -->
-            <section id="formacao" class="reveal mb-10 pt-10 border-t border-gray-200 dark:border-gray-800">
-                <div class="text-accent text-xs font-bold tracking-widest mb-3">06 / <span class="lang-pt">PRODUÇÃO CIENTÍFICA & LATTES</span><span class="lang-en">ACADEMIC & LATTES</span><span class="lang-es">PRODUCCIÓN CIENTÍFICA & LATTES</span></div>
-                <h3 class="text-3xl font-semibold mb-8 text-gray-900 dark:text-gray-100">
-                    <span class="lang-pt">Uma base sólida.</span><span class="lang-en">A solid foundation.</span><span class="lang-es">Una base sólida.</span>
-                </h3>
+                </div>
             </section>
 
             <!-- 07. ESCUTA & CRIAÇÃO (CTA) -->
@@ -215,26 +304,19 @@
                 
                 <div class="relative overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-2xl p-6 md:p-8 hover:border-accent/50 transition duration-300">
                     <div class="relative z-10">
-                        <div class="border-l-2 border-accent pl-3.5 py-0.5 mb-5">
-                            <p class="text-xs md:text-sm italic text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <span class="lang-pt">“A palavra é uma tecnologia entre-mundos; vamos tramar uma nova língua? Fala que eu te escuto.”</span>
-                                <span class="lang-en">“The word is a technology between worlds; shall we weave a new language? Speak, I'm listening.”</span>
-                                <span class="lang-es">“La palabra es una tecnología entre mundos; ¿vamos a tejer una nueva lengua? Habla, te escucho.”</span>
-                            </p>
-                        </div>
-
                         <h3 class="text-2xl md:text-3xl font-semibold mb-3 text-gray-900 dark:text-white leading-snug">
                             <span class="lang-pt">Vamos abstrair e elaborar essa dor para transformar, em vez de repetir, os mesmos problemas?</span>
                             <span class="lang-en">Shall we abstract and work through that pain to transform, rather than repeat, the same problems?</span>
                             <span class="lang-es">¿Vamos a abstraer y elaborar ese dolor para transformar, en lugar de repetir, los mismos problemas?</span>
                         </h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
-                            <span class="lang-pt">Toda solução tecnológica real nasce de uma escuta atenta. Estou aberta a novos projetos, consultorias e parcerias remotas.</span>
-                            <span class="lang-en">Every meaningful technological solution begins with attentive listening. I am open to new projects, consulting, and remote partnerships.</span>
-                            <span class="lang-es">Toda solución tecnológica real nace de una escucha atenta. Estoy abierta a nuevos proyectos, consultorías y asociaciones remotas.</span>
+                            <span class="lang-pt">Seja para estruturar pipelines e painéis de Business Intelligence, desenvolver aplicações web e automações em Python, aplicar visão computacional ou desenhar arquiteturas de dados centradas nas pessoas, estou aberta a novos projetos, consultorias e parcerias remotas.</span>
+                            <span class="lang-en">Whether structuring Business Intelligence pipelines and dashboards, building web applications and Python automations, applying computer vision, or designing human-centered data architectures, I am open to new projects, consulting, and remote partnerships.</span>
+                            <span class="lang-es">Ya sea para estructurar pipelines y paneles de Business Intelligence, desarrollar aplicaciones web y automatizaciones en Python, aplicar visión computacional o diseñar arquitecturas de datos centradas en las personas, estoy abierta a nuevos proyectos, consultorías y asociaciones remotas.</span>
                         </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md">
-                            <a id="gmailLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Vamos%20tramar%20uma%20nova%20l%C3%ADngua%3F" target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition shadow-lg inline-flex items-center justify-center gap-2 text-center">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md">
+                            <a id="gmailLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com" target="_blank" rel="noopener noreferrer" class="bg-accent hover:bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded-lg transition shadow-lg shadow-blue-500/20 inline-flex items-center justify-center gap-2 text-center">
+                                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                                 <span class="lang-pt">Enviar no Gmail</span><span class="lang-en">Send via Gmail</span><span class="lang-es">Enviar vía Gmail</span>
                             </a>
                         </div>
@@ -246,26 +328,27 @@
 
     <!-- WIDGET DO CHATBOT -->
     <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
-        <button id="chatbot-btn" class="bg-pink-500 text-white rounded-full shadow-lg hover:bg-pink-600 transition flex items-center justify-center group overflow-hidden w-14 h-14 border-2 border-white dark:border-slate-800 cursor-pointer shrink-0" aria-label="Abrir Chat">
+        <button id="chatbot-btn" class="bg-pink-500 text-white rounded-full shadow-lg hover:bg-pink-600 transition flex items-center justify-center group overflow-hidden w-14 h-14 border-2 border-white dark:border-slate-800 cursor-pointer shrink-0">
             <img src="isa-avatar.png" alt="IsA Avatar" class="w-full h-full object-cover transform group-hover:scale-110 transition">
         </button>
     </div>
 
     <div id="chatbot-window" class="hidden fixed bottom-24 right-6 w-[90vw] md:w-80 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-xl shadow-2xl flex-col overflow-hidden text-gray-800 dark:text-white z-50 transition-all">
+        <!-- Chat HTML igual ao original -->
         <div class="bg-gradient-to-r from-pink-500 to-accent p-3 font-semibold flex justify-between items-center text-white">
             <div class="flex items-center gap-2.5">
                 <img src="isa-avatar.png" alt="IsA" class="w-8 h-8 rounded-full object-cover border border-white/40">
                 <span class="text-sm tracking-wide">IsA - Assistente Virtual</span>
             </div>
-            <button id="close-chat" class="text-white/80 hover:text-white p-1 cursor-pointer">✕</button>
+            <button id="close-chat" class="text-white/80 hover:text-white p-1 cursor-pointer">X</button>
         </div>
+        
         <div id="chat-messages" class="p-4 h-72 overflow-y-auto flex flex-col gap-3 text-sm bg-gray-50 dark:bg-slate-800/50">
             <div class="bg-gray-200 dark:bg-slate-700 p-2.5 rounded-lg rounded-tl-none self-start max-w-[85%] text-gray-800 dark:text-gray-200 shadow-sm">
-                <span class="lang-pt">Olá! 👋 Sou a IsA, assistente de IA da Isabella. Como posso ajudar?</span>
-                <span class="lang-en">Hello! 👋 I'm IsA, Isabella's AI assistant. How can I help?</span>
-                <span class="lang-es">¡Hola! 👋 Soy IsA, la asistente de IA de Isabella. ¿Cómo puedo ayudar?</span>
+                Olá! 👋 Sou a IsA, a assistente virtual de inteligência artificial da Isabella Carvalho. Como posso ajudar o seu negócio hoje?
             </div>
         </div>
+        
         <div class="p-3 border-t border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex gap-2">
             <input type="text" id="chat-input" class="w-full bg-gray-100 dark:bg-slate-800 border-none rounded-lg p-2.5 outline-none focus:ring-1 focus:ring-pink-500 text-sm" placeholder="Escreva sua dúvida...">
             <button id="send-btn" class="bg-accent px-3 py-2 rounded-lg text-white font-semibold hover:bg-blue-600 transition">➤</button>
@@ -273,19 +356,25 @@
     </div>
 
     <script>
+        // Troca de Tema
         document.getElementById('themeToggle').addEventListener('click', () => {
             document.documentElement.classList.toggle('dark');
         });
 
+        // ==========================================
+        // NOVO CÓDIGO DO SELECT DE IDIOMAS
+        // ==========================================
         const langSelect = document.getElementById('langSelect');
-        let currentLang = 'pt';
-        const gmailLink = document.getElementById('gmailLink');
+        let currentLang = 'pt'; // Variável global lida pela IsA
 
         langSelect.addEventListener('change', (e) => {
             currentLang = e.target.value;
+            
             document.body.setAttribute('data-lang', currentLang);
             document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang;
 
+            const gmailLink = document.getElementById('gmailLink');
+            
             if (currentLang === 'en') {
                 document.title = 'Isabella Carvalho | Technology, Management, Data & Impact';
                 if (gmailLink) gmailLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Shall%20we%20weave%20a%20new%20language%3F%20%7C%20Portfolio%20Contact';
@@ -298,6 +387,7 @@
             }
         });
 
+        // Chatbot e outras lógicas que você já tinha...
         const chatBtn = document.getElementById('chatbot-btn');
         const chatWindow = document.getElementById('chatbot-window');
         const closeChat = document.getElementById('close-chat');
@@ -308,14 +398,14 @@
         chatBtn.addEventListener('click', () => {
             chatWindow.classList.remove('hidden');
             chatWindow.classList.add('flex');
-            chatBtn.classList.add('hidden');
+            chatBtn.classList.add('hidden'); 
             chatInput.focus();
         });
         
         closeChat.addEventListener('click', () => {
             chatWindow.classList.add('hidden');
             chatWindow.classList.remove('flex');
-            chatBtn.classList.remove('hidden');
+            chatBtn.classList.remove('hidden'); 
         });
 
         async function sendMessage() {
@@ -340,8 +430,7 @@
                 const data = await response.json();
                 document.getElementById(typingId)?.remove();
                 
-                chatMessages.innerHTML += `<div class="bg-gray-200 dark:bg-slate-700 p-2.5 rounded-lg rounded-tl-none self-start max-w-[85%] text-gray-800 dark:text-gray-200 shadow-sm">${data.reply.replace(/
-/g, '<br>')}</div>`;
+                chatMessages.innerHTML += `<div class="bg-gray-200 dark:bg-slate-700 p-2.5 rounded-lg rounded-tl-none self-start max-w-[85%] text-gray-800 dark:text-gray-200 shadow-sm">${data.reply.replace(/\n/g, '<br>')}</div>`;
                 chatMessages.scrollTop = chatMessages.scrollHeight;
 
             } catch (error) {
