@@ -37,15 +37,9 @@
         .dark .spotlight { background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.03), transparent 40%); }
 
         /* Comportamento de tradução */
-        .lang-en { display: none !important; }
-        body.lang-english .lang-pt { display: none !important; }
-        body.lang-english .lang-en { display: block !important; }
-        body.lang-english span.lang-en,
-        body.lang-english a.lang-en,
-        body.lang-english em.lang-en,
-        body.lang-english strong.lang-en { display: inline !important; }
-        body.lang-english div.flex.lang-en { display: flex !important; }
-        body.lang-english div.grid.lang-en { display: grid !important; }
+        body[data-lang="pt"] .lang-en, body[data-lang="pt"] .lang-es { display: none !important; }
+        body[data-lang="en"] .lang-pt, body[data-lang="en"] .lang-es { display: none !important; }
+        body[data-lang="es"] .lang-pt, body[data-lang="es"] .lang-en { display: none !important; }
         
         /* Efeito de aparecimento gradual */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -76,15 +70,14 @@
         }
     </style>
 </head>
-<body class="antialiased selection:bg-accent selection:text-white" onmousemove="document.querySelector('.spotlight').style.setProperty('--x', event.clientX + 'px'); document.querySelector('.spotlight').style.setProperty('--y', event.clientY + 'px');">
-    
+<body data-lang="pt" class="antialiased selection:bg-accent selection:text-white" onmousemove="document.querySelector('.spotlight').style.setProperty('--x', event.clientX + 'px'); document.querySelector('.spotlight').style.setProperty('--y', event.clientY + 'px');">    
     <div class="spotlight" style="--x: 50vw; --y: 50vh;"></div>
 
     <!-- Toggles Fixos -->
     <div class="fixed top-4 right-4 z-50 flex gap-3 text-xs font-semibold tracking-wider">
-        <button id="langToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">PT / EN</button>
+        <button id="langToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">PT / EN / ES</button>
         <button id="themeToggle" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition">
-            🌓 <span class="lang-pt">TEMA</span><span class="lang-en">THEME</span>
+            🌓 <span class="lang-pt">TEMA</span><span class="lang-en">THEME</span><span class="lang-es">TEMA</span>
         </button>
     </div>
 
@@ -1130,19 +1123,30 @@
             document.documentElement.classList.toggle('dark');
         });
 
-        // Alternância de Idioma (PT / EN)
+       // Alternância de Idioma (PT / EN / ES)
+        const langs = ['pt', 'en', 'es'];
+        let currentLangIndex = 0;
+        let currentLang = 'pt'; // Variável global para a IsA
+
         const langToggle = document.getElementById('langToggle');
         const gmailLink = document.getElementById('gmailLink');
+
         langToggle.addEventListener('click', () => {
-            const isEnglish = document.body.classList.toggle('lang-english');
-            document.documentElement.lang = isEnglish ? 'en' : 'pt-BR';
-            document.title = isEnglish
-                ? 'Isabella Carvalho | Technology, Management, Data & Impact'
-                : 'Isabella Carvalho | Tecnologia, Gestão, Dados & Impacto';
-            if (gmailLink) {
-                gmailLink.href = isEnglish
-                    ? 'https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Shall%20we%20weave%20a%20new%20language%3F%20%7C%20Portfolio%20Contact'
-                    : 'https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Vamos%20tramar%20uma%20nova%20l%C3%ADngua%3F%20%7C%20Contato%20Portf%C3%B3lio';
+            currentLangIndex = (currentLangIndex + 1) % langs.length;
+            currentLang = langs[currentLangIndex];
+            
+            document.body.setAttribute('data-lang', currentLang);
+            document.documentElement.lang = currentLang === 'pt' ? 'pt-BR' : currentLang;
+
+            if (currentLang === 'en') {
+                document.title = 'Isabella Carvalho | Technology, Management, Data & Impact';
+                if (gmailLink) gmailLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Shall%20we%20weave%20a%20new%20language%3F%20%7C%20Portfolio%20Contact';
+            } else if (currentLang === 'es') {
+                document.title = 'Isabella Carvalho | Tecnología, Gestión, Datos & Impacto';
+                if (gmailLink) gmailLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=%C2%BFTramamos%20un%20nuevo%20lenguaje%3F%20%7C%20Contacto%20Portafolio';
+            } else {
+                document.title = 'Isabella Carvalho | Tecnologia, Gestão, Dados & Impacto';
+                if (gmailLink) gmailLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=isabellactlemess@gmail.com&su=Vamos%20tramar%20uma%20nova%20l%C3%ADngua%3F%20%7C%20Contato%20Portf%C3%B3lio';
             }
         });
 
@@ -1233,11 +1237,14 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
 
             try {
-                // Faz o POST para o servidor local na porta 3000
+                // Faz o POST para o servidor
                 const response = await fetch('https://isa-back-xkm5.onrender.com/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message })
+                    body: JSON.stringify({ 
+                        message: message,
+                        siteLanguage: currentLang
+                    })
                 });
 
                 const data = await response.json();
