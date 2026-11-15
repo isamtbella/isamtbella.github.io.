@@ -36,7 +36,7 @@
         }
         .dark .spotlight { background: radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.03), transparent 40%); }
 
-        /* Comportamento de tradução (PT / EN / ES) */
+        /* Comportamento de tradução rigoroso (PT / EN / ES) */
         body[data-lang="pt"] .lang-en, body[data-lang="pt"] .lang-es { display: none !important; }
         body[data-lang="en"] .lang-pt, body[data-lang="en"] .lang-es { display: none !important; }
         body[data-lang="es"] .lang-pt, body[data-lang="es"] .lang-en { display: none !important; }
@@ -68,6 +68,7 @@
 
     <!-- Toggles Fixos com Bandeirinhas -->
     <div class="fixed top-4 right-4 z-50 flex gap-3 text-xs font-semibold tracking-wider items-center">
+        <!-- SELECT DE IDIOMAS COM BANDEIRAS -->
         <select id="langSelect" class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 px-3 py-1.5 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition cursor-pointer outline-none border border-transparent focus:border-accent">
             <option value="pt">🇧🇷 PT-BR</option>
             <option value="en">🇺🇸 EN</option>
@@ -325,6 +326,21 @@
                     <span class="lang-en">Design and execution of strategic analytical dashboards, converting operational pain points and complex data into interactive platforms to support high-level decision-making.</span>
                     <span class="lang-es">Diseño y ejecución de paneles analíticos estratégicos, convirtiendo dolores operativos y datos complejos en plataformas interactivas para la toma de decisiones.</span>
                 </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-red-500 transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] text-red-500 uppercase tracking-widest font-semibold mb-2"><span class="lang-pt">Monitoramento Operacional</span><span class="lang-en">Operational Monitoring</span><span class="lang-es">Monitoreo Operativo</span></div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-pt">Monitoramento de Focos de Incêndio</span><span class="lang-en">Wildfire Monitoring</span><span class="lang-es">Monitoreo de Incendios Forestales</span></h4>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-darker rounded-xl p-6 hover:border-blue-500 transition duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] text-blue-500 uppercase tracking-widest font-semibold mb-2"><span class="lang-pt">Gestão Urbana</span><span class="lang-en">Urban Management</span><span class="lang-es">Gestión Urbana</span></div>
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-pt">Plataforma de Mobilidade Urbana</span><span class="lang-en">Urban Mobility Platform</span><span class="lang-es">Plataforma de Movilidad Urbana</span></h4>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- 04. PSICOLOGIA & IMPACTO SOCIAL -->
